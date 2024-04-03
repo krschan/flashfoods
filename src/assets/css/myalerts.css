@@ -1,0 +1,43 @@
+article {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.info-form {
+    margin: 6rem 0 2rem 0;
+    width: 40%;
+    border-radius: 1.5rem;
+    border: 3px solid lightgray;
+}
+h2 {
+    padding: 1.5rem 0 1.5rem 0;
+    width: 100%;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border: 2px solid lightgray;
+    background-color: lightgray;
+}
+.top-nav-img > a > img {
+    width: 150px;
+    height: auto; 
+}
+
+.plan {
+    margin: 0 18% 0 18%;
+    padding: 1.5rem 0 1.5rem 0;
+    border-radius: 5px;
+    border: lightgrey 1px solid;
+    background-color: lightgrey;
+}
+article .plan:first-child {
+    margin-bottom: 5%;
+}
+
+.plan > h3 {
+    padding: 0.2rem;
+}
+p {
+    margin: 2rem 1rem 2rem 1rem;
+}
+img {
+    width: 70%;
+}

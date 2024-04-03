@@ -1,0 +1,114 @@
+/* BODY */
+#grey-background {
+    background-color: #ebebeb;
+}   
+
+/* RETURN to main page */
+.return {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+.logo {
+    position: fixed;
+    top: 50px;
+    left: 47%;
+    width: 115px;
+}
+
+#white-background {
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 5px 2.5px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 50px 50px;
+}
+
+#login-or-signin{
+    padding-top: 290px;
+}
+
+#login-or-signin button {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#login-or-signin #login {
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid red;
+}
+
+
+
+/* SIGN IN WITH */
+.signin-faster {
+    width: 32px;
+    height: 32px;
+}
+
+/* MAIN */
+.main {
+    padding-top: 50px;
+    text-align: left;
+}
+
+.main > div > button {
+    border: 0;
+    margin: 0 10px;
+}
+
+.main > div {
+    padding-bottom: 30px;
+    font-weight: bolder;
+}
+
+div > input {
+    width: 100%;
+    box-shadow: 0 0 0;
+    border: 0;
+    margin-top: 20px;
+}
+
+.main > div > a > button {
+    width: 100%;
+    background-color: #ffc90e;
+    color: white;
+    font-weight: bold;
+}
+
+.main > div > a > button:hover {
+    border: solid 1px #f9d967;
+    background-color: #f9d967;
+}
+
+.support-box {
+    margin-top: 10px;
+}
+
+#support{
+    color: red;
+    text-decoration: underline red;
+    font-style: oblique;
+    font-weight: 100;
+    font-size: small
+}
+.help-box{
+border-top: 1px solid black;
+padding-top: 30px;
+}
+
+.help-box > div button {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 0 ;
+    font-style: italic;
+    
+} 
+.help-box > p{
+    padding-bottom: 15px;
+    
+}
