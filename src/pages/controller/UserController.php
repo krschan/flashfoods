@@ -127,6 +127,9 @@
             
             if ($stmt->execute()) {
 
+                $_SESSION["logged"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["admin"] = false;
                 header("Location: ../view/login/index-user.php");
                 exit();
         
@@ -172,7 +175,10 @@
             $stmt->bind_param("sssss", $mail, $username, $password, $filename, $admin); 
             
             if ($stmt->execute()) {
-                
+
+                $_SESSION["logged"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["admin"] = true;
                 $_SESSION["image"] = $location . basename($_FILES["fileUpload"]["name"]);
                 header("Location: ../view/login/index-user.php");
                 exit();
