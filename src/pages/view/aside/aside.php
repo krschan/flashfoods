@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$is_logged = isset($_SESSION['logged']) == true;
+$is_logged = isset($_SESSION['logged']) && $_SESSION['logged'] === true;
 
 if ($is_logged){
     echo '
