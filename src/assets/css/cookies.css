@@ -1,0 +1,12 @@
+body {
+    background-color: #e5e5e5;
+}
+
+.cookies-text {
+    background-color: white;
+    border-radius: 50px;
+    width: 40%;
+    padding: 50px;
+    margin-top: 60px;
+    text-align: justify;
+}

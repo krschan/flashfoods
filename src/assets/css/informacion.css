@@ -1,0 +1,49 @@
+article {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.info-box {
+    padding-top: 75px;
+}
+
+.info-form {
+    margin: 1.3rem 0 1.3rem 0;
+    width: 40%;
+    border-radius: 1.5rem;
+    border: 3px solid lightgray;
+}
+h2 {
+    padding: 1.5rem 0 1.5rem 0;
+    width: 100%;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border: 2px solid lightgray;
+    background-color: lightgray;
+}
+h3 {
+    padding: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin: 0;
+}
+input {
+    padding-left: 10px;
+    margin: 10px 0 10px 0;
+}
+.user-img {
+    width: 100px;
+    height: auto; 
+}
+.top-nav-img > a > img {
+    width: 150px;
+    height: auto; 
+}
+
+@media only screen and (max-width: 600px) {
+    .info-form input {
+        width: 50%;
+    }
+}
