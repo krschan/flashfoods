@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user->registerAdmin();
     }
 }
-
+// test
 class UserController {
     private $conn;
 
