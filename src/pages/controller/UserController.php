@@ -26,11 +26,13 @@ class UserController {
         $flashfood = "flashfood";
 
         // create connection
-        $this->conn = new mysqli($servername, $username, $password, $flashfood);
-
-        // check connection
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+        try {
+            $this->conn = new PDO("mysql:host=$servername;dbname=$flashfood", $username, $password);
+            // set the PDO error mode to exception
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully"; // This message should not be echoed here in a production environment
+        } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
         }
     }
 
@@ -52,25 +54,19 @@ class UserController {
         }
 
         // Check in the database
-        $check = $this->conn->prepare("SELECT admin, image FROM user WHERE username=? AND password=?");
-        $check->bind_param("ss", $username, $password);
-        $check->execute();
-        $check->store_result();
+        $stmt = $this->conn->prepare("SELECT admin, image FROM user WHERE username=:username AND password=:password");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
 
-        if ($check->num_rows > 0) {
-            $check->bind_result($admin, $image);
-            $check->fetch();
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Authentication successful
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
-            $_SESSION["admin"] = false;
-
-            if ($admin === 1) {
-                // User is admin
-                $_SESSION["admin"] = true;
-                $_SESSION["image"] = $image;
-            }
+            $_SESSION["admin"] = ($result['admin'] == 1);
+            $_SESSION["image"] = $result['image'];
 
             header("Location: ../view/menu/index.php");
             exit();
@@ -111,7 +107,7 @@ class UserController {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
             $_SESSION["admin"] = false;
-            header("Location: ../view/menu/index.php");
+            header("Location: ../view/login/index.php");
             exit();
     
         } else {
@@ -179,7 +175,6 @@ class UserController {
         header("Location: ../view/menu/index.php");
         exit();
     }
-
     public function update (): void {
         $mail = $_POST['mail'];
         $username = $_POST['user']; 
