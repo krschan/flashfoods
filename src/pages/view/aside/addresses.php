@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlashFood | Direcciones</title>
-    <link rel="stylesheet" href="/src/assets/css/direcciones.css" />
+    <title>FlashFood | Addresses</title>
+    <link rel="stylesheet" href="/src/assets/css/addresses.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 </head>
 

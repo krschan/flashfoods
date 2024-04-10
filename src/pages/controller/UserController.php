@@ -64,9 +64,9 @@ class UserController {
             // Authentication successful
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
-            $_SESSION["admin"]  = false;
+            $_SESSION["admin"] = false;
 
-            if ($admin == 1) {
+            if ($admin === 1) {
                 // User is admin
                 $_SESSION["admin"] = true;
                 $_SESSION["image"] = $image;
@@ -111,7 +111,7 @@ class UserController {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
             $_SESSION["admin"] = false;
-            header("Location: ../view/login/index.php");
+            header("Location: ../view/menu/index.php");
             exit();
     
         } else {
@@ -179,5 +179,42 @@ class UserController {
         header("Location: ../view/menu/index.php");
         exit();
     }
+
+    public function update (): void {
+        $mail = $_POST['mail'];
+        $username = $_POST['user']; 
+        $password = $_POST['password'];
+        $admin = 0;
+
+        if (!ctype_alpha($username)) {
+            $_SESSION["logged"] = false;
+            $_SESSION["error"] = "The username can only contain letters.";
+            header("Location: ../view/login/login.php");
+            exit();
+        }
+
+        if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)) {
+            $_SESSION["logged"] = false;
+            $_SESSION["error"] = "The password must be at least 8 characters long and contain at least one uppercase letter.";
+            header("Location: ../view/login/login.php");
+            exit();
+        }
+
+        $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $mail, $username, $password, $admin); 
+        
+        if ($stmt->execute()) {
+
+            $_SESSION["logged"] = true;
+            $_SESSION["username"] = $username;
+            $_SESSION["admin"] = false;
+            header("Location: ../view/menu/index.php");
+            exit();
+    
+        } else {
+            echo "Error al registrar el usuario.";
+        }
+    }
 }
-?>
+
+    ?>

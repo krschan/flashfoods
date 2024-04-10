@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlashFood | Información</title>
-    <link rel="stylesheet" href="/src/assets/css/informacion.css" />
+    <link rel="stylesheet" href="/src/assets/css/information.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 </head>
 
@@ -38,6 +38,14 @@
                     <input type="tel" id="phone-number" name="numero-de-telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" /><br />
 
                     <input type="submit" value="Guardar cambios" />
+                    <?php
+                    if(isset($_SESSION['error'])) {
+                        echo "<p style='color: red;'>".$_SESSION['error']."</p>";
+                        unset($_SESSION['error']);
+                    }
+                    
+                ?>
+                
                 </form>
             </article>
         </div>

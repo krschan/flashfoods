@@ -28,28 +28,8 @@ session_start();
     </head>
 
     <body id="map-body">
-        <!-- Aside -->
-        <button id="menu-toggle">Mostrar Menú</button>
-
-        <aside id="menu-content" class="aligned menu-hidden">
-            <div class="center">
-                <a href="/src/index.html">
-                    <button><img src="/src/assets/img/logo.png" alt="logo-home-page"></button>
-                </a>
-            </div>
-            <ul>
-                <li class="content-locked"><a href="#"><button>Información cuenta</button></a></li>
-                <li class="content-locked"><a href="#"><button>Direcciones</button></a></li>
-                <li class="content-locked"><a href="#"><button>Historial y detalles</button></a></li>
-                <li class="content-locked"><a href="#"><button>Facturas por abono</button></a></li>
-                <li class="content-locked"><a href="#"><button>Cupones de descuento</button></a></li>
-                <li class="content-locked"><a href="#"><button>Mi lista de deseos</button></a></li>
-                <li class="content-locked"><a href="#"><button>My alerts</button></a></li>
-                <li><a href="/src/aside/soportetecnico.html"><button>Soporte técnico</button></a></li>
-            </ul>
-        </aside>
-        
-        
+        <!-- Aside -->  
+        <?php require_once '../aside/aside.php';?>
 
         <aside id="menu-content-tablet">
             <button><img src="/src/assets/img/hamburger-menu.png" alt="hamburger-menu"></button>
@@ -103,11 +83,8 @@ session_start();
             </div>
 
             <!-- Login -->
-            <div id="login">
-                <a href="/src/pages/view/login/login.php">
-                    <button>Sign in</button>
-                </a>
-            </div>
+            
+            <?php require_once '../login/login-signout.php';?>
         </div>
 
         <!-- Zoom -->

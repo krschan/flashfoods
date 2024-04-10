@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlashFood | Cupones</title>
-    <link rel="stylesheet" href="/src/assets/css/cuponesdedescuento.css" />
+    <link rel="stylesheet" href="/src/assets/css/discount-coupons.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 </head>
 

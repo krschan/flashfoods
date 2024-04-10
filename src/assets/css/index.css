@@ -40,7 +40,7 @@
 
 /* FILTERS */
 #filters {
-    width: 45%;
+    width: 41%;
 }
 
 #filters > div > button {
@@ -140,8 +140,9 @@ div > img {
 
 #menu-toggle {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 30px;
+    left: 50px;
+    z-index: 10;
 }
 
 

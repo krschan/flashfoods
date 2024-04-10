@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
-    <link rel="stylesheet" href="/src/assets/css/soportetecnico.css">
+    <link rel="stylesheet" href="/src/assets/css/technical-support.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
     <title>FlashFood | Login</title>
 </head>

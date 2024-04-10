@@ -76,6 +76,7 @@
                         echo "<p style='color: red;'>".$_SESSION['error']."</p>";
                         unset($_SESSION['error']);
                     }
+                    
                 ?>
 
             </div>   

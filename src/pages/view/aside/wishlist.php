@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlashFood | Lista deseos</title>
-    <link rel="stylesheet" href="/src/assets/css/milistadedeseos.css" />
+    <link rel="stylesheet" href="/src/assets/css/wishlist.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 </head>
 
