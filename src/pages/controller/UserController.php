@@ -40,7 +40,7 @@ class UserController {
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        // Validate username and password here
+        // validate username and password here
         if (!ctype_alpha($username)) {
             $_SESSION["error"] = "The username can only contain letters.";
             header("Location: ../view/login/login.php");
@@ -53,7 +53,7 @@ class UserController {
             exit();
         }
 
-        // Check in the database
+        // check in the database
         $stmt = $this->conn->prepare("SELECT admin, image FROM user WHERE username=:username AND password=:password");
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
@@ -62,7 +62,7 @@ class UserController {
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Authentication successful
+            // authentication successful
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
             $_SESSION["admin"] = ($result['admin'] == 1);
@@ -71,7 +71,7 @@ class UserController {
             header("Location: ../view/menu/index.php");
             exit();
         } else {
-            // Authentication failed, display an error message
+            // authentication failed, display an error message
             $_SESSION["error"] = "Invalid username or password. Please try again.";
             header("Location: ../view/login/login.php");
             exit();
@@ -79,7 +79,7 @@ class UserController {
     }
 
     // register user
-    public function register():void {
+    public function register(): void {
         $mail = $_POST['mail'];
         $username = $_POST['user']; 
         $password = $_POST['password'];
@@ -99,24 +99,31 @@ class UserController {
             exit();
         }
 
-        $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $mail, $username, $password, $admin); 
-        
-        if ($stmt->execute()) {
-
-            $_SESSION["logged"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["admin"] = false;
-            header("Location: ../view/login/index.php");
-            exit();
-    
-        } else {
-            echo "Error al registrar el usuario.";
+        try {
+            // insert in the database
+            $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (:mail, :username, :password, :admin)");
+            $stmt->bindParam(":mail", $mail);
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":admin", $admin);
+            
+            // execute the statement
+            if ($stmt->execute()) {
+                $_SESSION["logged"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["admin"] = false;
+                header("Location: ../view/menu/index.php");
+                exit();
+            } else {
+                echo "Error al registrar el usuario.";
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
-    }  
+    }
 
     // register user admin
-    public function registerAdmin():void {
+    public function registerAdmin(): void {
         $mail = $_POST['mail'];
         $username = $_POST['user']; 
         $password = $_POST['password'];
@@ -136,7 +143,7 @@ class UserController {
             exit();
         }
         
-        // Path file to uploads
+        // path file to uploads
         $location = "/src/pages/model/profile-picture/";
         
         // $filename = $_SERVER['DOCUMENT_ROOT'] . $location . basename($_FILES["fileUpload"]["name"]);
@@ -148,22 +155,32 @@ class UserController {
             $_SESSION["error"] = "The file you have entered had some errors. Try again.";
         }
 
-        $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, image, admin) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $mail, $username, $password, $filename, $admin); 
-        
-        if ($stmt->execute()) {
-
-            $_SESSION["logged"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["admin"] = true;
-            $_SESSION["image"] = $location . basename($_FILES["fileUpload"]["name"]);
-            header("Location: ../view/login/index-user.php");
-            exit();
-    
-        } else {
-            echo "Error al registrar el usuario.";
+        try {
+            // insert in the database
+            $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, image, admin) VALUES (:mail, :username, :password, :image, :admin)");
+            
+            $stmt->bindParam(":mail", $mail);
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":image", $filename);
+            $stmt->bindParam(":admin", $admin);
+            
+            // execute the statement
+            if ($stmt->execute()) {
+                $_SESSION["logged"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["admin"] = true;
+                $_SESSION["image"] = $location . basename($_FILES["fileUpload"]["name"]);
+                header("Location: ../view/menu/index.php");
+                exit();
+            } else {
+                echo "Error al registrar el usuario.";
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
     }
+
 
     public function logout(): void {
         unset($_SESSION["admin"]);
@@ -211,5 +228,4 @@ class UserController {
         }
     }
 }
-
-    ?>
+?>

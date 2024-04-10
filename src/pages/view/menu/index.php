@@ -81,11 +81,11 @@ session_start();
                     <button>WAFFLE</button>
                 </div>
             </div>
-
-            <!-- Login -->
-            
-            <?php require_once '../login/login-signout.php';?>
         </div>
+
+        <!-- Login -->
+
+        <?php require_once 'image.php';?>
 
         <!-- Zoom -->
         <footer>
