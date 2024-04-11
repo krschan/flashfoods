@@ -105,9 +105,8 @@ session_start();
         <!-- Cookies -->
         <div class="cookies">
             <div class="aligned cookies-text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officia ducimus ipsa voluptates? Sapiente suscipit praesentium,
-                    eos totam sunt illo rem animi sequi debitis!</p>
+                <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio web y ofrecerte 
+                    las mejores ofertas en comida rápida. Al navegar en Flash Foods, aceptas nuestro uso de cookies.</p>
             </div>
             <div class="aligned cookies-button">
                 <div class="aligned check">
@@ -115,7 +114,11 @@ session_start();
                 </div>
                 <div class="aligned check">
                     <a href="/src/pages/view/menu/cookies.html"><button>LEER MÁS COOKIES</button></a>
-                </div>  
+                </div>
+
+                <div id="cookies-close">
+                    <button>X</button>
+                </div>
             </div>
         </div>
     </body>

@@ -1,3 +1,4 @@
+// Carousel filters for food
 $("#filters").slick({
     dots: false,
     infinite: true,
@@ -28,16 +29,19 @@ $("-").click (
     }
 )
 
-// after user clicks accept on cookies it hides afterwards.
+// After user clicks accept on cookies it hides afterwards.
 $(".button-accept").click(
     function(){
         $(".cookies").css(
             {"display":"none"}
+        );
+        $("#login").css(
+            {"display":"inline-block"}
         )
     }
 )
 
-
+// User can hide or show the menu
 $(document).ready(function() {
     $('#menu-toggle').click(function() {
         $('#menu-content').toggleClass('menu-visible');

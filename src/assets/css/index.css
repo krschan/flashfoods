@@ -53,6 +53,7 @@
 
 /* LOGIN */
 #login {
+    display: none;
     position: fixed;
     top: 30px;
     right: 50px;
@@ -110,6 +111,24 @@ div > img {
 .cookies button {
     font-weight: bolder;
     border: solid 1px #ffc90e;
+}
+
+#cookies-close {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+}
+
+#cookies-close button {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0 0 0;
+    background: none;
+}
+
+#cookies-close button:hover {
+    background: none;
+    color: black;
 }
 
 .button-accept  {
