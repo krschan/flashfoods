@@ -108,6 +108,10 @@ div > img {
     text-align: center;
 }
 
+.cookies-button div:nth-child(2) {
+    margin-right: 50px;
+}
+
 .cookies button {
     font-weight: bolder;
     border: solid 1px #ffc90e;
@@ -129,6 +133,7 @@ div > img {
 #cookies-close button:hover {
     background: none;
     color: black;
+    cursor: pointer;
 }
 
 .button-accept  {

@@ -117,7 +117,7 @@ session_start();
                 </div>
 
                 <div id="cookies-close">
-                    <button>X</button>
+                    <button class="button-close">X</button>
                 </div>
             </div>
         </div>

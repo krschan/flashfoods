@@ -17,7 +17,7 @@
 
     <body id="grey-background" class="center">
         <div class="return">
-            <a href="/src/pages/view/menu/index.html">
+            <a href="/src/pages/view/menu/index.php">
                 <button>Return</button>
             </a>
         </div>
