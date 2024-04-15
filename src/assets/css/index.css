@@ -169,6 +169,12 @@ div > img {
     z-index: 10;
 }
 
+#menu-close {
+    background-color: none;
+    box-shadow: 0 0 0;
+    border: 0;
+}
+
 
 
 @media only screen and (max-width: 900px) {

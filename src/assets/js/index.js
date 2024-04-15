@@ -89,9 +89,15 @@ $(".button-close").click(
 
 // });
 
-// User can hide or show the menu
-$(document).ready(function() {
-    $('#menu-toggle').click(function() {
-        $('#menu-content').toggleClass('menu-visible');
-    });
+// User can show the menu
+$('#menu-toggle').click(function() {
+    $('#menu-content').toggleClass('menu-visible');
+    $('#menu-toggle').css({"display":"none"})
 });
+
+$('#menu-close').click(function() {
+    $('#menu-content').toggleClass('menu-visible');
+    $('#menu-toggle').css({"display":"inline-block"})
+})
+
+

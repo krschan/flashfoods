@@ -4,6 +4,7 @@ if (isset($_SESSION['logged']) == true){
     <button id="menu-toggle">Show menu</button>
     
     <aside id="menu-content" class="aligned">
+        <button id="menu-close">X</button>
         <div class="center">
             <a href="/src/pages/view/menu/index.php">
                 <button><img src="/src/assets/img/logo.png" alt="logo-home-page"></button>
@@ -28,6 +29,7 @@ if (isset($_SESSION['logged']) == true){
     <button id="menu-toggle">Show menu</button>
 
     <aside id="menu-content" class="aligned menu-hidden">
+        <button id="menu-close">X</button>
         <div class="center">
             <a href="/src/pages/view/menu/index.php">
                 <button><img src="/src/assets/img/logo.png" alt="logo-home-page"></button>
