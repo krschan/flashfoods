@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <form action="/src/pages/controller/UserController.php" method="post" enctype="multipart/form-data">
+        <form action="/src/pages/controller/UserController.php" method="post" id="register"  enctype="multipart/form-data">
             
             <div class="aligned main">
                 <div>

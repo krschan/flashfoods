@@ -48,48 +48,22 @@ $(".button-close").click(
             {"display":"none"}
         )
 
-        $(".newdiv").append("<div" + Cookies + "'/div>");
+        $(".restart-cookies").append("<button>Cookies</button>");
     }
 )
 
+// Open cookies
+$(".restart-cookies").click(
+    function(){
+        $(".cookies").css(
+            {"display":"inline-block"}
+        )
 
+        $(".restart-cookies button").remove();
+    }
+)
 
-// EJEMPLO
-
-// // 7.2. 1.5p] Crea un nou formulari que permeti afegir un nou gènere al formulari anterior validant
-// // que com mínim tingui entre 2 y 7 lletres.
-
-
-// $("#formulariGenere").validate({
-//     rules:{
-//         nomgenere:{
-//             required: true
-//         }
-//     },
-//     messages:{
-//         nomgenere:{
-//             required:"Entre 2 i 7 caràcters."
-//         }
-//     },
-// });
-
-// $("#formulariGenere").valid();
-
-// let genere_llista = 3; // Número 3 perquè ja tinc 3 generes en el html.
-
-// $("#nouGenere").click(function() {
-
-//     genere_llista++;
-
-//     let nou_genere = $("input[name=nomgenere]").val();
-
-//     $(".checkbox").append("<input type='checkbox' name='genere' id='genere" + genere_llista + "' value='" + nou_genere + "'><label>"+ nou_genere+"</label>");
-
-//     $("#nouGenereMissatge").text("Gènere afegit correctament!").css("color", "green");
-
-// });
-
-// User can show the menu
+// User can show & hide the menu
 $('#menu-toggle').click(function() {
     $('#menu-content').toggleClass('menu-visible');
     $('#menu-toggle').css({"display":"none"})
@@ -101,3 +75,41 @@ $('#menu-close').click(function() {
 })
 
 
+
+//JQUERY VALIDATE
+
+$("#register").validate ({
+
+    rules: {
+            user:{
+                required:true,
+                minlength:3,
+                maxlength:13
+
+            },
+            mail: {
+                 requied:true,
+                 mail:true
+                    },
+        password: {
+            required: true,
+            minlenth: 5
+        },
+
+        messages: {
+            mail: {
+                required: "El correo es obligatorio",
+            },
+         }
+
+
+
+
+        }
+    }
+    )
+$("#login").validate ({
+
+
+    
+})

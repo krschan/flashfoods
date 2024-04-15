@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <form action="/src/pages/controller/UserController.php" method="post"> 
+        <form action="/src/pages/controller/UserController.php" method="post" id="login"> 
             
             <div class="aligned main">
                 <div class="center">

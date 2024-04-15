@@ -136,6 +136,12 @@ div > img {
     cursor: pointer;
 }
 
+.restart-cookies {
+    position: fixed;
+    right: 50px;
+    top: 30px;
+}
+
 .button-accept  {
     border: solid 1px #ffc90e;
     background-color: #ffc90e;
@@ -174,7 +180,6 @@ div > img {
     box-shadow: 0 0 0;
     border: 0;
 }
-
 
 
 @media only screen and (max-width: 900px) {

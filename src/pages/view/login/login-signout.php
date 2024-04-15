@@ -16,4 +16,10 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
     </div>';
 }
 
+echo '
+    <div class="restart-cookies">
+        
+    </div>
+    ';
+
 ?>
