@@ -3,7 +3,7 @@ if (isset($_SESSION['logged']) == true){
     echo '
     <button id="menu-toggle">Show menu</button>
     
-    <aside id="menu-content" class="aligned">
+    <aside id="menu-content" class="aligned menu-hidden">
         <button id="menu-close">X</button>
         <div class="center">
             <a href="/src/pages/view/menu/index.php">

@@ -22,7 +22,7 @@ session_start();
         <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
         <script src="/src/assets/js/dist/jquery.validate.js"></script>
         <script src="/src/assets/js/dist/additional-methods.js"></script>
-        <script src="/src/assets/js/index.js" defer></script>
+        <script src="/src/assets/js/style.js" defer></script>
 
         <title>FlashFood | home</title>
     </head>

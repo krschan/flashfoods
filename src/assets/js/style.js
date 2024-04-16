@@ -88,8 +88,8 @@ $("#register").validate ({
 
             },
             mail: {
-                 requied:true,
-                 mail:true
+                requied:true,
+                mail:true
                     },
         password: {
             required: true,

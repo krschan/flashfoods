@@ -9,6 +9,13 @@
     <title>FlashFood | Facturas</title>
     <link rel="stylesheet" href="/src/assets/css/planning.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
+
+    <!-- jQuery -->
+    <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
+    <script src="/src/assets/js/dist/jquery.validate.js"></script>
+    <script src="/src/assets/js/dist/additional-methods.js"></script>
+    <script src="/src/assets/js/style.js" defer></script>    
 </head>
 
 <body>

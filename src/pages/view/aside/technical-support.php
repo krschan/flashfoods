@@ -10,9 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
+    <title>FlashFood | Login</title>
     <link rel="stylesheet" href="/src/assets/css/technical-support.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
-    <title>FlashFood | Login</title>
+
+    <!-- jQuery -->
+    <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
+    <script src="/src/assets/js/dist/jquery.validate.js"></script>
+    <script src="/src/assets/js/dist/additional-methods.js"></script>
+    <script src="/src/assets/js/style.js" defer></script>
 </head>
 
 <body id="grey-background" class="center">

@@ -130,6 +130,34 @@ button:hover {
     border: solid 1px #e26769;
 }
 
+.menu-hidden {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.menu-visible {
+    left: 0;
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    z-index: 10;
+}
+
+#menu-close {
+    background-color: none;
+    box-shadow: 0 0 0;
+    border: 0;
+}
+
 /* Profile Picture */
 #profile-picture {
     border-radius: 50%;
