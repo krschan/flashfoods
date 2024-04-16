@@ -3,11 +3,11 @@
     background-size: auto;
 }
 
-.left {
+.left-side {
     width: 16%;
 }
 
-.right {
+.right-side {
     padding-top: 25px;
     width: 83%;
 }

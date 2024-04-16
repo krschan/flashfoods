@@ -35,7 +35,7 @@ session_start();
             <button><img src="/src/assets/img/hamburger-menu.png" alt="hamburger-menu"></button>
         </aside>
 
-        <div class="aligned left">
+        <div class="aligned left-side">
         </div>
 
         <div class="search-box aligned">
@@ -48,7 +48,7 @@ session_start();
             </div>
         </div>
 
-        <div class="aligned right">
+        <div class="aligned right-side">
             <!-- Search -->
             <div class="aligned center" id="search-bar">
                 <input type="text" name="search" id="search">

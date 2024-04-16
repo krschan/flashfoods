@@ -21,6 +21,10 @@
     text-align: center;
 }
 
+.right {
+    text-align: right;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -33,6 +37,10 @@ button {
     border: solid 1px rgb(255, 201, 14);
     box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
     background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 input {
@@ -55,7 +63,7 @@ button:hover {
     font-weight: bold;
     position: fixed;
     width: 250px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 #menu-content img {
@@ -153,9 +161,22 @@ button:hover {
 }
 
 #menu-close {
-    background-color: none;
+    background: none;
     box-shadow: 0 0 0;
     border: 0;
+    width: 20%;
+    text-align: right;
+    color: #c43b3d  ;
+    font-weight: bolder;
+    font-size: larger;
+    padding-bottom: 25px;
+}
+
+#menu-close:hover {
+    background: none;
+    color: #c43b3d;
+    font-weight: bolder;
+    font-size: larger;
 }
 
 /* Profile Picture */
