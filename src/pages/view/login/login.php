@@ -13,6 +13,13 @@
         <link rel="stylesheet" href="/src/assets/css/login.css">
         <link rel="stylesheet" href="/src/assets/css/style.css">
         <title>FlashFood | Login</title>
+
+        <!-- jQuery -->
+        <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+        <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
+        <script src="/src/assets/js/dist/jquery.validate.js"></script>
+        <script src="/src/assets/js/dist/additional-methods.js"></script>
+        <script src="/src/assets/js/style.js" defer></script>
     </head>
 
     <body id="grey-background" class="center">
@@ -54,23 +61,23 @@
                 </div>
 
                 <div>
-                    <label for="username">Usuario</label>
+                    <label for="username">Username</label>
                     <div>
                         <input type="text" name="username">
                     </div>
                 </div>
 
                 <div>
-                    <label for="password">Contraseña</label>
+                    <label for="password">Password</label>
                     <div>
                         <input type="password" name="password">
                     </div>
                     <div class="support-box">
-                        <a id="support" href="/src/pages/view/aside/soportetecnico.php">Contraseña olvidada o tienes algun problema?</a>
+                        <a id="support" href="/src/pages/view/aside/technical-support.php">Forgot password or having trouble?</a>
                     </div>
                 </div>
                 
-                <input type="submit" name="login" value="Iniciar sesión">
+                <input type="submit" name="login" value="Log in">
                 <?php
                     if(isset($_SESSION['error'])) {
                         echo "<p style='color: red;'>".$_SESSION['error']."</p>";

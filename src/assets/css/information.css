@@ -32,6 +32,7 @@ label {
 input {
     padding-left: 10px;
     margin: 10px 0 10px 0;
+    width: 90%;
 }
 .user-img {
     width: 100px;
@@ -40,6 +41,45 @@ input {
 .top-nav-img > a > img {
     width: 150px;
     height: auto; 
+}
+article#user-information {
+    padding: 2rem 0 2rem 3rem;
+    text-align: start;
+    position: relative;
+}
+
+article#user-information img.user-img {
+    vertical-align: middle;
+    border: 1px solid black;
+    float: left;
+    margin-right: 20px;
+}
+
+form {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 8rem);
+}
+
+#update-button {
+    width: 60%;
+    cursor: pointer;
+}
+
+#delete-button:hover {
+    border: 1px solid #EB5D61;
+    background-color:  #c44549;
+    font-weight: bold;
+    width: 30%;
+    cursor: pointer;
+}
+#delete-button {
+    border: 1px solid #EB5D61;
+    color: white;
+    font-weight: bold;
+    background-color: #EB5D61;
+    width: 30%;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

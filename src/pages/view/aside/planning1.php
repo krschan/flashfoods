@@ -24,13 +24,15 @@
 
     <div class="center">
         <div class="info-form aligned">
-            <h2>Facturas por abono</h2>
+            <h2>Planning</h2>
             <article>
                 <div class="plan">
-                    <h3>Plan Gratuïto (Actual)</h3>
-                    <a href="/src/pages/aside/planning.html"><button>Información</button></a>
-                    <a href="/src/pages/aside/planning2.html"><button>Cambiar plan</button></a>
-                    <p> Con nuestro plan gratuito, tendrás acceso a una amplia variedad de ofertas de comida rápida en tu área. Podrás explorar diferentes restaurantes, ver sus menús y descubrir descuentos exclusivos para disfrutar de tus platillos favoritos a precios especiales. ¡Todo esto de forma gratuita y fácil de usar!</p>
+                    <h3>Free Plan (Current)</h3>
+                    <a href="/src/pages/aside/planning.html"><button>Information</button></a>
+                    <a href="/src/pages/aside/planning2.html"><button>Change plan</button></a>
+                    <p>"With our free plan, you'll have access to a wide variety of fast food offers in your area. 
+                        You can explore different restaurants, view their menus, and discover exclusive discounts 
+                        to enjoy your favorite dishes at special prices. All of this is available for free and easy to use!"</p>
                 </div>
             </article>
         </div>

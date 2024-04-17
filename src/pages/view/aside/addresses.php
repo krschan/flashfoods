@@ -24,14 +24,17 @@
 
     <div class="center">
         <div class="info-form aligned">
-            <h2>Direcciones</h2>
+            <h2>Addresses</h2>
             <article>
                 <div class="direccion-message">
                     <p>
-                        ¿Estás de acuerdo en permitir el acceso a tu ubicación para mejorar tu experiencia en nuestra web? Tu ubicación nos ayudará a brindarte un servicio más personalizado y adaptado a tus necesidades. ¿Aceptas compartir tu ubicación con nosotros?
+                    Are you willing to allow access to your location to enhance your 
+                    experience on our website? Your location will help us provide you 
+                    with a more personalized service tailored to your needs. 
+                    Do you agree to share your location with us?
                     </p>
-                    <button>Denegar</button>
-                    <button>Aceptar</button>
+                    <button>Deny</button>
+                    <button>Accept</button>
                 </div>
             </article>
         </div>

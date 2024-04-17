@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlashFood | Cupones</title>
+    <title>FlashFood | Coupons</title>
     <link rel="stylesheet" href="/src/assets/css/discount-coupons.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 
@@ -24,15 +24,15 @@
 
     <div class="center">
         <div class="info-form aligned">
-            <h2>Cupones de descuento</h2>
+            <h2>Discount coupons</h2>
             <article>
                 <div class="plan">
-                    <h3>Cupón McDonalds</h3>
-                    <a href="#"><button>Mostrar código</button></a>
+                    <h3>McDonald's coupon</h3>
+                    <a href="#"><button>Show code</button></a>
                 </div>
                 <div class="plan">
-                    <h3>Cupón KFC</h3>
-                    <a href="#"><button>Mostrar código</button></a>
+                    <h3>KFC's coupon</h3>
+                    <a href="#"><button>Show code</button></a>
                 </div>
             </article>
         </div>

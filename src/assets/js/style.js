@@ -13,7 +13,7 @@ $("#filters").slick({
 
 
 // Zoom
-$("+").click (
+$(".zoom-in").click (
     function () {
         this.classList.toggle('zoom');
 
@@ -21,7 +21,7 @@ $("+").click (
     }
 )
 
-$("-").click (
+$(".zoom-out").click (
     function () {
         this.classList.toggle('zoom');
 
@@ -88,28 +88,55 @@ $("#register").validate ({
 
             },
             mail: {
-                requied:true,
-                mail:true
+                required:true,   
+                email:true
                     },
         password: {
             required: true,
-            minlenth: 5
+            minlength: 8
+        }
+    },
+    messages: {
+        mail: {
+            required: "El correo es obligatorio",
+            email: "Introduce una dirección válida   "
         },
-
-        messages: {
-            mail: {
-                required: "El correo es obligatorio",
-            },
-         }
-
-
-
+    user:{
+        required:"El usuario es obligatorio",
+        minlength:"Debe tener almenos 3 caracteres",
+        maxlength: "Debe ser de macimo 13 caracteres"
+        },
+    password: {
+        required: "La contraseña es obligatoria",
+        minlength:"La contraseña debe tener minimo 8 caracteres"
 
         }
     }
-    )
-$("#login").validate ({
-
-
+});
     
-})
+
+$("#login").validate ({
+    rules: {
+        username: {
+            required:true,
+            minlength: 3
+
+        },
+        password:  {
+        required:true,
+        minlength: 8
+
+        }
+    },
+    messages: {
+        username:  {
+            required: "El usuario es obligatorio ",
+            minlength: "El usuario debe tener minimo 3 caracteres"
+
+        },
+        password: {
+            required: "La contraseña es obligatoria",
+            minlength: "La contraseña debe tener minimo 8 caracteres"
+        }
+    }
+    });

@@ -52,9 +52,8 @@ class UserController {
             header("Location: ../view/login/login.php");
             exit();
         }
-
         // check in the database
-        $stmt = $this->conn->prepare("SELECT admin, image FROM user WHERE username=:username AND password=:password");
+        $stmt = $this->conn->prepare("SELECT admin, image, mail FROM user WHERE username=:username AND password=:password");
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
         $stmt->execute();
@@ -67,6 +66,9 @@ class UserController {
             $_SESSION["username"] = $username;
             $_SESSION["admin"] = ($result['admin'] == 1);
             $_SESSION["image"] = $result['image'];
+            
+            // Set the email in session
+            $_SESSION["mail"] = $result['mail'];
 
             header("Location: ../view/menu/index.php");
             exit();
@@ -76,7 +78,8 @@ class UserController {
             header("Location: ../view/login/login.php");
             exit();
         }
-    }
+        }
+
 
     // register user
     public function register(): void {
@@ -192,40 +195,6 @@ class UserController {
         header("Location: ../view/menu/index.php");
         exit();
     }
-    public function update (): void {
-        $mail = $_POST['mail'];
-        $username = $_POST['user']; 
-        $password = $_POST['password'];
-        $admin = 0;
 
-        if (!ctype_alpha($username)) {
-            $_SESSION["logged"] = false;
-            $_SESSION["error"] = "The username can only contain letters.";
-            header("Location: ../view/login/login.php");
-            exit();
-        }
-
-        if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)) {
-            $_SESSION["logged"] = false;
-            $_SESSION["error"] = "The password must be at least 8 characters long and contain at least one uppercase letter.";
-            header("Location: ../view/login/login.php");
-            exit();
-        }
-
-        $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $mail, $username, $password, $admin); 
-        
-        if ($stmt->execute()) {
-
-            $_SESSION["logged"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["admin"] = false;
-            header("Location: ../view/menu/index.php");
-            exit();
-    
-        } else {
-            echo "Error al registrar el usuario.";
-        }
-    }
 }
 ?>

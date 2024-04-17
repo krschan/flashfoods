@@ -1,5 +1,5 @@
 <?php
-    session_start()
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
-    <title>FlashFood | Login</title>
+    <title>FlashFood | Technical Support</title>
     <link rel="stylesheet" href="/src/assets/css/technical-support.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
 
@@ -24,8 +24,7 @@
 
 <body id="grey-background" class="center">
     <div class="return">
-
-    <!-- Arreglar el return cuando el usuario este logueado y devolverlo a index-user.php y cuando no este logueado a index.php -->
+        <!-- Fix the return when the user is logged in and return it to index-user.php and when not logged in to index.php -->
         <a href="/src/pages/view/menu/index.php">
             <button>Return</button>
         </a>
@@ -37,7 +36,7 @@
 
             <div id="login-or-signin">
                 <a href="#">
-                    <button id="login">Soporte técnico</button>
+                    <button id="login">Technical Support</button>
                 </a>
             </div>
 
@@ -45,7 +44,7 @@
 
         <div class="aligned main">
             <div>
-                <label for="email" class="mail">Correo electrónico</label>
+                <label for="email" class="mail">Email</label>
                 <div>
                     <input type="email">
                 </div>
@@ -53,28 +52,28 @@
 
             <div>
                 <a href="/src/pages/view/login/index-user.html">
-                    <button>Enviar</button>
+                    <button>Send</button>
                 </a>
             </div>
             <div class="help-box">
-                <p class="center">¿Cómo te podemos ayudar?</p>
+                <p class="center">How can we help you?</p>
 
                 <div>
                     <a href="#">
-                        <button>He olvidado o perdido el acceso a mi método de inicio de sesión.</button>
+                        <button>I forgot or lost access to my login method.</button>
                     </a>
 
                 </div>
 
                 <div>
                     <a href="#">
-                        <button>No recibo el enlace de registro por correo electrónico.</button>
+                        <button>I don't receive the registration link by email.</button>
                     </a>
                 </div>
 
                 <div>
                     <a href="#">
-                        <button>No consigo acceder a mi cuenta cuando realizo el proceso de registro.</button>
+                        <button>I can't access my account when I go through the registration process.</button>
                     </a>
                 </div>
             </div>

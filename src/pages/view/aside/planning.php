@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlashFood | Facturas</title>
+    <title>FlashFood | Planning</title>
     <link rel="stylesheet" href="/src/assets/css/planning.css" />
     <link rel="stylesheet" href="/src/assets/css/style.css" />
 
@@ -25,16 +25,16 @@
 
     <div class="center">
         <div class="info-form aligned">
-            <h2>Facturas por abono</h2>
+            <h2>Planning</h2>
             <article>
                 <div class="plan">
-                    <h3>Plan Gratuïto (Actual)</h3>
-                    <a href="/src/pages/aside/planning1.html"><button>Información</button></a>
-                    <a href="/src/pages/aside/planning2.html"><button>Cambiar plan</button></a>
+                    <h3>Free Plan (Current)</h3>
+                    <a href="/src/pages/aside/planning1.html"><button>Information</button></a>
+                    <a href="/src/pages/aside/planning2.html"><button>Change plan</button></a>
                 </div>
                 <div class="plan">
-                    <h3>Plan Premium</h3>
-                    <a href="/src/pages/aside/planning2.html"><button>Mejorar suscripción</button></a>
+                    <h3>Premium Plan</h3>
+                    <a href="/src/pages/aside/planning2.html"><button>Upgrade subscription</button></a>
                 </div>
             </article>
         </div>
