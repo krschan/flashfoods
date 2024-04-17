@@ -40,7 +40,10 @@
 
 /* FILTERS */
 #filters {
-    width: 41%;
+    float: right;
+    margin-right: 150px;
+    margin-top: 10px;
+    width: 48%;
 }
 
 #filters > div > button {
