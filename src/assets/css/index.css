@@ -99,13 +99,13 @@ div > img {
 }
 
 .cookies-text {
-    width: 79%;
+    width: 69%;
 }
 
 
 .cookies-button {
-    width: 20%;
-    text-align: center;
+    width: 30%;
+    text-align: right;
 }
 
 .cookies-button div:nth-child(2) {

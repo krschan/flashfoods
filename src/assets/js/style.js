@@ -29,6 +29,16 @@ $(".zoom-out").click (
     }
 )
 
+$(document).ready(function() {
+    // Comprobar si el usuario ha aceptado las cookies
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+      // Ocultar el mensaje de cookies
+        $(".cookies").css({"display": "none"});
+      // Mostrar la opción de inicio de sesión
+        $("#login").css({"display": "inline-block"});
+    }
+});
+
 // After user clicks accept on cookies it hides afterwards.
 $(".button-accept").click(
     function(){
@@ -38,6 +48,8 @@ $(".button-accept").click(
         $("#login").css(
             {"display":"inline-block"}
         )
+
+        localStorage.setItem('cookiesAccepted', 'true');
     }
 )
 
