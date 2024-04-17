@@ -93,16 +93,15 @@ $('#menu-close').click(function() {
 $("#register").validate ({
 
     rules: {
-            user:{
-                required:true,
-                minlength:3,
-                maxlength:13
-
-            },
-            mail: {
-                required:true,   
-                email:true
-                    },
+        user:{
+            required:true,
+            minlength:3,
+            maxlength:13
+        },
+        mail: {
+            required:true,   
+            email:true
+                },
         password: {
             required: true,
             minlength: 8
@@ -113,15 +112,14 @@ $("#register").validate ({
             required: "El correo es obligatorio",
             email: "Introduce una dirección válida   "
         },
-    user:{
-        required:"El usuario es obligatorio",
-        minlength:"Debe tener almenos 3 caracteres",
-        maxlength: "Debe ser de macimo 13 caracteres"
+        user:{
+            required:"El usuario es obligatorio",
+            minlength:"Debe tener almenos 3 caracteres",
+            maxlength: "Debe ser de macimo 13 caracteres"
         },
-    password: {
-        required: "La contraseña es obligatoria",
-        minlength:"La contraseña debe tener minimo 8 caracteres"
-
+        password: {
+            required: "La contraseña es obligatoria",
+            minlength:"La contraseña debe tener minimo 8 caracteres"
         }
     }
 });

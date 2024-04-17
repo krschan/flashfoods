@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Flash Food gives you the best offers and discounts near you."/>
         <meta name="generator" content="FlashFood">
-        <link rel="stylesheet" href="/src/assets/css/sign-up.css">
+        <link rel="stylesheet" href="/src/assets/css/register-admin.css">
         <link rel="stylesheet" href="/src/assets/css/style.css">
         <title>FlashFood | Register Admin</title>
 
@@ -40,7 +40,7 @@
                     <button id="signup">Sign-up</button>
                 </a>
                 <a href="#">
-                    <button id="signup">Sign-up Admin</button>
+                    <button id="signup-admin">Sign-up Admin</button>
                 </a>  
             </div>
         </div>
@@ -77,7 +77,7 @@
                     <input type="file" name="fileUpload" id="fileUpload">
                 </div>
                 
-                <input type="submit" name="register-admin" value="Create Account">
+                <input type="submit" name="register-admin" value="Create Account" class="input-signin">
             </div>   
         </form>
         
