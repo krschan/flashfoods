@@ -140,3 +140,65 @@ $("#login").validate ({
         }
     }
     });
+
+// Keywords list
+const availableKeywords = [
+    'McDonald`s',
+    'Burger King',
+    'KFC',
+    'Wendy`s',
+    'Subway',
+    'Taco Bell',
+    'Pizza Hut',
+    'Domino`s Pizza',
+    'Chipotle Mexican Grill',
+    'Five Guys',
+    'Arby`s',
+    'Popeyes Louisiana Kitchen',
+    'Chick-fil-A',
+    'Dairy Queen',
+    'Jimmy John`s'
+];
+
+// Get DOM elements
+const resultsBox = document.querySelector(".result-box");
+const inputBox = document.getElementById("search");
+
+// Function to filter and display results
+function filterAndDisplayResults(input) {
+    const filteredResults = availableKeywords.filter(keyword =>
+        keyword.toLowerCase().includes(input.toLowerCase())
+    );
+    if (filteredResults.length > 0) {
+        resultsBox.innerHTML = "<ul>" + filteredResults.map(result => `<li>${result}</li>`).join('') + "</ul>";
+        resultsBox.style.display = "block";
+    } else {
+        resultsBox.innerHTML = "";
+        resultsBox.style.display = "none";
+    }
+}
+
+// Event listener for keyup event on search input
+inputBox.addEventListener("keyup", function() {
+    const input = inputBox.value.trim();
+    if (input.length > 0) {
+        filterAndDisplayResults(input);
+    } else {
+        resultsBox.style.display = "none";
+    }
+});
+
+// Event listener for click event on search results
+resultsBox.addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+        const selectedRestaurant = event.target.innerText;
+        switch (selectedRestaurant) {
+            case "McDonald`s":
+                window.location.href = "mcdonalds.html";
+                break;
+            // Add more restaurants
+            default:
+                break;
+        }
+    }
+});

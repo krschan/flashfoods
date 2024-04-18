@@ -51,7 +51,8 @@ session_start();
     <div class="aligned right-side">
         <!-- Search -->
         <div class="aligned center" id="search-bar">
-            <input type="text" name="search" id="search">
+              <input type="text" name="search" id="search" placeholder="Search restaurants" autocomplete="off">
+            <div class="result-box"></div>
         </div>
 
         <!-- Filters -->
