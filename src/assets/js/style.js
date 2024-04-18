@@ -86,46 +86,39 @@ $('#menu-close').click(function() {
     $('#menu-toggle').css({"display":"inline-block"})
 })
 
+// SLICK CARROUSEL
+$("#slider").slick({
+    dots:false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow: "<button class='prev'>PREV</button>",
+    nextArrow: "<button class='next'>NEXT</button>",
+    responsive:[
+        {
+            breakpoint: 800,
+            settings:{
+                slidesToShow: 1
+            }
+        },
 
+        {
+            breakpoint: 600,
+            settings:{
+                slidesToShow: 1,
+                arrows: false,
+                dots: true
+            }
+        }
+    ]
+});
 
 //JQUERY VALIDATE
-
-$("#register").validate ({
-
-    rules: {
-        user:{
-            required:true,
-            minlength:3,
-            maxlength:13
-        },
-        mail: {
-            required:true,   
-            email:true
-                },
-        password: {
-            required: true,
-            minlength: 8
-        }
-    },
-    messages: {
-        mail: {
-            required: "El correo es obligatorio",
-            email: "Introduce una dirección válida   "
-        },
-        user:{
-            required:"El usuario es obligatorio",
-            minlength:"Debe tener almenos 3 caracteres",
-            maxlength: "Debe ser de macimo 13 caracteres"
-        },
-        password: {
-            required: "La contraseña es obligatoria",
-            minlength:"La contraseña debe tener minimo 8 caracteres"
-        }
-    }
-});
-    
-
 $("#login").validate ({
+
     rules: {
         username: {
             required:true,
@@ -133,11 +126,12 @@ $("#login").validate ({
 
         },
         password:  {
-        required:true,
-        minlength: 8
+            required:true,
+            minlength: 8
 
         }
     },
+
     messages: {
         username:  {
             required: "El usuario es obligatorio ",
@@ -149,4 +143,189 @@ $("#login").validate ({
             minlength: "La contraseña debe tener minimo 8 caracteres"
         }
     }
-    });
+});
+
+$("#register").validate ({
+
+    rules: {
+        mail: {
+            required:true,   
+            email:true
+        },
+        username:{
+            required:true,
+            minlength:3,
+            maxlength:13
+        },
+        password: {
+            required: true,
+            minlength: 8
+        }
+    },
+    messages: {
+        mail: {
+            required: "El correo es obligatorio",
+            email: "Introduce una dirección válida"
+        },
+        username:{
+            required:"El usuario es obligatorio",
+            minlength:"Debe tener almenos 3 caracteres",
+            maxlength: "Debe ser de macimo 13 caracteres"
+        },
+        password: {
+            required: "La contraseña es obligatoria",
+            minlength:"La contraseña debe tener minimo 8 caracteres"
+        }
+    }
+});
+
+$("#register-admin").validate ({
+
+    rules: {
+        mail: {
+            required:true,   
+            email:true
+        },
+        username:{
+            required:true,
+            minlength:3,
+            maxlength:13
+        },
+        password: {
+            required: true,
+            minlength: 8
+        }
+    },
+    messages: {
+        mail: {
+            required: "El correo es obligatorio",
+            email: "Introduce una dirección válida"
+        },
+        username:{
+            required:"El usuario es obligatorio",
+            minlength:"Debe tener almenos 3 caracteres",
+            maxlength: "Debe ser de máximo 13 caracteres"
+        },
+        password: {
+            required: "La contraseña es obligatoria",
+            minlength:"La contraseña debe tener minimo 8 caracteres"
+        }
+    }
+});
+
+$("#information").validate ({
+
+    rules: {
+        username: {
+            required: true,
+            maxlength: 13,
+            minlength:3
+        },
+        nameSurname: {
+            required: true,
+            maxlength: 25,
+            minlength: 3
+
+        },
+        email: {
+            required:true,   
+            email:true
+        },
+        birthDate: {
+            required:true,   
+                
+        },
+        phoneNumberr: {
+            required:true,   
+            minlength: 9    
+        }
+    
+    },
+    messages: {
+        username: {
+            required:"El usuario es obligatorio",
+            maxlength: "Debe ser de máximo 13 caracteres",
+            minlength:"Debe tener almenos 3 caracteres"
+        },
+        nameSurname: {
+            required: "El nombre y tu primer apellido son obligatorios",
+            maxlength: "Debe ser de máximo 25 caracteres",
+            minlength:"Debe tener almenos 3 caracteres"
+
+        },
+        email: {
+            required:"El correo es obligatorio",   
+            email:"Introduce una dirección válida"
+        },
+        birthDate: {
+            required:"La fecha de nacimiento es obligatoria",   
+            
+        },
+        phoneNumberr: {
+            required:"El telefono es obligatorio",   
+            minlength:"El número de telefono debe tener minimo 9 digitos"
+        }
+    }
+});
+
+// Keywords list
+const availableKeywords = [
+    'McDonald`s',
+    'Burger King',
+    'KFC',
+    'Wendy`s',
+    'Subway',
+    'Taco Bell',
+    'Pizza Hut',
+    'Domino`s Pizza',
+    'Chipotle Mexican Grill',
+    'Five Guys',
+    'Arby`s',
+    'Popeyes Louisiana Kitchen',
+    'Chick-fil-A',
+    'Dairy Queen',
+    'Jimmy John`s'
+];
+
+// Get DOM elements
+const resultsBox = document.querySelector(".result-box");
+const inputBox = document.getElementById("search");
+
+// Function to filter and display results
+function filterAndDisplayResults(input) {
+    const filteredResults = availableKeywords.filter(keyword =>
+        keyword.toLowerCase().includes(input.toLowerCase())
+    );
+    if (filteredResults.length > 0) {
+        resultsBox.innerHTML = "<ul>" + filteredResults.map(result => `<li>${result}</li>`).join('') + "</ul>";
+        resultsBox.style.display = "block";
+    } else {
+        resultsBox.innerHTML = "";
+        resultsBox.style.display = "none";
+    }
+}
+
+// Event listener for keyup event on search input
+inputBox.addEventListener("keyup", function() {
+    const input = inputBox.value.trim();
+    if (input.length > 0) {
+        filterAndDisplayResults(input);
+    } else {
+        resultsBox.style.display = "none";
+    }
+});
+
+// Event listener for click event on search results
+resultsBox.addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+        const selectedRestaurant = event.target.innerText;
+        switch (selectedRestaurant) {
+            case "McDonald`s":
+                window.location.href = "mcdonalds.html";
+                break;
+            // Add more restaurants
+            default:
+                break;
+        }
+    }
+});

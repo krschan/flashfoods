@@ -45,25 +45,25 @@
             </div>
         </div>
 
-        <form action="/src/pages/controller/UserController.php" method="post" enctype="multipart/form-data">
+        <form action="/src/pages/controller/UserController.php" method="post" enctype="multipart/form-data" id="register-admin">
             
             <div class="aligned main">
                 <div>
-                    <label for="email" class="mail">Email</label>
+                    <label for="email">Email</label>
                     <div>
                         <input type="email" name="mail">
                     </div>
                 </div>
 
                 <div>
-                    <label for="user" class="mail">Username</label>
+                    <label for="username">Username</label>
                     <div>
-                        <input type="text" name="user">
+                        <input type="text" name="username">
                     </div>
                 </div>
 
                 <div>
-                    <label for="password" class="password">Password</label>
+                    <label for="password">Password</label>
                     <div>
                         <input type="password" name="password">
                     </div>

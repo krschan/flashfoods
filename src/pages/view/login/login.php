@@ -34,7 +34,7 @@
 
             <div id="login-or-signin">
                 <a href="#">
-                    <button id="login">Log in</button>
+                    <button id="signin">Log in</button>
                 </a>  
                 <a href="/src/pages/view/login/register.php">
                     <button id="signup">Sign-up</button>

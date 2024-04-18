@@ -30,6 +30,15 @@ a {
     color: black;
 }
 
+/* VALIDATOR MESSAGES FOR SIGN IN PAGES */
+form .main > div > div > label {
+    font-weight: lighter;
+}
+
+form .main > div > div {
+    text-align: center;
+}
+
 /* DEFAULT BUTTON */
 button {
     padding: 10px 20px;

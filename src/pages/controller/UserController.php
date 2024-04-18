@@ -12,7 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user->register();
     } elseif (isset($_POST["register-admin"])) {
         $user->registerAdmin();
-    }
+    } elseif (isset($_POST["delete_account"])) { 
+        $user->deleteAccount($_SESSION["username"]); 
+}
 }
 // test
 class UserController {
@@ -196,5 +198,28 @@ class UserController {
         exit();
     }
 
+
+    // delete account method
+    public function deleteAccount($username): void {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM user WHERE username = :username");
+            $stmt->bindParam(":username", $username);
+            
+            if ($stmt->execute()) {
+                session_destroy();
+                header("Location: ../view/login/login.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error deleting the account. Please try again.";
+                header("Location: ../view/information.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error deleting the account: " . $e->getMessage();
+            header("Location: ../view/information.php");
+            exit();
+        }
+    }
 }
+
 ?>

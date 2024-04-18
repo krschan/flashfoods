@@ -29,21 +29,21 @@
                 <div class="img">
                     <img class="user-img" src="/src/assets/img/user.png" alt="profile-image" />
                 </div>
-                <form>
+                <form id="information">
                     <label for="username">Username</label><br />
                     <input type="text" id="user" name="username" placeholder="username" /><br />
 
                     <label for="name-surname">Name and Surname</label><br />
-                    <input type="text" id="name-surname" name="name-surname" placeholder="name surname1 surname2" /><br />
+                    <input type="text" id="nameSurname" name="nameSurname" placeholder="name surname1 surname2" /><br />
 
                     <label for="email">Email</label><br />
                     <input type="email" id="email" name="email" placeholder="email" /><br />
 
                     <label for="birth-date">Birth Date</label><br />
-                    <input type="date" id="birth-date" name="birth-date" /><br />
+                    <input type="date" id="birthDate" name="birthDate" /><br />
 
                     <label for="phone-number">Phone Number</label><br />
-                    <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" /><br />
+                    <input type="tel" id="phoneNumberr" name="phoneNumberr" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" /><br />
 
                     <?php
                     if(isset($_SESSION['error'])) {

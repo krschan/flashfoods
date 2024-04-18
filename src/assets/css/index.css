@@ -38,6 +38,31 @@
     display: none;
 }
 
+.result-box {
+    display: none;
+    margin-left: 20px;
+    background: white;
+    border: 1px #f9d967 solid;
+    border-radius: 0 0 20px 20px;
+}
+
+.result-box ul {
+    text-align: left;
+    border-top: 1px solid rgb(255, 255, 255);
+    padding: 15px 10px;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.result-box ul li:hover {
+    background-color: rgba(171, 171, 171, 0.432);
+}
+
 /* FILTERS */
 #filters {
     float: right;
@@ -155,7 +180,6 @@ div > img {
     border: solid 1px #f9d967;
     background-color: #f9d967;
 }
-
 
 @media only screen and (max-width: 900px) {
 
