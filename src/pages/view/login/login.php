@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 
-                <input type="submit" name="login" value="Log in">
+                <input type="submit" name="login" value="Log in" class="input-signin">
                 <?php
                     if(isset($_SESSION['error'])) {
                         echo "<p style='color: red;'>".$_SESSION['error']."</p>";

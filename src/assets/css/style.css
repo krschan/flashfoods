@@ -30,7 +30,7 @@ a {
     color: black;
 }
 
-/* Default Button */
+/* DEFAULT BUTTON */
 button {
     padding: 10px 20px;
     border-radius: 20px;
@@ -56,7 +56,7 @@ button:hover {
     color: white;
 }
 
-/* Aside */
+/* ASIDE */
 #menu-content {
     background-color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -83,7 +83,7 @@ button:hover {
     display: none;
 }
 
-/* Aside - Button */
+/* ASIDE - Button */
 #menu-content > ul > li > a > button {
     padding: 20px 0 20px 20px;
     font-weight: bold;
@@ -105,7 +105,7 @@ button:hover {
     border-top: 1px solid rgba(0, 0, 0, 0.275);
 }
 
-/* Aside - Content-locked */
+/* ASIDE - Content-locked */
 .content-locked {
     opacity: 50%;
 }
@@ -113,29 +113,6 @@ button:hover {
 #menu-content .content-locked button:hover {
     background-color: white;
     color: black;
-}
-
-/* Login */
-#menu-login {
-    background-color: white;
-    position: fixed;
-    right: 0;
-    width: 250px;
-    padding-top: 175px;
-    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-    z-index: 1;
-}
-
-#menu-login a > button {
-    color: white;
-    background-color: #c43b3d;
-    border: solid 1px #c43b3d;
-}
-
-#menu-login a > button:hover {
-    background-color: #e26769;
-    border: solid 1px #e26769;
 }
 
 .menu-hidden {
@@ -179,7 +156,30 @@ button:hover {
     font-size: larger;
 }
 
-/* Profile Picture */
+/* LOGIN */
+#menu-login {
+    background-color: white;
+    position: fixed;
+    right: 0;
+    width: 250px;
+    padding-top: 175px;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    z-index: 1;
+}
+
+#menu-login a > button {
+    color: white;
+    background-color: #c43b3d;
+    border: solid 1px #c43b3d;
+}
+
+#menu-login a > button:hover {
+    background-color: #e26769;
+    border: solid 1px #e26769;
+}
+
+/* PROFILE PICTURE */
 #profile-picture {
     border-radius: 50%;
     width: 100%;
@@ -206,6 +206,19 @@ button:hover {
     border: solid 1px #e26769;
 }
 
+/* SIGN IN */
+.input-signin {
+    border: solid 1px #ffc90e;
+    background-color: #ffc90e;
+    color: white;
+    font-size: bolder;
+}
+
+.input-signin:hover {
+    border: solid 1px #f9d967;
+    background-color: #f9d967;
+    cursor: pointer;
+}
 
 /* MEDIA QUERY */
 @media only screen and (max-width: 900px) {

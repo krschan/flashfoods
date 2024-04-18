@@ -66,7 +66,10 @@
 
 /* FILTERS */
 #filters {
-    width: 41%;
+    float: right;
+    margin-right: 150px;
+    margin-top: 10px;
+    width: 48%;
 }
 
 #filters > div > button {
@@ -125,13 +128,13 @@ div > img {
 }
 
 .cookies-text {
-    width: 79%;
+    width: 69%;
 }
 
 
 .cookies-button {
-    width: 20%;
-    text-align: center;
+    width: 30%;
+    text-align: right;
 }
 
 .cookies-button div:nth-child(2) {
