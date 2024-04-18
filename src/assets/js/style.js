@@ -88,20 +88,23 @@ $('#menu-close').click(function() {
 
 // SLICK CARROUSEL
 $("#slider").slick({
-    dots:false,
+    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false,
     prevArrow: "<button class='prev'>PREV</button>",
     nextArrow: "<button class='next'>NEXT</button>",
     responsive:[
         {
             breakpoint: 800,
             settings:{
-                slidesToShow: 1
+                slidesToShow: 2,
+                arrows: false,
+                dots: false
             }
         },
 
@@ -110,7 +113,7 @@ $("#slider").slick({
             settings:{
                 slidesToShow: 1,
                 arrows: false,
-                dots: true
+                dots: false,
             }
         }
     ]
@@ -270,21 +273,21 @@ $("#information").validate ({
 
 // Keywords list
 const availableKeywords = [
-    'McDonald`s',
-    'Burger King',
-    'KFC',
-    'Wendy`s',
-    'Subway',
-    'Taco Bell',
-    'Pizza Hut',
-    'Domino`s Pizza',
-    'Chipotle Mexican Grill',
-    'Five Guys',
-    'Arby`s',
-    'Popeyes Louisiana Kitchen',
-    'Chick-fil-A',
-    'Dairy Queen',
-    'Jimmy John`s'
+    "McDonald's",
+    "Burger King",
+    "KFC",
+    "Wendy's",
+    "Subway",
+    "Taco Bell",
+    "Pizza Hut",
+    "Domino's Pizza",
+    "Chipotle Mexican Grill",
+    "Five Guys",
+    "Arby's",
+    "Popeyes Louisiana Kitchen",
+    "Chick-fil-A",
+    "Dairy Queen",
+    "Jimmy John's"
 ];
 
 // Get DOM elements
@@ -320,8 +323,8 @@ resultsBox.addEventListener("click", function(event) {
     if (event.target.tagName === "LI") {
         const selectedRestaurant = event.target.innerText;
         switch (selectedRestaurant) {
-            case "McDonald`s":
-                window.location.href = "mcdonalds.html";
+            case "McDonald's":
+                window.location.href = "/src/pages/view/menu/mcdonalds.php";
                 break;
             // Add more restaurants
             default:

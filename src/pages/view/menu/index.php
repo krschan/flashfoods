@@ -84,26 +84,6 @@ session_start();
         </div>
     </div>
 
-    <!-- <div class="aligned pop-up">
-        <h2>McDonald's</h2>
-        <p>McDonald's: I'm lovin' it</p>
-        <div id="slider">
-            <div>
-                <img src="/src/assets/img/pop-up/mcdonalds-1.jpg" alt="mcdonalds-1">
-            </div>
-            <div>
-                <img src="/src/assets/img/pop-up/mcdonalds-2.jpg" alt="mcdonalds-2">
-            </div>
-            <div>
-                <img src="/src/assets/img/pop-up/mcdonalds-3.jpg" alt="mcdonalds-1">
-            </div>
-            <div>
-                <img src="/src/assets/img/pop-up/mcdonalds-4    .jpg" alt="mcdonalds-4">
-            </div>
-
-        </div>
-    </div> -->
-
     <!-- Login -->
 
     <?php require_once 'image.php';?>

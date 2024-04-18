@@ -1,0 +1,40 @@
+.info-box {
+    text-align: center;
+    padding-top: 75px;
+}
+
+.info-form {
+    margin: 1.3rem 0 1.3rem 0;
+    width: 60%;
+    border-radius: 1.5rem;
+    border: 10px solid rgb(255, 201, 14);
+}
+
+.info-box h2 {
+    padding: 1rem;
+    font-size: 400%;
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(255, 201, 14);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.info-box h3 {
+    padding: 1.5rem;
+    font-size: 150%;
+}
+.info-box p {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: justify;
+}
+
+.info-box h3#opinion-title{
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: left;
+}
+
+#slider img {
+    width: 80%;
+    padding-left: 50px;
+    background-size: cover;
+}

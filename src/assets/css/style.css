@@ -30,6 +30,10 @@ a {
     color: black;
 }
 
+.italic {
+    font-style: italic;
+}
+
 /* VALIDATOR MESSAGES FOR SIGN IN PAGES */
 form .main > div > div > label {
     font-weight: lighter;
