@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["delete_account"])) { 
         $user->deleteAccount($_SESSION["username"]); 
 }
+}
 // test
 class UserController {
     private $conn;
@@ -220,5 +221,5 @@ class UserController {
         }
     }
 }
-}
+
 ?>
