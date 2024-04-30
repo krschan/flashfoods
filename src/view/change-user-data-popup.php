@@ -1,0 +1,39 @@
+<?php session_start(); ?>
+
+<div class="info-box center">
+    <div class="info-form aligned">
+        <h2>Account Information</h2>
+        <article id="user-information">
+            <div class="img">
+                <img class="user-img" src="/src/assets/img/user.png" alt="profile-image" />
+            </div>
+            <form id="information">
+                <label for="username">Username</label>
+                <input type="text" id="user" name="username" placeholder="username" />
+
+                <label for="name-surname">Name and Surname</label>
+                <input type="text" id="nameSurname" name="nameSurname" placeholder="name surname1 surname2" />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="email" />
+
+                <label for="birth-date">Birth Date</label>
+                <input type="date" id="birthDate" name="birthDate" />
+
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phoneNumberr" name="phoneNumberr" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+
+                <?php
+                if(isset($_SESSION['error'])) {
+                    echo "<p style='color: red;'>".$_SESSION['error']."</p>";
+                    unset($_SESSION['error']);
+                }
+                
+            ?>
+                <button type=submit id="normal-button">Update</button>
+                <button type=submit id="red-button">Delete Account</button>
+
+            </form>
+        </article>
+    </div>
+</div>
