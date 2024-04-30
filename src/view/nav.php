@@ -42,7 +42,7 @@ if(isset($_SESSION['logged']) == true){
   </ul>
   </nav>';
 } else {
-    echo '<nav>
+  echo '<nav>
   <ul>
     <li>
       <a href="index.php">
@@ -50,29 +50,28 @@ if(isset($_SESSION['logged']) == true){
         <span class="nav-item logo"><img src="images/flashfoods-logo.png" alt="flashfoods-logo"></span>
       </a>
     </li>
-    <li>
-      <a href="#" onclick="openPopup(\'change-user-data-popup.php\')">
+    <li class="content-locked"><a href="#">
         <i class="fas fa-user"></i>
         <span class="nav-item">Change user data</span>
       </a>
     </li>
-    <li><a href="#" onclick="openPopup(\'adresses-popup.php\')">
+    <li class="content-locked"><a href="#">
       <i class="fas fa-location-pin"></i>
       <span class="nav-item">Addresses</span>
     </a></li>
-    <li><a href="#" onclick="openPopup(\'history-popup.php\')">
+    <li class="content-locked"><a href="#">
       <i class="fas fa-history"></i>
       <span class="nav-item">History</span>
     </a></li>
-    <li><a href="#" onclick="openPopup(\'planning-popup.php\')">
+    <li class="content-locked"><a href="#">
       <i class="fas fa-file"></i>
       <span class="nav-item">Planning</span>
     </a></li>
-    <li><a href="#" onclick="openPopup(\'cupons-popup.php\')">
+    <li class="content-locked"><a href="#">
       <i class="fas fa-ticket"></i>
       <span class="nav-item">Cupons</span>
     </a></li>
-    <li><a href="#" onclick="openPopup(\'wishlist-popup.php\')">
+    <li class="content-locked"><a href="#">
       <i class="fas fa-heart"></i>
       <span class="nav-item">Wishlist</span>
     </a></li>
@@ -81,6 +80,6 @@ if(isset($_SESSION['logged']) == true){
     <span class="nav-item">Technical support</span>
     </a></li>
   
-  </ul>
+  </ul> 
   </nav>';
-}
+};

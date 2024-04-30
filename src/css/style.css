@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(/flashfoods-poksy/images/barcelona-map.png);
+  background-image: url(/src/images/barcelona-map.png);
   display: flex;
   min-height: 100vh;
   flex-direction: row;
@@ -95,7 +95,14 @@ nav:hover + .overlay {
   opacity: 1;
   pointer-events: auto;
 }
+.content-locked {
+  opacity: 50%;
+}
 
+#menu-content .content-locked button:hover {
+  background-color: white;
+  color: black;
+}
 .main {
   display: flex;
   flex-direction: column;
