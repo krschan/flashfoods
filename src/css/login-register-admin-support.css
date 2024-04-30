@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+
+/* BODY */
+#grey-background {
+  background-color: #ebebeb;
+}  
+.aligned {
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+} 
+
+/* RETURN to main page */
+.return {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+}
+
+.logo {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+}
+
+
+#white-background {
+  background-color: white;
+  box-shadow: 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 50px 50px;
+}
+
+#technical-div {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#technical-div-title {
+  padding-top: 290px;
+  text-align: center; 
+}
+
+#technical-div-title button {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0;
+  font-weight: bolder;
+  font-size: larger;
+  margin: 0 auto;
+}
+
+
+#technical-div-title #technical-title {
+  background-color: white;
+  color: black;
+  border-bottom: 2px solid red;
+}
+
+/* SIGN IN WITH */
+.signin-faster {
+  width: 32px;
+  height: 32px;
+}
+
+/* MAIN */
+.main {
+  padding-top: 50px;
+  text-align: left;
+}
+
+.main > div > button {
+  border: 0;
+  margin: 0 10px;
+}
+
+.main > div {
+  padding-bottom: 30px;
+  font-weight: bolder;
+}
+
+div > input {
+  width: 100%;
+  box-shadow: 0 0 0;
+  border: 0;
+  margin-top: 20px;
+}
+
+.main > div > a > button {
+  width: 100%;
+  background-color: #ffc90e;
+  color: white;
+  font-weight: bold;
+}
+
+.main > div > a > button:hover {
+  border: solid 1px #f9d967;
+  background-color: #f9d967;
+}
+
+.support-box {
+  margin-top: 10px;
+}
+
+#support{
+  color: red;
+  text-decoration: underline red;
+  font-style: oblique;
+  font-weight: 100;
+  font-size: small
+}
+.help-box{
+border-top: 1px solid black;
+padding-top: 30px;
+}
+
+.help-box > div button {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 0 ;
+  font-style: italic;
+  
+} 
+.help-box > p{
+  padding-bottom: 15px;
+  
+}
+
+/* default button style */
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: solid 1px rgb(255, 201, 14);
+  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  border: solid 1px rgb(255, 201, 14);
+  border-radius: 20px;
+  height: 25px;
+  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+}
+
+button:hover {
+  background-color: #ffc90e;
+  color: white;
+}

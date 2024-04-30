@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+
+body {
+  background-image: url(/flashfoods-poksy/images/barcelona-map.png);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  margin: 0;
+}
+
+/* menu navigation */
+nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  background: #ffc90e;
+  width: 90px;
+  overflow: hidden;
+  transition: width 0.2s linear;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  z-index: 1000; 
+}
+
+.logo img{
+  width: 150px;
+}
+
+a{
+  position: relative;
+  color: rgb(85, 83, 83);
+  font-size: 14px;
+  display: table;
+  width: 300px;
+  padding: 10px;
+}
+
+.fas{
+  position: relative;
+  width: 70px;
+  height: 55px;
+  top: 14px;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+.fa-bars  {
+  height: 45px;
+  top: 1px
+}
+
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+  color: #fff;
+  font-weight: bolder;
+}
+
+a:hover{
+  background: #deb00d;
+}
+
+nav:hover {
+  width: 280px;
+  transition: all 0.5s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+nav:hover + .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+}
+.content > article {
+  flex: 3;
+  min-height: 60vh;
+}
+.content > aside {
+  background: beige;
+  flex: 1;
+}
+header, footer {
+  height: 10vh;
+}
+
+/* search */
+.search-box{
+  width: 700px;
+  background: #fff;
+  margin: 19px 19px 19px 140px;
+  border: 1px solid #ffc90e;
+  border-radius: 20px;
+}
+
+.row{
+  display: flex;
+  padding: 5px 20px;
+}
+
+input{
+  flex: 1;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  color: #333
+}
+
+button{
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+button .fa-solid{
+  width: 25px;
+  color: #555;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+::placeholder{
+  color: #555;
+}
+
+.result-box{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.result-box ul{
+  border-top: 1px solid #999;
+  padding: 15px 10px;
+}
+
+.result-box ul li{
+  list-style: none;
+  border-radius: 3px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.result-box ul li:hover {
+  background: #e9f3ff;
+}
+
+
+.login-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.login-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc90e;
+  color: #fff;
+  padding: 15px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* menu navigation */
+.login-button a:hover {
+  background-color: #deb00d;
+}
+
+/* popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+/* change user data  */
+.info-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 600px;  
+  flex: none;
+}
+
+.info-form {
+  text-align: center;
+}
+
+.info-form h2 {
+  color: #fff;
+  background: #ffc90e;
+  text-align: left;
+  padding: 5px 0 5px 2rem;
+  margin-top: 1.5rem;
+  font-size: 24px;
+}
+
+.user-img {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  margin-bottom: 10px; 
+}
+
+#information label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#information input[type="text"],
+#information input[type="email"],
+#information input[type="date"],
+#information input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#information button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ffc90e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#information button:hover {
+  background-color: #deb00d;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
+/* change user data */
+
+.top-nav-img > a > img {
+  width: 150px;
+  height: auto; 
+}
+article#user-information {
+  padding: 2rem 1rem 2rem 3rem;
+  text-align: start;
+  position: relative;
+}
+
+article#user-information img.user-img {
+  vertical-align: middle;
+  border: 1px solid black;
+  float: left;
+  margin-right: 20px;
+}
+
+form {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 8rem);
+}
+
+#information #normal-button {
+  width: 50%;
+  cursor: pointer;
+}
+
+#information #red-button:hover {
+  border: 1px solid #EB5D61;
+  background:  #c44549;
+  font-weight: bold;
+  width: 48%;
+  cursor: pointer;
+}
+#information #red-button {
+  border: 1px solid #EB5D61;
+  color: #fff;
+  font-weight: bold;
+  background: #EB5D61;
+  width: 48%;
+  cursor: pointer;
+}
+#information #red-button-border:hover {
+  color: #fff;
+  border: 1px solid #EB5D61;
+  background:  #c44549;
+  font-weight: bold;
+  width: 48%;
+  cursor: pointer;
+}
+#information #red-button-border {
+  border: 1px solid #EB5D61;
+  color: #c44549;
+  font-weight: bold;
+  background: #fff;
+  width: 48%;
+  cursor: pointer;
+}
+article{
+  padding: 1rem;
+}
+
+footer {
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 600px) {
+  .info-form input {
+      width: 50%;
+  }
+}
+
+
