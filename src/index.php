@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- test -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlashFoods | Home</title>
-
+  
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/f527bb26f1.js" crossorigin="anonymous"></script>
   <!-- css -->
