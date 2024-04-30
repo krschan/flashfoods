@@ -28,8 +28,8 @@
             <article>
                 <div class="plan">
                     <h3>Premium Plan</h3>
-                    <a href="/src/pages/view/aside/planning.php"><button>Information</button></a>
-                    <a href="/src/pages/view/aside/planning1.php"><button>Change Plan</button></a>
+                    <a href="/src/pages/aside/planning.html"><button>Information</button></a>
+                    <a href="/src/pages/aside/planning1.html"><button>Change Plan</button></a>
                     <p>By upgrading to our premium plan, you'll unlock even more exclusive benefits. You'll enjoy premium offers at select restaurants, access special promotions only for premium users, and receive early notifications about new deals and launches. Additionally, you'll have priority customer service to ensure an even more personalized and satisfying experience. Enhance your culinary experience with our premium plan! Molestias, excepturi dolorem ea quod aliquid nam.</p>
                 </div>
             </article>

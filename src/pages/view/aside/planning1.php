@@ -28,8 +28,8 @@
             <article>
                 <div class="plan">
                     <h3>Free Plan (Current)</h3>
-                    <a href="/src/pages/view/aside/planning.php"><button>Information</button></a>
-                    <a href="/src/pages/view/aside/planning2.php"><button>Change plan</button></a>
+                    <a href="/src/pages/aside/planning.html"><button>Information</button></a>
+                    <a href="/src/pages/aside/planning2.html"><button>Change plan</button></a>
                     <p>"With our free plan, you'll have access to a wide variety of fast food offers in your area. 
                         You can explore different restaurants, view their menus, and discover exclusive discounts 
                         to enjoy your favorite dishes at special prices. All of this is available for free and easy to use!"</p>
