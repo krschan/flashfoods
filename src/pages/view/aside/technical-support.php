@@ -44,7 +44,7 @@
 
         <div class="aligned main">
             <div>
-                <label for="email" class="mail">Email</label>
+                <label for="email" class="mail">Mail</label>
                 <div>
                     <input type="email">
                 </div>
@@ -67,7 +67,7 @@
 
                 <div>
                     <a href="#">
-                        <button>I don't receive the registration link by email.</button>
+                        <button>I don't receive the registration link by mail.</button>
                     </a>
                 </div>
 
