@@ -8,10 +8,9 @@ if(isset($_SESSION['logged']) == true){
         <span class="nav-item logo"><img src="images/flashfoods-logo.png" alt="flashfoods-logo"></span>
       </a>
     </li>
-    <li>
-      <a href="#" onclick="openPopup(\'change-user-data-popup.php\')">
-        <i class="fas fa-user"></i>
-        <span class="nav-item">Change user data</span>
+    <li><a href="#" onclick="openPopup(\'change-user-data-popup.php\')">
+      <i class="fas fa-user"></i>
+      <span class="nav-item">Change user data</span>
       </a>
     </li>
     <li><a href="#" onclick="openPopup(\'adresses-popup.php\')">

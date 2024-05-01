@@ -1,3 +1,57 @@
+// cookies localstorage
+$(document).ready(function() {
+  // Comprobar si el usuario ha aceptado las cookies
+  if (localStorage.getItem('cookiesAccepted') === 'true') {
+    // Ocultar el mensaje de cookies
+      $("#cookies").css({"display": "none"});
+    // Mostrar la opción de inicio de sesión
+      $(".login-button a").css({"display": "flex"});
+  }
+});
+
+// after user clicks accept on cookies it hides afterwards.
+$(".cookies-accept").click(
+  function(){
+      $("#cookies").css(
+          {"display":"none"}
+      );
+      $(".login-button a").css(
+          {"display":"flex"}
+      )
+
+      localStorage.setItem('cookiesAccepted', 'true');
+  }
+);
+
+// close cookies but it show in right top.
+$(".cookies-close").click(
+  function(){
+      $("#cookies").css(
+          {"display":"none"}
+      );
+
+      $(".cookies-restart").css(
+        {"display":"flex"}
+      );
+      $(".cookies-restart").append("<button>Cookies</button>");
+  }
+);
+
+// user can open cookies again
+$(".cookies-restart").click(
+  function(){
+      $("#cookies").css(
+          {"display":"flex"}
+      );
+
+      $(".cookies-restart").css(
+        {"display":"none"}
+      );
+
+      $(".cookies-restart button").remove();
+  }
+);
+
 let availableKeywords = [
   'McDonald\'s',
   'Burger King',
