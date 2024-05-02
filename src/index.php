@@ -44,7 +44,7 @@
         } else {
           echo 
           '<div class="login-button">
-            <a href="auth/login.html">
+            <a href="auth/login.php">
               <span>Log in</span>
             </a>
           </div>';
