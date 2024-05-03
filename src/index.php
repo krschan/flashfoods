@@ -4,7 +4,10 @@
   <!-- test -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
+    <meta name="generator" content="FlashFood">
   <title>FlashFoods | Home</title>
+  <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
   
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/f527bb26f1.js" crossorigin="anonymous"></script>
@@ -15,9 +18,6 @@
   <script src="/src/js/dist/jquery.validate.js"></script>
   <script src="/src/js/dist/additional-methods.js"></script>
 
-  <!-- js -->
-  <script src="js/main.js" defer></script>  
-
   <!-- css -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,8 +27,8 @@
   <div class="main">
       <div class="search-box">
         <div class="row">
-          <input type="text" id="input-box" placeholder="Search in FlashFoods" autocomplete="off">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" id="input-search-box" placeholder="Search in FlashFoods" autocomplete="off">
+          <button id="button-search-box"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="result-box"></div>
       </div>
@@ -36,7 +36,7 @@
       <?php
         if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
           echo
-          '<div class="sign-button">
+          '<div class="sign-button">  
             <form action="/src/controller/user-controller.php" method="post">
               <input type="submit" name="logout" value="Sign out">
             </form>
@@ -85,5 +85,11 @@
       </div>
     </footer>
   </div>
+  
+  <!-- js -->
+  <script src="js/main.js" defer></script>  
+  <script src="js/popups.js"></script>
+  <script src="js/search.js"></script>
+
 </body>
 </html>

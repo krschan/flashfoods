@@ -14,24 +14,24 @@
   background-color: #ebebeb;
 }  
 .aligned {
-  display: inline-block;
-  height: 100%;
+  height: auto;
   text-align: center;
 } 
 
 /* RETURN to main page */
 .return {
-  position: fixed;
-  top: 50px;
-  left: 50px;
+  margin-left: 2.5rem;
+  position: relative;
+  top: 4.5rem;
+}
+
+.div-logo{
+  text-align: center;
 }
 
 .logo {
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
+  margin-top: 50px;
+  width: 350px;
 }
 
 
@@ -39,21 +39,23 @@
   background-color: white;
   box-shadow: 0 5px 2.5px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 50px 50px;
+  margin-top: -35px;
 }
 
-#technical-div {
+#main-div {
+  width: 20%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
 }
 
-#technical-div-title {
-  padding-top: 290px;
+#div-title {
+  padding-top: 180px;
   text-align: center; 
 }
 
-#technical-div-title button {
+#div-title button {
   border: 0;
   border-radius: 0;
   box-shadow: 0 0 0;
@@ -62,8 +64,7 @@
   margin: 0 auto;
 }
 
-
-#technical-div-title #technical-title {
+#div-title #technical-title {
   background-color: white;
   color: black;
   border-bottom: 2px solid red;
@@ -154,12 +155,60 @@ button:hover {
 input {
   border: solid 1px rgb(255, 201, 14);
   border-radius: 20px;
-  height: 25px;
   box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
-  padding-left: 10px;
+  padding: 0.5rem;
 }
 
 button:hover {
   background-color: #ffc90e;
   color: white;
+}
+
+/* signin buttons */
+#div-title{
+  padding-top: 290px;
+}
+
+#div-title button {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#div-title #sign-button {
+  background-color: #fff;
+  color: grey;
+  border-bottom: 0.3rem solid #fff;
+}
+
+#div-title #sign-button-selected {
+  background-color: #fff;
+  color: #000;
+  border-bottom: 0.3rem solid red;
+}
+
+#div-title #sign-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.signin-faster {
+  width: 32px;
+  height: 32px;
+}
+.signin-input {
+  padding: 0.5rem 0;
+  border: solid 1px #ffc90e;
+  background-color: #ffc90e;
+  color: #000;
+  font-size: bolder;
+}
+
+.signin-input:hover {
+  padding: 0.5rem 0;
+  border: solid 1px #f9d967;
+  background-color: #f9d967;
+  cursor: pointer;
 }

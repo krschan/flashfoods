@@ -37,16 +37,13 @@ nav {
   width: 150px;
 }
 
-a{
+nav a {
+  padding: 10px;
+  width: 300px;
   position: relative;
   color: rgb(85, 83, 83);
   font-size: 14px;
   display: table;
-}
-
-nav a {
-  padding: 10px;
-  width: 300px;
 }
 
 nav a:hover {
@@ -141,7 +138,7 @@ header, footer {
   padding: 5px 20px;
 }
 
-input{
+#input-search-box{
   flex: 1;
   height: 50px;
   background: transparent;
@@ -151,7 +148,7 @@ input{
   color: #333
 }
 
-button{
+#button-search-box{
   background: transparent;
   border: 0;
   outline: 0;
@@ -200,12 +197,12 @@ button .fa-solid{
   align-items: center;
   justify-content: center;
   background-color: #ffc90e;
-  color: #000000;
+  color: #ffffff;
   padding: 15px 5px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  width: 300px;
+  width: 170px;
 }
 
 /* menu navigation */
@@ -220,7 +217,6 @@ button .fa-solid{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #000000;
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -233,7 +229,7 @@ button .fa-solid{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #000000;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 600px;  

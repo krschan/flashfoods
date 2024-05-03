@@ -11,28 +11,32 @@
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
     <title>FlashFood | Technical Support</title>
+    <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
+    
+    <!-- css -->
     <link rel="stylesheet" href="../css/login-register-admin-support.css">
-
+    
     <!-- jQuery -->
     <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
     <script src="/src/assets/js/dist/jquery.validate.js"></script>
     <script src="/src/assets/js/dist/additional-methods.js"></script>
-    <script src="/src/assets/js/style.js" defer></script>
 </head>
 
-<body id="grey-background" class="center">
-    <div class="return">
+<body id="grey-background">
+
+
+    <div>
+        <div id="white-background" class="center">
+        <div class="return">
         <a href="../index.php">
             <button>Return</button>
         </a>
     </div>
-
-    <div>
-        <div id="white-background" class="center">
-            <img class="logo" src="../images/flashfoods-logo.png" alt="logo-flashfood">
-
-            <div id="technical-div-title">
+            <div class="div-logo">
+                <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
+            </div>  
+            <div id="div-title">
                 <a href="#">
                     <button id="technical-title">Technical Support</button>
                 </a>
@@ -40,7 +44,7 @@
 
         </div>
 
-        <div id="technical-div" class="aligned main">
+        <div id="main-div" class="main">
             <div>
                 <label for="email" class="mail">Email</label>
                 <div>
@@ -77,6 +81,7 @@
             </div>
         </div>
     </div>
+    <script src="/src/assets/js/main.js" defer></script>
 </body>
 
 </html>

@@ -31,7 +31,7 @@
                 
             ?>
                 <button type=submit id="normal-button">Update</button>
-                <button type=submit id="red-button">Delete Account</button>
+                <button type=submit id="red-button">DELETE ACCOUNT</button>
 
             </form>
         </article>
