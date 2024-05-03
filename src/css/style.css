@@ -49,6 +49,10 @@ nav a {
   width: 300px;
 }
 
+nav a:hover {
+  background: #deb00d;
+}
+
 .fas{
   position: relative;
   width: 70px;
@@ -71,10 +75,6 @@ nav a {
   color: #000000;
   font-weight: bolder;
 }
-
-/* a:hover{
-  background: #deb00d;
-} */
 
 nav:hover {
   width: 280px;
@@ -459,6 +459,7 @@ footer {
 
 .cookies-restart button:hover {
   background-color: #deb00d;
+  cursor: pointer;
 }
 
 

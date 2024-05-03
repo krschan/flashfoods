@@ -14,16 +14,15 @@
         <title>FlashFood | Login</title>
 
         <!-- jQuery -->
-        <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
-        <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
-        <script src="/src/assets/js/dist/jquery.validate.js"></script>
-        <script src="/src/assets/js/dist/additional-methods.js"></script>
-        <script src="../js/main.js" defer></script>
+        <script src="/src/js/jquery-3.7.1.min.js"></script>
+        <script src="/src/js/slick-1.8.1/slick/slick.js"></script>
+        <script src="/src/js/dist/jquery.validate.js"></script>
+        <script src="/src/js/dist/additional-methods.js"></script>
     </head>
 
     <body id="grey-background" class="center">
         <div class="return">
-            <a href="/src/pages/view/menu/index.php">
+            <a href="/src/view/index.php">
                 <button>Return</button>
             </a>
         </div>
