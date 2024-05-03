@@ -48,7 +48,7 @@ session_start();
     </div>
   </div>
 
-  <form action="../controller/user-controller.php" method="post" id="register" enctype="multipart/form-data">
+  <form action="../controller/UserController.php" method="post" id="register" enctype="multipart/form-data">
 
     <div id="main-div" class="aligned main">
       <div class="center">

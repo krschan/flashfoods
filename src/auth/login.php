@@ -49,7 +49,7 @@ session_start();
         </div>
     </div>
 
-    <form action="../controller/user-controller.php" method="post" id="login">
+    <form action="../controller/UserController.php" method="post" id="login">
 
         <div id="main-div" class="aligned main">
             <div class="center">

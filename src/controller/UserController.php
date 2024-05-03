@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // test
 class UserController {
     private $conn;
-
+    
     public function __construct() {
         // database connection
-        $servername = "localhost";
+        $servername = "127.0.0.1:3000";
         $username = "root";
         $password = "";
         $flashfood = "flashfood";
