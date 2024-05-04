@@ -22,7 +22,7 @@ class UserController {
     
     public function __construct() {
         // database connection
-        $servername = "127.0.0.1:3000";
+        $servername = "localhost";
         $username = "root";
         $password = "";
         $flashfood = "flashfood";
@@ -43,13 +43,13 @@ class UserController {
         // validate username and password here
         if (!ctype_alpha($username)) {
             $_SESSION["error"] = "The username can only contain letters.";
-            header("Location: ../view/login/login.php");
+            header("Location: ../auth/login.php");
             exit();
         }
 
         if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)) {
             $_SESSION["error"] = "The password must be at least 8 characters long and contain at least one uppercase letter.";
-            header("Location: ../view/login/login.php");
+            header("Location: ../auth/login.php");
             exit();
         }
         // check in the database
@@ -70,12 +70,12 @@ class UserController {
             // Set the email in session
             $_SESSION["mail"] = $result['mail'];
 
-            header("Location: ../view/menu/index.php");
+            header("Location: ../index.php");
             exit();
         } else {
             // authentication failed, display an error message
             $_SESSION["error"] = "Invalid username or password. Please try again.";
-            header("Location: ../view/login/login.php");
+            header("Location: ../auth/login.php");
             exit();
         }
         }

@@ -37,7 +37,7 @@
         if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
           echo
           '<div class="sign-button">  
-            <form action="/src/controller/user-controller.php" method="post">
+            <form action="/src/controller/UserController.php" method="post">
               <input type="submit" name="logout" value="Sign out">
             </form>
           </div>';
@@ -45,7 +45,7 @@
           echo 
           '<div class="login-button">
             <a href="auth/login.php">
-              <span>Log in</span>
+              <span>Log-in</span>
             </a>
           </div>';
         }
