@@ -47,11 +47,18 @@ inputBox.onkeyup = function(){
 function display(result){
   // map the results to list items
   const content = result.map((list)=>{
-    return "<li onclick=selectInput(this)>" + list + "</li>";
+    return "<li class='result-item'>" + list + "</li>";
   });
 
   // display the list items in the results box
   resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+
+  // add click event to each result item
+  document.querySelectorAll('.result-item').forEach(item => {
+    item.addEventListener('click', function() {
+      selectInput(this);
+    });
+  });
 }
 
 // function to select an item from the results
@@ -60,4 +67,24 @@ function selectInput(list){
   inputBox.value = list.innerHTML;
   // clear the results box
   resultsBox.innerHTML = '';
+
+  // check if the selected item is "McDonald's"
+  if (list.innerHTML === 'McDonald\'s') {
+    // activate the markers for McDonald's
+    activateMarkers('McDonald\'s');
+  }
+}
+
+// function to activate markers
+function activateMarkers(restaurant) {
+
+  if (restaurant === 'McDonald\'s') {
+    // get all the McDonald's markers
+    var mcdonaldsMarkers = document.querySelectorAll('.mcdonalds-marker');
+
+    // add the 'show-marker' class to each McDonald's marker
+    mcdonaldsMarkers.forEach(function(marker) {
+      marker.classList.add('show-marker');
+    });
+  }
 }

@@ -30,7 +30,7 @@ nav {
   transition: width 0.2s linear;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   flex: 1;
-  z-index: 10; 
+  z-index: 30; 
 }
 
 .logo img{
@@ -85,7 +85,7 @@ nav:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3); 
-  z-index: 5;
+  z-index: 20;
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -221,6 +221,7 @@ button .fa-solid{
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
+  z-index: 25;
 }
 
 /* change user data  */
@@ -359,6 +360,44 @@ article{
 
 footer {
   vertical-align: bottom;
+}
+
+/* location and map */
+.map-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFD43B;
+  font-size: 2.5rem;
+  z-index: 10;
+}
+.mcdonalds-marker {
+  position: absolute;
+  color: #c44549;
+  font-size: 2.5rem;
+  display: none;
+  z-index: 10;
+}
+
+.show-marker {
+  display: inline-block !important; 
+}
+
+#mcdonalds1 {
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+#mcdonalds2 {
+  top: 80%;
+  left: 15%;
+  transform: translate(-80%, -15%);
+}
+#mcdonalds3 {
+  top: 60%;
+  left: 80%;
+  transform: translate(-60%, -80%);
 }
 
 /* cookies */
