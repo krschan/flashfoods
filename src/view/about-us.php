@@ -13,8 +13,15 @@ session_start();
   <title>FlashFood | About us</title>
   <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
 
+  <!-- jQuery -->
+  <script src="/src/js/jquery-3.7.1.min.js"></script>
+  <script src="/src/js/slick-1.8.1/slick/slick.js"></script>
+  <script src="/src/js/dist/jquery.validate.js"></script>
+  <script src="/src/js/dist/additional-methods.js"></script>
+
   <!-- css -->
   <link rel="stylesheet" href="../css/about-us.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 </head>
 
@@ -39,22 +46,38 @@ session_start();
     </div>
 
     <div id="content-container" class="main">
-      <img src="../images/about-us-work.jpg" alt="three young entrepeneurs working" class="main-img">
-      <div class="text-content">
-      <p><span class="bold">Flashfoods</span> was born from the collaborative efforts of three young students: Cristian Oraña, Pau Carrera, and
-    Alex Rodríguez. What began as a classroom project in 2023 has swiftly evolved into a burgeoning startup, driven
-    by a shared passion for innovation and technology.</p>
-    <p>At Flashfoods, our mission is simple yet transformative: to revolutionize the way people <span class="bold">discover the latest
-    deals and offerings in their local food scene</span>. We've created an interactive map that not only showcases the
-    freshest deals but also highlights a diverse array of fast-food joints and, soon, restaurants of all kinds.</p>
-    <p>By harnessing the power of technology, Flashfoods serves as a dynamic platform, connecting hungry customers with
-    exciting culinary experiences while simultaneously spotlighting the vibrant tapestry of eateries in every
-    neighborhood. Whether you're craving a quick bite or embarking on a gastronomic adventure, Flashfoods is your
-    gateway to culinary exploration.</p>
-    <p class="join-us">Join us as we redefine the dining landscape, one delicious discovery at a time.</p>
+      <div class="main-content">
+        <img src="../images/about-us-work.jpg" alt="three young entrepeneurs working" class="main-img">
+        <div class="text-content">
+          <p><span class="bold">Flashfoods</span> was born from the collaborative efforts of three young students:
+            Cristian Oraña, Pau Carrera, and
+            Alex Rodríguez. What began as a classroom project in 2023 has swiftly evolved into a burgeoning startup,
+            driven
+            by a shared passion for innovation and technology.</p>
+          <p>At Flashfoods, our mission is simple yet transformative: to revolutionize the way people <span
+              class="bold">discover the latest
+              deals and offerings in their local food scene</span>. We've created an interactive map that not only
+            showcases the
+            freshest deals but also highlights a diverse array of fast-food joints and, soon, restaurants of all kinds.
+          </p>
+          <p>By harnessing the power of technology, Flashfoods serves as a dynamic platform, connecting hungry customers
+            with
+            exciting culinary experiences while simultaneously spotlighting the vibrant tapestry of eateries in every
+            neighborhood. Whether you're craving a quick bite or embarking on a gastronomic adventure, Flashfoods is
+            your
+            gateway to culinary exploration.</p>
+          <p class="join-us">Join us as we redefine the dining landscape, one delicious discovery at a time.</p>
+        </div>
+      </div>
+      <div class="slick-carousel">
+        <div><img src="../images/1-slick-image.jpg" alt="Imagen 1"></div>
+        <div><img src="../images/2-slick-image.jpg" alt="Imagen 2"></div>
+        <div><img src="../images/3-slick-image.jpg" alt="Imagen 3"></div>
+        <div><img src="../images/4-slick-image.jpg" alt="Imagen 4"></div>
       </div>
     </div>
   </div>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

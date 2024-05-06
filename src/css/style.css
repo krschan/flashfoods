@@ -52,6 +52,10 @@ nav:hover {
   transition: all 0.5s ease;
 }
 
+nav .content-locked {
+  opacity: 35%;
+}
+
 /* Logo */
 .logo img {
   width: 150px;

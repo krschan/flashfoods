@@ -202,34 +202,34 @@ $("#information").validate ({
 });
 
 // SLICK CARROUSEL
-$("#slider").slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  arrows: false,
-  prevArrow: "<button class='prev'>PREV</button>",
-  nextArrow: "<button class='next'>NEXT</button>",
-  responsive:[
-      {
-          breakpoint: 800,
-          settings:{
-              slidesToShow: 2,
-              arrows: false,
-              dots: false
-          }
-      },
-
-      {
-          breakpoint: 600,
-          settings:{
-              slidesToShow: 1,
-              arrows: false,
-              dots: false,
-          }
-      }
-  ]
+$(".slick-carousel").slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: "<button class='slick-prev'><</button>",
+    nextArrow: "<button class='slick-next'>></button>",
+    responsive:[
+        {
+            breakpoint: 1200,
+            settings:{
+                slidesToShow: 2,
+                arrows: true,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 992,
+            settings:{
+                slidesToShow: 1,
+                arrows: true,
+                dots: false
+            }
+        }
+    ]
 });
+
