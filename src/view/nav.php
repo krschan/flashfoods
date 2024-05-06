@@ -33,9 +33,14 @@ if(isset($_SESSION['logged']) == true){
       <i class="fas fa-heart"></i>
       <span class="nav-item">Wishlist</span>
     </a></li>
+    <hr class="nav-separator">
     <li><a href="view/technical-support.php">
     <i class="fas fa-circle-info"></i>
     <span class="nav-item">Technical support</span>
+    </a></li>
+    <li><a href="view/about-us.php">
+    <i class="fas fa-user-tie"></i>
+    <span class="nav-item">About us</span>
     </a></li>
   
   </ul>
@@ -74,9 +79,14 @@ if(isset($_SESSION['logged']) == true){
       <i class="fas fa-heart"></i>
       <span class="nav-item">Wishlist</span>
     </a></li>
+    <hr class="nav-separator">
     <li><a href="view/technical-support.php">
     <i class="fas fa-circle-info"></i>
     <span class="nav-item">Technical support</span>
+    </a></li>
+    <li><a href="view/about-us.php">
+    <i class="fas fa-user-tie"></i>
+    <span class="nav-item">About us</span>
     </a></li>
   
   </ul> 

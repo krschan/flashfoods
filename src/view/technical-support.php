@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +12,10 @@
     <meta name="generator" content="FlashFood">
     <title>FlashFood | Technical Support</title>
     <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
-    
+
     <!-- css -->
     <link rel="stylesheet" href="../css/login-register-admin-support.css">
-    
+
     <!-- jQuery -->
     <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
@@ -28,14 +28,15 @@
 
     <div>
         <div id="white-background" class="center">
-        <div class="return">
-        <a href="../index.php">
-            <button>Return</button>
-        </a>
-    </div>
+            <div class="return">
+                <a href="../index.php">
+                    <button>Return</button>
+                </a>
+            </div>
             <div class="div-logo">
-                <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
-            </div>  
+                <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png"
+                        alt="logo-flashfood"></a>
+            </div>
             <div id="div-title">
                 <a href="#">
                     <button id="technical-title">Technical Support</button>

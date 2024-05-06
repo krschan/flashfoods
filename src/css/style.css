@@ -123,6 +123,13 @@ nav:hover + .overlay {
 header, footer {
   height: 10vh;
 }
+.nav-separator {
+  margin-left: 10%;
+  margin-right: 10%;
+  border: none;
+  border-top: 1px solid #000;
+  align-self: center;
+}
 
 /* search */
 .search-box{
