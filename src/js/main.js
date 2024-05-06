@@ -1,207 +1,207 @@
 // cookies localstorage
-$(document).ready(function() {
-  if (localStorage.getItem('cookiesAccepted') === 'true') {
-      $("#cookies").css({"display": "none"});
-      $(".login-button a").css({"display": "flex"});
-  }
+$(document).ready(function () {
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+        $("#cookies").css({ "display": "none" });
+        $(".login-button a").css({ "display": "flex" });
+    }
 });
 
 // after user clicks accept on cookies it hides afterwards.
 $(".cookies-accept").click(
-  function(){
-      $("#cookies").css(
-          {"display":"none"}
-      );
-      $(".login-button a").css(
-          {"display":"flex"}
-      )
+    function () {
+        $("#cookies").css(
+            { "display": "none" }
+        );
+        $(".login-button a").css(
+            { "display": "flex" }
+        )
 
-      localStorage.setItem('cookiesAccepted', 'true');
-  }
+        localStorage.setItem('cookiesAccepted', 'true');
+    }
 );
 
 // close cookies but it show in right top.
 $(".cookies-close").click(
-  function(){
-      $("#cookies").css(
-          {"display":"none"}
-      );
+    function () {
+        $("#cookies").css(
+            { "display": "none" }
+        );
 
-      $(".cookies-restart").css(
-        {"display":"flex"}
-      );
-      $(".cookies-restart").append("<button>Cookies</button>");
-  }
+        $(".cookies-restart").css(
+            { "display": "flex" }
+        );
+        $(".cookies-restart").append("<button>Cookies</button>");
+    }
 );
 
 // user can open cookies again
 $(".cookies-restart").click(
-  function(){
-      $("#cookies").css(
-          {"display":"flex"}
-      );
+    function () {
+        $("#cookies").css(
+            { "display": "flex" }
+        );
 
-      $(".cookies-restart").css(
-        {"display":"none"}
-      );
+        $(".cookies-restart").css(
+            { "display": "none" }
+        );
 
-      $(".cookies-restart button").remove();
-  }
+        $(".cookies-restart button").remove();
+    }
 );
 
-//JQUERY VALIDATE
-$("#login").validate ({
+// JQUERY VALIDATE
+$("#login").validate({
 
-  rules: {
-      username: {
-          required:true,
-          minlength: 3
+    rules: {
+        username: {
+            required: true,
+            minlength: 3
 
-      },
-      password:  {
-          required:true,
-          minlength: 8
+        },
+        password: {
+            required: true,
+            minlength: 8
 
-      }
-  },
+        }
+    },
 
-  messages: {
-      username:  {
-          required: "El usuario es obligatorio ",
-          minlength: "El usuario debe tener minimo 3 caracteres"
+    messages: {
+        username: {
+            required: "The username is required",
+            minlength: "The username must be at least 3 characters long"
 
-      },
-      password: {
-          required: "La contraseña es obligatoria",
-          minlength: "La contraseña debe tener minimo 8 caracteres"
-      }
-  }
+        },
+        password: {
+            required: "The password is required",
+            minlength: "The password must be at least 8 characters long"
+        }
+    }
 });
 
-$("#register").validate ({
+$("#register").validate({
 
-  rules: {
-      mail: {
-          required:true,   
-          email:true
-      },
-      username:{
-          required:true,
-          minlength:3,
-          maxlength:13
-      },
-      password: {
-          required: true,
-          minlength: 8
-      }
-  },
-  messages: {
-      mail: {
-          required: "El correo es obligatorio",
-          email: "Introduce una dirección válida"
-      },
-      username:{
-          required:"El usuario es obligatorio",
-          minlength:"Debe tener almenos 3 caracteres",
-          maxlength: "Debe ser de macimo 13 caracteres"
-      },
-      password: {
-          required: "La contraseña es obligatoria",
-          minlength:"La contraseña debe tener minimo 8 caracteres"
-      }
-  }
+    rules: {
+        mail: {
+            required: true,
+            email: true
+        },
+        username: {
+            required: true,
+            minlength: 3,
+            maxlength: 13
+        },
+        password: {
+            required: true,
+            minlength: 8
+        }
+    },
+    messages: {
+        mail: {
+            required: "The email is required",
+            email: "Enter a valid email address"
+        },
+        username: {
+            required: "The username is required",
+            minlength: "It must be at least 3 characters long",
+            maxlength: "It must be at most 13 characters long"
+        },
+        password: {
+            required: "The password is required",
+            minlength: "The password must be at least 8 characters long"
+        }
+    }
 });
 
-$("#register-admin").validate ({
+$("#register-admin").validate({
 
-  rules: {
-      mail: {
-          required:true,   
-          email:true
-      },
-      username:{
-          required:true,
-          minlength:3,
-          maxlength:13
-      },
-      password: {
-          required: true,
-          minlength: 8
-      }
-  },
-  messages: {
-      mail: {
-          required: "El correo es obligatorio",
-          email: "Introduce una dirección válida"
-      },
-      username:{
-          required:"El usuario es obligatorio",
-          minlength:"Debe tener almenos 3 caracteres",
-          maxlength: "Debe ser de máximo 13 caracteres"
-      },
-      password: {
-          required: "La contraseña es obligatoria",
-          minlength:"La contraseña debe tener minimo 8 caracteres"
-      }
-  }
+    rules: {
+        mail: {
+            required: true,
+            email: true
+        },
+        username: {
+            required: true,
+            minlength: 3,
+            maxlength: 13
+        },
+        password: {
+            required: true,
+            minlength: 8
+        }
+    },
+    messages: {
+        mail: {
+            required: "The email is required",
+            email: "Enter a valid email address"
+        },
+        username: {
+            required: "The username is required",
+            minlength: "It must be at least 3 characters long",
+            maxlength: "It must be at most 13 characters long"
+        },
+        password: {
+            required: "The password is required",
+            minlength: "The password must be at least 8 characters long"
+        }
+    }
 });
 
-$("#information").validate ({
+$("#information").validate({
 
-  rules: {
-      username: {
-          required: true,
-          maxlength: 13,
-          minlength:3
-      },
-      nameSurname: {
-          required: true,
-          maxlength: 25,
-          minlength: 3
+    rules: {
+        username: {
+            required: true,
+            maxlength: 13,
+            minlength: 3
+        },
+        nameSurname: {
+            required: true,
+            maxlength: 25,
+            minlength: 3
 
-      },
-      email: {
-          required:true,   
-          email:true
-      },
-      birthDate: {
-          required:true,   
-              
-      },
-      phoneNumberr: {
-          required:true,   
-          minlength: 9    
-      }
-  
-  },
-  messages: {
-      username: {
-          required:"El usuario es obligatorio",
-          maxlength: "Debe ser de máximo 13 caracteres",
-          minlength:"Debe tener almenos 3 caracteres"
-      },
-      nameSurname: {
-          required: "El nombre y tu primer apellido son obligatorios",
-          maxlength: "Debe ser de máximo 25 caracteres",
-          minlength:"Debe tener almenos 3 caracteres"
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        birthDate: {
+            required: true,
 
-      },
-      email: {
-          required:"El correo es obligatorio",   
-          email:"Introduce una dirección válida"
-      },
-      birthDate: {
-          required:"La fecha de nacimiento es obligatoria",   
-          
-      },
-      phoneNumberr: {
-          required:"El telefono es obligatorio",   
-          minlength:"El número de telefono debe tener minimo 9 digitos"
-      }
-  }
+        },
+        phoneNumberr: {
+            required: true,
+            minlength: 9
+        }
+
+    },
+    messages: {
+        username: {
+            required: "The username is required",
+            maxlength: "It must be at most 13 characters long",
+            minlength: "It must be at least 3 characters long"
+        },
+        nameSurname: {
+            required: "The name and your first surname are required",
+            maxlength: "It must be at most 25 characters long",
+            minlength: "It must be at least 3 characters long"
+
+        },
+        email: {
+            required: "The email is required",
+            email: "Enter a valid email address"
+        },
+        birthDate: {
+            required: "The birthdate is required",
+
+        },
+        phoneNumberr: {
+            required: "The phone number is required",
+            minlength: "The phone number must be at least 9 digits long"
+        }
+    }
 });
 
-// SLICK CARROUSEL
+// SLICK CAROUSEL
 $(".slick-carousel").slick({
     dots: false,
     infinite: true,
@@ -213,10 +213,10 @@ $(".slick-carousel").slick({
     arrows: true,
     prevArrow: "<button class='slick-prev'><</button>",
     nextArrow: "<button class='slick-next'>></button>",
-    responsive:[
+    responsive: [
         {
             breakpoint: 1200,
-            settings:{
+            settings: {
                 slidesToShow: 2,
                 arrows: true,
                 dots: false
@@ -224,7 +224,7 @@ $(".slick-carousel").slick({
         },
         {
             breakpoint: 992,
-            settings:{
+            settings: {
                 slidesToShow: 1,
                 arrows: true,
                 dots: false
@@ -232,4 +232,3 @@ $(".slick-carousel").slick({
         }
     ]
 });
-

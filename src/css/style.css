@@ -520,8 +520,13 @@ footer {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 600px) {
-  .info-form input {
+@media only screen and (max-width: 768px) {
+  .search-box {
     width: 50%;
+    margin: 19px auto;
+  }
+
+  .login-button a{
+    width: 100px;
   }
 }
