@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +10,15 @@
   list-style: none;
 }
 
+/* Body */
 body {
   background-image: url(/src/images/barcelona-map.png);
   display: flex;
   min-height: 100vh;
   flex-direction: row;
-  margin: 0;
 }
 
-/* menu navigation */
+/* Navigation */
 nav {
   position: absolute;
   top: 0;
@@ -30,11 +31,7 @@ nav {
   transition: width 0.2s linear;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   flex: 1;
-  z-index: 30; 
-}
-
-.logo img{
-  width: 150px;
+  z-index: 30;
 }
 
 nav a {
@@ -50,7 +47,18 @@ nav a:hover {
   background: #deb00d;
 }
 
-.fas{
+nav:hover {
+  width: 280px;
+  transition: all 0.5s ease;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Icons */
+.fas {
   position: relative;
   width: 70px;
   height: 55px;
@@ -60,12 +68,12 @@ nav a:hover {
   color: #000000;
 }
 
-.fa-bars  {
+.fa-bars {
   height: 45px;
   top: 1px
 }
 
-.nav-item{
+.nav-item {
   position: relative;
   top: 12px;
   margin-left: 10px;
@@ -73,56 +81,52 @@ nav a:hover {
   font-weight: bolder;
 }
 
-nav:hover {
-  width: 280px;
-  transition: all 0.5s ease;
-}
-
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); 
+  background: rgba(0, 0, 0, 0.3);
   z-index: 20;
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
-nav:hover + .overlay {
+nav:hover+.overlay {
   opacity: 1;
   pointer-events: auto;
 }
-.content-locked {
-  opacity: 50%;
-}
 
-#menu-content .content-locked button:hover {
-  background-color: white;
-  color: black;
-}
+/* Content */
 .main {
   display: flex;
   flex-direction: column;
   flex: 5;
 }
+
 .content {
   display: flex;
   flex-direction: row;
 }
-.content > article {
+
+.content>article {
   flex: 3;
   min-height: 60vh;
 }
-.content > aside {
+
+.content>aside {
   background: beige;
   flex: 1;
 }
-header, footer {
+
+header,
+footer {
   height: 10vh;
 }
+
 .nav-separator {
   margin-left: 10%;
   margin-right: 10%;
@@ -131,8 +135,8 @@ header, footer {
   align-self: center;
 }
 
-/* search */
-.search-box{
+/* Search */
+.search-box {
   width: 700px;
   background: #fff;
   margin: 19px 19px 19px 140px;
@@ -140,12 +144,12 @@ header, footer {
   border-radius: 20px;
 }
 
-.row{
+.row {
   display: flex;
   padding: 5px 20px;
 }
 
-#input-search-box{
+#input-search-box {
   flex: 1;
   height: 50px;
   background: transparent;
@@ -155,33 +159,34 @@ header, footer {
   color: #333
 }
 
-#button-search-box{
+#button-search-box {
   background: transparent;
   border: 0;
   outline: 0;
 }
-button .fa-solid{
+
+button .fa-solid {
   width: 25px;
   color: #555;
   font-size: 22px;
   cursor: pointer;
 }
 
-::placeholder{
+::placeholder {
   color: #555;
 }
 
-.result-box{
+.result-box {
   max-height: 300px;
   overflow-y: scroll;
 }
 
-.result-box ul{
+.result-box ul {
   border-top: 1px solid #999;
   padding: 15px 10px;
 }
 
-.result-box ul li{
+.result-box ul li {
   list-style: none;
   border-radius: 3px;
   padding: 15px 10px;
@@ -192,7 +197,7 @@ button .fa-solid{
   background: #e9f3ff;
 }
 
-
+/* Login Button */
 .login-button {
   position: fixed;
   top: 20px;
@@ -212,12 +217,11 @@ button .fa-solid{
   width: 170px;
 }
 
-/* menu navigation */
 .login-button a:hover {
   background-color: #deb00d;
 }
 
-/* popup */
+/* Popup */
 .popup {
   display: none;
   position: fixed;
@@ -231,7 +235,7 @@ button .fa-solid{
   z-index: 25;
 }
 
-/* change user data  */
+/* User Data */
 .info-box {
   position: fixed;
   top: 50%;
@@ -240,7 +244,7 @@ button .fa-solid{
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 600px;  
+  width: 600px;
   flex: none;
 }
 
@@ -258,10 +262,10 @@ button .fa-solid{
 }
 
 .user-img {
-  width: 100px; 
-  height: 100px; 
-  border-radius: 50%; 
-  margin-bottom: 10px; 
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 #information label {
@@ -300,12 +304,12 @@ button .fa-solid{
   color: red;
   margin-top: 10px;
 }
-/* change user data */
 
-.top-nav-img > a > img {
+.top-nav-img>a>img {
   width: 150px;
-  height: auto; 
+  height: auto;
 }
+
 article#user-information {
   padding: 2rem 1rem 2rem 3rem;
   text-align: start;
@@ -332,11 +336,12 @@ form {
 
 #information #red-button:hover {
   border: 1px solid #EB5D61;
-  background:  #c44549;
+  background: #c44549;
   font-weight: bold;
   width: 48%;
   cursor: pointer;
 }
+
 #information #red-button {
   border: 1px solid #EB5D61;
   color: #000000;
@@ -345,14 +350,16 @@ form {
   width: 48%;
   cursor: pointer;
 }
+
 #information #red-button-border:hover {
   color: #000000;
   border: 1px solid #EB5D61;
-  background:  #c44549;
+  background: #c44549;
   font-weight: bold;
   width: 48%;
   cursor: pointer;
 }
+
 #information #red-button-border {
   border: 1px solid #EB5D61;
   color: #c44549;
@@ -361,7 +368,8 @@ form {
   width: 48%;
   cursor: pointer;
 }
-article{
+
+article {
   padding: 1rem;
 }
 
@@ -369,7 +377,7 @@ footer {
   vertical-align: bottom;
 }
 
-/* location and map */
+/* Location and Map */
 .map-marker {
   position: absolute;
   top: 50%;
@@ -379,6 +387,7 @@ footer {
   font-size: 2.5rem;
   z-index: 10;
 }
+
 .mcdonalds-marker {
   position: absolute;
   color: #c44549;
@@ -388,7 +397,7 @@ footer {
 }
 
 .show-marker {
-  display: inline-block !important; 
+  display: inline-block !important;
 }
 
 #mcdonalds1 {
@@ -396,18 +405,20 @@ footer {
   left: 30%;
   transform: translate(-30%, -30%);
 }
+
 #mcdonalds2 {
   top: 80%;
   left: 15%;
   transform: translate(-80%, -15%);
 }
+
 #mcdonalds3 {
   top: 60%;
   left: 80%;
   transform: translate(-60%, -80%);
 }
 
-/* cookies */
+/* Cookies */
 #cookies {
   display: flex;
   justify-content: space-between;
@@ -504,11 +515,9 @@ footer {
   cursor: pointer;
 }
 
-
+/* Media Queries */
 @media only screen and (max-width: 600px) {
   .info-form input {
-      width: 50%;
+    width: 50%;
   }
 }
-
-

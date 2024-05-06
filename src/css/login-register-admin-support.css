@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,23 +10,25 @@
   list-style: none;
 }
 
-/* BODY */
+/* Body */
 #grey-background {
   background-color: #ebebeb;
-}  
+}
+
 .aligned {
   height: auto;
   text-align: center;
-} 
+}
 
-/* RETURN to main page */
+/* Return to main page */
 .return {
   margin-left: 2.5rem;
   position: relative;
   top: 4.5rem;
 }
 
-.div-logo{
+/* Logo */
+.div-logo {
   text-align: center;
 }
 
@@ -34,7 +37,7 @@
   width: 350px;
 }
 
-
+/* Header */
 #white-background {
   background-color: white;
   box-shadow: 0 5px 2.5px rgba(0, 0, 0, 0.2);
@@ -42,6 +45,7 @@
   margin-top: -35px;
 }
 
+/* Content */
 #main-div {
   width: 20%;
   position: absolute;
@@ -50,9 +54,10 @@
   text-align: center;
 }
 
+/* Title */
 #div-title {
   padding-top: 180px;
-  text-align: center; 
+  text-align: center;
 }
 
 #div-title button {
@@ -70,43 +75,43 @@
   border-bottom: 2px solid red;
 }
 
-/* SIGN IN WITH */
+/* Sign In With */
 .signin-faster {
   width: 32px;
   height: 32px;
 }
 
-/* MAIN */
+/* Main */
 .main {
   padding-top: 50px;
   text-align: left;
 }
 
-.main > div > button {
+.main>div>button {
   border: 0;
   margin: 0 10px;
 }
 
-.main > div {
+.main>div {
   padding-bottom: 30px;
   font-weight: bolder;
 }
 
-div > input {
+div>input {
   width: 100%;
   box-shadow: 0 0 0;
   border: 0;
   margin-top: 20px;
 }
 
-.main > div > a > button {
+.main>div>a>button {
   width: 100%;
   background-color: #ffc90e;
   color: white;
   font-weight: bold;
 }
 
-.main > div > a > button:hover {
+.main>div>a>button:hover {
   border: solid 1px #f9d967;
   background-color: #f9d967;
 }
@@ -115,31 +120,33 @@ div > input {
   margin-top: 10px;
 }
 
-#support{
+#support {
   color: red;
   text-decoration: underline red;
   font-style: oblique;
   font-weight: 100;
   font-size: small
 }
-.help-box{
-border-top: 1px solid black;
-padding-top: 30px;
+
+.help-box {
+  border-top: 1px solid black;
+  padding-top: 30px;
 }
 
-.help-box > div button {
+.help-box>div button {
   width: 100%;
   border: 1px solid black;
-  border-radius: 0 ;
+  border-radius: 0;
   font-style: italic;
-  
-} 
-.help-box > p{
-  padding-bottom: 15px;
-  
+
 }
 
-/* default button style */
+.help-box>p {
+  padding-bottom: 15px;
+
+}
+
+/* Default Button Style */
 button {
   padding: 10px 20px;
   border-radius: 20px;
@@ -164,8 +171,8 @@ button:hover {
   color: white;
 }
 
-/* signin buttons */
-#div-title{
+/* Signin Buttons */
+#div-title {
   padding-top: 190px;
 }
 
@@ -198,6 +205,7 @@ button:hover {
   width: 32px;
   height: 32px;
 }
+
 .signin-input {
   padding: 0.5rem 0;
   border: solid 1px #ffc90e;

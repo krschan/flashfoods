@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +10,20 @@
   list-style: none;
 }
 
-/* BODY */
+/* Body */
 #body-background {
   background-color: #ebebeb;
-}  
+}
 
-/* RETURN to main page */
+/* Return to main page */
 .return-button {
   margin-left: 2.5rem;
   position: relative;
   top: 4.5rem;
 }
 
-.logo-container{
+/* Logo */
+.logo-container {
   text-align: center;
 }
 
@@ -30,7 +32,7 @@
   width: 350px;
 }
 
-
+/* Header */
 #header-background {
   background-color: white;
   box-shadow: 0 5px 2.5px rgba(0, 0, 0, 0.2);
@@ -38,6 +40,7 @@
   margin-top: -35px;
 }
 
+/* Content */
 #content-container {
   width: 70%;
   position: absolute;
@@ -49,9 +52,10 @@
   align-items: top;
 }
 
+/* Title */
 #title-container {
   padding-top: 100px;
-  text-align: center; 
+  text-align: center;
 }
 
 #title-container button {
@@ -69,13 +73,13 @@
   border-bottom: 2px solid red;
 }
 
-/* MAIN */
+/* Main */
 .main {
   padding-top: 50px;
   text-align: left;
 }
 
-/* default button style */
+/* Default Button Style */
 button {
   padding: 10px 20px;
   border-radius: 20px;
@@ -88,6 +92,7 @@ button:hover {
   cursor: pointer;
 }
 
+/* Input */
 input {
   border: solid 1px rgb(255, 201, 14);
   border-radius: 20px;
@@ -100,18 +105,20 @@ button:hover {
   color: white;
 }
 
+/* Main Image */
 .main-img {
   margin: 2rem;
   height: 30%;
-  width: 30%; 
+  width: 30%;
   border: 5px solid #ffc90e;
 }
 
+/* Text Content */
 .text-content {
-  width: 65%; 
+  width: 65%;
 }
 
-.text-content p{
+.text-content p {
   margin: 2rem 0;
   font-size: 1.2rem;
 }
@@ -121,11 +128,11 @@ button:hover {
 }
 
 .text-content .join-us {
-margin-top: 4rem;  
-font-size: 2rem;
+  margin-top: 4rem;
+  font-size: 2rem;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   #content-container {
     flex-direction: column;
