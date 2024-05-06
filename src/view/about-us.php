@@ -18,30 +18,29 @@ session_start();
 
 </head>
 
-<body id="grey-background">
-
+<body id="body-background">
 
   <div>
-    <div id="white-background" class="center">
-      <div class="return">
+    <div id="header-background" class="center">
+      <div class="return-button">
         <a href="../index.php">
           <button>Return</button>
         </a>
       </div>
-      <div class="div-logo">
+      <div class="logo-container">
         <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
       </div>
-      <div id="div-title">
+      <div id="title-container">
         <a href="#">
-          <button id="home-title">About us</button>
+          <button id="title-button">About us</button>
         </a>
       </div>
 
     </div>
 
-    <div id="main-div" class="main">
+    <div id="content-container" class="main">
       <img src="../images/about-us-work.jpg" alt="three young entrepeneurs working" class="main-img">
-      <div class="main-content">
+      <div class="text-content">
       <p><span class="bold">Flashfoods</span> was born from the collaborative efforts of three young students: Cristian Oraña, Pau Carrera, and
     Alex Rodríguez. What began as a classroom project in 2023 has swiftly evolved into a burgeoning startup, driven
     by a shared passion for innovation and technology.</p>

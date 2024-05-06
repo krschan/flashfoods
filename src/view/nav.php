@@ -35,11 +35,11 @@ if(isset($_SESSION['logged']) == true){
     </a></li>
     <hr class="nav-separator">
     <li><a href="view/technical-support.php">
-    <i class="fas fa-circle-info"></i>
+    <i class="fas fa-wrench"></i>
     <span class="nav-item">Technical support</span>
     </a></li>
     <li><a href="view/about-us.php">
-    <i class="fas fa-user-tie"></i>
+    <i class="fas fa-circle-info"></i>
     <span class="nav-item">About us</span>
     </a></li>
   
@@ -81,11 +81,11 @@ if(isset($_SESSION['logged']) == true){
     </a></li>
     <hr class="nav-separator">
     <li><a href="view/technical-support.php">
-    <i class="fas fa-circle-info"></i>
+    <i class="fas fa-wrench"></i>
     <span class="nav-item">Technical support</span>
     </a></li>
     <li><a href="view/about-us.php">
-    <i class="fas fa-user-tie"></i>
+    <i class="fas fa-circle-info"></i>
     <span class="nav-item">About us</span>
     </a></li>
   
