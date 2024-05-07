@@ -14,9 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user->registerAdmin();
     } elseif (isset($_POST["delete_account"])) {
         $user->deleteAccount($_SESSION["username"]);
+    } elseif (isset($_POST["update_account"])) {
+        $username = $_SESSION["username"];
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $nameSurname = $_POST['nameSurname'];
+        $birthDate = $_POST['birthDate'];
+        $phoneNumber = $_POST['phoneNumber'];
+
+        $user->updateAccount($username, $email, $nameSurname, $birthDate, $phoneNumber);
     }
 }
-// test
+
 class UserController
 {
     private $conn;
@@ -57,7 +65,6 @@ class UserController
             exit();
         }
         */
-
         // check in the database
         $stmt = $this->conn->prepare("SELECT admin, image, mail FROM user WHERE username=:username AND password=:password");
         $stmt->bindParam(':username', $username);
@@ -86,7 +93,6 @@ class UserController
         }
     }
 
-
     // register user
     public function register(): void
     {
@@ -109,7 +115,6 @@ class UserController
             exit();
         }
         */
-
         try {
             // insert in the database
             $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (:mail, :username, :password, :admin)");
@@ -144,23 +149,22 @@ class UserController
         $password = $_POST['password'];
         $admin = 1;
 
-        /*
         // validate username and password here
+        /*
         if (!ctype_alpha($username)) {
             $_SESSION["logged"] = false;
             $_SESSION["error"] = "The username can only contain letters.";
-            header("Location: ../auth/login.php");
+            header("Location: ../auth/register-admin.php");
             exit();
         }
 
         if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)) {
             $_SESSION["logged"] = false;
             $_SESSION["error"] = "The password must be at least 8 characters long and contain at least one uppercase letter.";
-            header("Location: ../auth/login.php");
+            header("Location: ../auth/register-admin.php");
             exit();
         }
-       */
-
+        */
         // path file to uploads
         $location = "../model/";
 
@@ -236,4 +240,42 @@ class UserController
         }
     }
 
+    // update user
+    public function updateAccount($username, $email, $nameSurname, $birthDate, $phoneNumber): void
+    {
+        $currentUsername = $_SESSION['username'];
+        $currentEmail = $_SESSION['mail'];
+
+        // Verificar si se realizaron cambios
+        if ($username === $currentUsername && $email === $currentEmail) {
+            $_SESSION["error"] = "No changes were made.";
+            header("Location: ../index.php");
+            exit();
+        }
+
+        try {
+            $stmt = $this->conn->prepare("UPDATE user SET username = :username, mail = :email, name = :nameSurname, birth_date = :birthDate, phone_number = :phoneNumber WHERE username = :currentUsername");
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":email", $currentEmail);
+            $stmt->bindParam(":nameSurname", $nameSurname);
+            $stmt->bindParam(":birthDate", $birthDate);
+            $stmt->bindParam(":phoneNumber", $phoneNumber);
+            $stmt->bindParam(":currentUsername", $currentUsername);
+
+            if ($stmt->execute()) {
+                header("Location: ../index.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error updating user information.";
+                header("Location: ../index.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error updating user information: " . $e->getMessage();
+            header("Location: ../index.php");
+            exit();
+        }
+    }
+
 }
+?>
