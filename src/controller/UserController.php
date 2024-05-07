@@ -140,7 +140,7 @@ class UserController
     public function registerAdmin(): void
     {
         $mail = $_POST['mail'];
-        $username = $_POST['user'];
+        $username = $_POST['username'];
         $password = $_POST['password'];
         $admin = 1;
 
@@ -185,6 +185,7 @@ class UserController
 
             // execute the statement
             if ($stmt->execute()) {
+                $_SESSION["mail"] = $mail;
                 $_SESSION["logged"] = true;
                 $_SESSION["username"] = $username;
                 $_SESSION["admin"] = true;
@@ -211,4 +212,28 @@ class UserController
         header("Location: ../index.php");
         exit();
     }
+
+    // delete user
+    public function deleteAccount($username): void
+    {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM user WHERE username = :username");
+            $stmt->bindParam(":username", $username);
+
+            if ($stmt->execute()) {
+                session_destroy();
+                header("Location: ../index.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error deleting the account.";
+                header("Location: ../index.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error deleting the account: " . $e->getMessage();
+            header("Location: ../index.php");
+            exit();
+        }
+    }
+
 }

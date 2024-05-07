@@ -13,15 +13,15 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <form id="information">
+            <form id="information" method="POST" action="controller/UserController.php">
                 <label for="username">Username</label>
-                <input type="text" id="user" name="username" placeholder="username" />
+                <input type="text" id="user" name="username" placeholder="<?php echo $_SESSION['username']; ?>" />
 
                 <label for="name-surname">Name and Surname</label>
-                <input type="text" id="nameSurname" name="nameSurname" placeholder="name surname1 surname2" />
+                <input type="text" id="nameSurname" name="nameSurname"/>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="email" />
+                <input type="email" id="email" name="email" placeholder="<?php echo $_SESSION['mail']; ?>" />
 
                 <label for="birth-date">Birth Date</label>
                 <input type="date" id="birthDate" name="birthDate" />
@@ -37,7 +37,7 @@
 
                 ?>
                 <button type=submit id="normal-button">Update</button>
-                <button type=submit id="red-button">DELETE ACCOUNT</button>
+                <button type=submit name="delete_account" id="red-button">DELETE ACCOUNT</button>
 
             </form>
         </article>
