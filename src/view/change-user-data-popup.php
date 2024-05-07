@@ -5,7 +5,13 @@
         <h2>Account Information</h2>
         <article id="user-information">
             <div class="img">
-                <img class="user-img" src="/src/assets/img/user.png" alt="profile-image" />
+                <div class="img">
+                    <?php if (isset($_SESSION['image']) && !empty($_SESSION['image'])): ?>
+                        <img class="user-img" src="model/<?php echo $_SESSION['image']; ?>" alt="profile-image" />
+                    <?php else: ?>
+                        <img class="user-img" src="model/user-img.jpg" alt="profile-image" />
+                    <?php endif; ?>
+                </div>
             </div>
             <form id="information">
                 <label for="username">Username</label>
@@ -24,12 +30,12 @@
                 <input type="tel" id="phoneNumberr" name="phoneNumberr" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
 
                 <?php
-                if(isset($_SESSION['error'])) {
-                    echo "<p style='color: red;'>".$_SESSION['error']."</p>";
+                if (isset($_SESSION['error'])) {
+                    echo "<p style='color: red;'>" . $_SESSION['error'] . "</p>";
                     unset($_SESSION['error']);
                 }
-                
-            ?>
+
+                ?>
                 <button type=submit id="normal-button">Update</button>
                 <button type=submit id="red-button">DELETE ACCOUNT</button>
 

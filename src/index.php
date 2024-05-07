@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,16 +40,19 @@
     <?php
     if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
       echo
-        '<div class="sign-button">  
-            <form action="/src/controller/UserController.php" method="post">
-              <input type="submit" name="logout" value="Sign out">
-            </form>
-          </div>';
+      '<div class="login-button">  
+          <a href="../src/controller/UserController.php" onclick="event.preventDefault(); document.getElementById(\'logout-form\').submit();">
+            <span>Log out</span>
+          </a>
+          <form id="logout-form" action="../src/controller/UserController.php" method="post" style="display: none;">
+            <input type="hidden" name="logout" value="1">
+          </form>
+      </div>';
     } else {
       echo
         '<div class="login-button">
             <a href="auth/login.php">
-              <span>Log-in</span>
+              <span>Log in</span>
             </a>
           </div>';
     }
