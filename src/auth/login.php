@@ -17,10 +17,9 @@ session_start();
     <link rel="stylesheet" href="../css/login-register-admin-support.css">
 
     <!-- jQuery -->
-    <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
-    <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
-    <script src="/src/assets/js/dist/jquery.validate.js"></script>
-    <script src="/src/assets/js/dist/additional-methods.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/dist/jquery.validate.js"></script>
+    <script src="../js/dist/additional-methods.js"></script>
 </head>
 
 <body id="grey-background" class="center">
@@ -93,6 +92,7 @@ session_start();
 
         </div>
     </form>
+    <script src="../js/main.js" defer></script>
 </body>
 
 </html>
