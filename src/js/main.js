@@ -199,6 +199,49 @@ $(document).ready(function () {
         }
     });
 
+    $(document).ready(function(){
+        $("#formAdmin").validate({
+            rules : {
+                name : {
+                    required:true,
+                    minlength:2
+                },
+                phone : {
+                    required:true,
+                    minlength:9,
+                    maxlength:20
+                },
+                email : {
+                    required:true,
+                    email:true
+                },
+                Description:{
+                    required:true,
+                    minlength:5,
+                    maxlength:12
+                }
+            },
+                messages:{
+                    name : {
+                        required: "The name is required",
+                        minlength: "It must be at least 2 characters long"
+                    },
+                    phone : {
+                    required: "The username is required",
+                    maxlength: "It must be at most 20 characters long",
+                    minlength: "The phone number must be at least 9 digits long"
+                    },
+                    email : {
+                        required: "The email is required",
+                        email: "Enter a valid email address"
+                  },
+                  Description : {
+                    required: "The name and your first surname are required",
+                    maxlength: "It must be at most 25 characters long",
+                    minlength: "It must be at least 3 characters long"
+                  },
+                }});
+
     // SLICK CAROUSEL
     $(".slick-carousel").slick({
         dots: false,
