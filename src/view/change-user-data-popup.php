@@ -40,8 +40,9 @@
                 }
 
                 ?>
-                <button type=submit name="update_account" id="normal-button">Update</button>
-                <button type=submit name="delete_account" id="red-button">DELETE ACCOUNT</button>
+                <button type=submit name="update_account" class="normal-button" >Save changes</button>
+                <button type=button name="change_password" class="normal-button"><a id="change-password-button" href="/src/auth/change-password.php">Change password</a></button> 
+                <button type=submit name="delete_account" class="red-button">DELETE ACCOUNT</button>
             </form>
 
         </article>
@@ -50,27 +51,34 @@
 <?php
 function getUserData($field)
 {
+    // database connection parameters
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "flashfood";
 
     try {
+        // database connection
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        // statement to select the specified field
         $stmt = $conn->prepare("SELECT $field FROM user WHERE username = :username");
 
+        // bind the username parameter
         $stmt->bindParam(':username', $_SESSION['username']);
         $stmt->execute();
 
+        // execute the statement
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $conn = null;
 
+        // if a result is found, return the value of the specified field
         if ($result) {
             return $result[$field];
         } else {
+            // if is not found, return an empty string
             return "";
         }
     } catch (PDOException $e) {

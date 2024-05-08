@@ -333,44 +333,48 @@ form {
   width: calc(100% - 8rem);
 }
 
-#information #normal-button {
-  width: 50%;
+#information .normal-button {
+  width: 30%;
   cursor: pointer;
 }
 
-#information #red-button:hover {
+#information .red-button:hover {
   border: 1px solid #EB5D61;
   background: #c44549;
   font-weight: bold;
-  width: 48%;
+  width: 35%;
   cursor: pointer;
 }
 
-#information #red-button {
+#information .red-button {
   border: 1px solid #EB5D61;
   color: #000000;
   font-weight: bold;
   background: #EB5D61;
-  width: 48%;
+  width: 35%;
   cursor: pointer;
 }
 
-#information #red-button-border:hover {
+#information .red-button-border:hover {
   color: #000000;
   border: 1px solid #EB5D61;
   background: #c44549;
   font-weight: bold;
-  width: 48%;
+  width: 30%;
   cursor: pointer;
 }
 
-#information #red-button-border {
+#information .red-button-border {
   border: 1px solid #EB5D61;
   color: #c44549;
   font-weight: bold;
   background: #fff;
   width: 48%;
   cursor: pointer;
+}
+
+#change-password-button {
+  color: #000;
 }
 
 article {

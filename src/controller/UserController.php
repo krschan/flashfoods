@@ -15,13 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["delete_account"])) {
         $user->deleteAccount($_SESSION["username"]);
     } elseif (isset($_POST["update_account"])) {
-        $username = $_SESSION["username"];
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $nameSurname = $_POST['nameSurname'];
-        $birthDate = $_POST['birthDate'];
-        $phoneNumber = $_POST['phoneNumber'];
-
         $user->updateAccount($username, $email, $nameSurname, $birthDate, $phoneNumber);
+    } elseif (isset($_POST["change_password"])) {
+        $user->changePassword($_SESSION["username"], $oldPassword, $newPassword, $confirmNewPassword);
     }
 }
 
@@ -221,9 +217,11 @@ class UserController
     public function deleteAccount($username): void
     {
         try {
+            // delete in the database
             $stmt = $this->conn->prepare("DELETE FROM user WHERE username = :username");
             $stmt->bindParam(":username", $username);
 
+            // execute the statement
             if ($stmt->execute()) {
                 session_destroy();
                 header("Location: ../index.php");
@@ -243,17 +241,17 @@ class UserController
     // update user
     public function updateAccount($username, $email, $nameSurname, $birthDate, $phoneNumber): void
     {
+        $username = $_SESSION["username"];
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $nameSurname = $_POST['nameSurname'];
+        $birthDate = $_POST['birthDate'];
+        $phoneNumber = $_POST['phoneNumber'];
+
         $currentUsername = $_SESSION['username'];
         $currentEmail = $_SESSION['mail'];
 
-        // Verificar si se realizaron cambios
-        if ($username === $currentUsername && $email === $currentEmail) {
-            $_SESSION["error"] = "No changes were made.";
-            header("Location: ../index.php");
-            exit();
-        }
-
         try {
+            // update in the database
             $stmt = $this->conn->prepare("UPDATE user SET username = :username, mail = :email, name = :nameSurname, birth_date = :birthDate, phone_number = :phoneNumber WHERE username = :currentUsername");
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":email", $currentEmail);
@@ -262,6 +260,7 @@ class UserController
             $stmt->bindParam(":phoneNumber", $phoneNumber);
             $stmt->bindParam(":currentUsername", $currentUsername);
 
+            // execute the statement
             if ($stmt->execute()) {
                 header("Location: ../index.php");
                 exit();
@@ -277,5 +276,53 @@ class UserController
         }
     }
 
+    // update password
+    public function changePassword($username, $oldPassword, $newPassword, $confirmNewPassword): void
+    {
+        $oldPassword = $_POST['old-password'];
+        $newPassword = $_POST['new-password'];
+        $confirmNewPassword = $_POST['confirm-new-password'];
+
+        // compares if the password match
+        if ($newPassword !== $confirmNewPassword) {
+            $_SESSION["error"] = "New password and confirm password do not match.";
+            header("Location: ../auth/change-password.php");
+            exit();
+        }
+
+        // execute the statement
+        try {
+            $stmt = $this->conn->prepare("SELECT password FROM user WHERE username=:username AND password=:password");
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':password', $oldPassword);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $stmt = $this->conn->prepare("UPDATE user SET password = :newPassword WHERE username = :username");
+                $stmt->bindParam(":newPassword", $newPassword);
+                $stmt->bindParam(":username", $username);
+
+                // execute the statement
+                if ($stmt->execute()) {
+                    $_SESSION["success"] = "Password updated successfully.";
+                    header("Location: ../index.php");
+                    exit();
+                } else {
+                    $_SESSION["error"] = "Error updating password.";
+                    header("Location: ../auth/change-password.php");
+                    exit();
+                }
+            } else {
+                $_SESSION["error"] = "Invalid old password. Please try again.";
+                header("Location: ../auth/change-password.php");
+                exit();
+            }
+            // invalid old password
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error changing password: " . $e->getMessage();
+            header("Location: ../auth/change-password.php");
+            exit();
+        }
+    }
+
 }
-?>
