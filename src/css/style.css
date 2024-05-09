@@ -367,7 +367,6 @@ form {
   border: 1px solid #EB5D61;
   background: #c44549;
   font-weight: bold;
-  width: 30%;
   cursor: pointer;
 }
 
@@ -376,7 +375,7 @@ form {
   color: #c44549;
   font-weight: bold;
   background: #fff;
-  width: 48%;
+  width: 30%;
   cursor: pointer;
 }
 

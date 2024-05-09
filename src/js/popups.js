@@ -19,7 +19,7 @@ function openPopup(content) {
       popupUrl = "view/history-popup.php";
       break;
     case "planning-popup.php":
-      popupUrl = "view/planning-poSpup.php";
+      popupUrl = "view/planning-popup.php";
       break;
     case "cupons-popup.php":
       popupUrl = "view/cupons-popup.php";

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <body>
-    <div class="center">
+    <div class="info-box center">
         <div class="info-form aligned">
             <h2>Discount coupons</h2>
             <article>
