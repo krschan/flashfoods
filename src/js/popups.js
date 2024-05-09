@@ -27,6 +27,9 @@ function openPopup(content) {
     case "wishlist-popup.php":
       popupUrl = "view/wishlist-popup.php";
       break;
+    case "admin-popup.php":
+      popupUrl = "view/admin-popup.php";
+      break;
     default:
       popupUrl = "view/index.php";
   }

@@ -87,8 +87,17 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] == false){
     <li><a href="view/about-us.php">
     <i class="fas fa-circle-info"></i>
     <span class="nav-item">About us</span>
-    </a></li>
+    </a></li>';
+
+    if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true && $_SESSION["admin"] == true){
+      echo '
+      <li><a href="#" onclick="openPopup(\'admin-popup.php\')">
+      <i class="fas fa-user-tie"></i>
+      <span class="nav-item">Admin</span>
+      </a></li>';
+  }
   
+  echo '
   </ul>
   </nav>';
 }
