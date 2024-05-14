@@ -391,6 +391,26 @@ footer {
   vertical-align: bottom;
 }
 
+/* History */
+.history-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.date {
+  color: #888;
+}
+
+.opinion {
+  margin-top: 10px;
+  font-style: italic;
+}
+
 /* Location and Map */
 .map-marker {
   position: absolute;
@@ -528,6 +548,7 @@ footer {
   background-color: #deb00d;
   cursor: pointer;
 }
+
 
 /* Media Queries */
 @media only screen and (max-width: 768px) {
