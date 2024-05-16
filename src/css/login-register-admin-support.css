@@ -109,6 +109,7 @@ div>input {
   background-color: #ffc90e;
   color: white;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .main>div>a>button:hover {
@@ -153,6 +154,7 @@ button {
   border: solid 1px rgb(255, 201, 14);
   box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: white;
+  transition: background-color 0.3s;
 }
 
 button:hover {
@@ -182,6 +184,7 @@ button:hover {
   box-shadow: 0 0 0;
   font-weight: bolder;
   font-size: larger;
+  transition: background-color 0.3s;
 }
 
 #div-title #sign-button {
@@ -212,6 +215,7 @@ button:hover {
   background-color: #ffc90e;
   color: #000;
   font-size: bolder;
+  transition: background-color 0.3s;
 }
 
 .signin-input:hover {
