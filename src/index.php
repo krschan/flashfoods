@@ -40,7 +40,7 @@
     <?php
     if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
       echo
-      '<div class="login-button">  
+        '<div class="login-button">  
           <a href="../src/controller/UserController.php" onclick="event.preventDefault(); document.getElementById(\'logout-form\').submit();">
             <span>Log out</span>
           </a>

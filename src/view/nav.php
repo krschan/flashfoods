@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['logged']) || $_SESSION['logged'] == false){
+if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
   echo '<nav>
   <ul>
     <li>
@@ -89,14 +89,14 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] == false){
     <span class="nav-item">About us</span>
     </a></li>';
 
-    if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true && $_SESSION["admin"] == true){
-      echo '
+  if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true && $_SESSION["admin"] == true) {
+    echo '
       <li><a href="#" onclick="openPopup(\'admin-popup.php\')">
       <i class="fas fa-user-tie"></i>
       <span class="nav-item">Admin</span>
       </a></li>';
   }
-  
+
   echo '
   </ul>
   </nav>';

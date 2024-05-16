@@ -40,14 +40,16 @@
                 }
 
                 ?>
-                <button type=submit name="update_account" class="normal-button" >Save changes</button>
-                <button type=button name="change_password" class="normal-button"><a id="change-password-button" href="/src/auth/change-password.php">Change password</a></button> 
+                <button type=submit name="update_account" class="normal-button">Save changes</button>
+                <button type=button name="change_password" class="normal-button"><a id="change-password-button"
+                        href="/src/auth/change-password.php">Change password</a></button>
                 <button type=submit name="delete_account" class="red-button">DELETE ACCOUNT</button>
             </form>
 
         </article>
     </div>
 </div>
+
 <?php
 function getUserData($field)
 {
@@ -85,3 +87,5 @@ function getUserData($field)
         echo "Error: " . $e->getMessage();
     }
 }
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

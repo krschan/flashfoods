@@ -315,24 +315,27 @@ button .fa-solid {
   height: auto;
 }
 
-article#user-information, article#affiliation-information {
+article#user-information,
+article#affiliation-information {
   padding: 2rem 1rem 2rem 3rem;
   text-align: start;
   position: relative;
 }
 
-article#user-information img.user-img, article#affiliation-information img.user-img  {
+article#user-information img.user-img,
+article#affiliation-information img.user-img {
   vertical-align: middle;
   border: 1px solid black;
   float: left;
   margin-right: 20px;
 }
 
-article#user-information img.user-img:hover, article#affiliation-information img.user-img:hover {
+article#user-information img.user-img:hover,
+article#affiliation-information img.user-img:hover {
   background-color: #000;
   opacity: 50%;
   cursor: pointer;
-} 
+}
 
 form {
   display: inline-block;
@@ -557,7 +560,7 @@ footer {
     margin: 19px auto;
   }
 
-  .login-button a{
+  .login-button a {
     width: 100px;
   }
 }

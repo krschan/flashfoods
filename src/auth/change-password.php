@@ -25,7 +25,7 @@ session_start();
 <body id="grey-background" class="center">
     <div class="return">
         <a href="../index.php">
-            <button>Return</button> 
+            <button>Return</button>
         </a>
     </div>
 
