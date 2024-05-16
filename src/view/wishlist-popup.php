@@ -5,7 +5,7 @@
         <div class="info-form aligned">
             <h2>Wishlist</h2>
             <article>
-                <div class="plan">
+                <div class="div-popup">
                     <p>
                         1. McDonald's: Big Mac Combo for €4.50<br>
                         2. Burger King: 2 Whoppers for €8.50<br>

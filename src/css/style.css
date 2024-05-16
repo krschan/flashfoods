@@ -402,7 +402,6 @@ footer {
 /* History */
 .history-item {
   margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
 }
 
@@ -420,18 +419,24 @@ footer {
 }
 
 /* Plan */
-.plan {
-  background-color: #f0f0f0;
+.div-popup {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
+  background: #f0f0f0;
+}
+.plan {
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: linear-gradient(to left, #f0f0f0 45%, #ffc90e);
 }
 .plan h3 {
   color: #555;
   margin-bottom: 10px;
 }
 .plan a button {
-  background-color: #007BFF;
+  background-color: #ffc90e;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -441,11 +446,34 @@ footer {
   transition: background-color 0.3s;
 }
 .plan a button:hover {
-  background-color: #0056b3;
+  background-color: #deb00d;
 }
-.premium-highlight {
-  background-color: #ffd700;
-  border: 2px solid #ffcc00;
+.div-plan {
+  text-align: left;
+  display: inline-block;
+  width: 50%;
+  height: 10rem;
+  border-radius: 0.5rem;
+}
+
+.text-plan {
+  padding: 0.2rem 1rem;
+  vertical-align: top;
+  text-align: left;
+  display: inline-block;
+  width: 47%;
+}
+.div-plan h3 {
+  padding: 5px;
+  color: #000;
+  font-size: 40px;
+  width: 15%;
+}
+#upgrade-button {
+background-color: #deb00d;
+}
+#upgrade-button:hover {
+background-color: #b28e0c;
 }
 
 /* Location and Map */

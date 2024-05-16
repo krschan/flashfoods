@@ -5,11 +5,11 @@
         <div class="info-form aligned">
             <h2>Discount coupons</h2>
             <article>
-                <div class="plan">
+                <div class="div-popup">
                     <h3>McDonald's coupon</h3>
                     <a href="#"><button>Show code</button></a>
                 </div>
-                <div class="plan">
+                <div class="div-popup">
                     <h3>KFC's coupon</h3>
                     <a href="#"><button>Show code</button></a>
                 </div>

@@ -3,16 +3,34 @@
 <body>
     <div class="info-box center">
         <div class="info-form aligned">
-            <h2>Planning</h2>
+            <h2>Plans</h2>
             <article>
                 <div class="plan">
-                    <h3>Free Plan (Current)</h3>
-                    <a href="/src/pages/aside/planning1.html"><button>Information</button></a>
-                    <a href="/src/pages/aside/planning2.html"><button>Change plan</button></a>
+                    <div class="div-plan">
+                        <h3>Free Plan (current)</h3>
+                    </div>
+                    <ul class="text-plan">
+                        <h4>Features</h4>
+                        <li>· Interactive map and nearby deals.</li>
+                        <li>· Real-time deal notifications.</li>
+                        <li>· Personalized wishlist.</li>
+                        <li>· Access to limited-time offers.</li>
+                        <li>· Basic customer support.</li>
+                    </ul>
                 </div>
                 <div class="plan">
-                    <h3>Premium Plan</h3>
-                    <a href="/src/pages/aside/planning2.html"><button>Upgrade subscription</button></a>
+                    <div class="div-plan">
+                        <h3>Premium Plan</h3>
+                        <a href="#"><button id="upgrade-button">Upgrade plan</button></a>
+                    </div>
+                    <ul class="text-plan">
+                        <h4>Features</h4>
+                        <li>· Priority access to best deals.</li>
+                        <li>· Exclusive additional discounts.</li>
+                        <li>· Priority and personalized support.</li>
+                        <li>· Advanced customization.</li>
+                        <li>· Enhanced interactive map.</li>
+                    </ul>
                 </div>
             </article>
         </div>

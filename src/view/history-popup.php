@@ -5,7 +5,7 @@
         <div class="info-form aligned">
             <h2>History</h2>
             <article>
-                <div class="history-item">
+                <div class="history-item div-popup">
                     <p>
                         <span class="bold">Hamburgers Express</span> <br>
                         <span class="date">Date: 2024-05-12 | Time: 13:30 hrs</span> <br>
@@ -14,7 +14,7 @@
                     </p>
                     <p class="opinion">Rating: 9/10 - Delicious! The best burger I've had in a long time.</p>
                 </div>
-                <div class="history-item">
+                <div class="history-item div-popup">
                     <p>
                         <span class="bold">Quick Pizza</span> <br>
                         <span class="date">Date: 2024-05-11 | Time: 19:00 hrs</span> <br>
@@ -23,7 +23,7 @@
                     <p class="opinion">Comment: Good ambiance and service. The pepperoni pizza is highly recommended.
                     </p>
                 </div>
-                <div class="history-item">
+                <div class="history-item div-popup">
                     <p>
                         <span class="bold">Spicy Tacos</span> <br>
                         <span class="date">Date: 2024-05-10 | Time: 14:45 hrs</span> <br>
