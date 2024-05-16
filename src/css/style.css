@@ -326,7 +326,7 @@ article#affiliation-information {
 
 article#user-information img.user-img,
 article#affiliation-information img.user-img {
-  vertical-align: middle;
+  vertical-align: top;
   border: 1px solid black;
   float: left;
   margin-right: 20px;
@@ -341,7 +341,7 @@ article#affiliation-information img.user-img:hover {
 
 form {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: calc(100% - 8rem);
 }
 
