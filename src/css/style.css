@@ -365,23 +365,6 @@ form {
   cursor: pointer;
 }
 
-#information .red-button-border:hover {
-  color: #000000;
-  border: 1px solid #EB5D61;
-  background: #c44549;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#information .red-button-border {
-  border: 1px solid #EB5D61;
-  color: #c44549;
-  font-weight: bold;
-  background: #fff;
-  width: 30%;
-  cursor: pointer;
-}
-
 #change-password-button {
   color: #000;
 }
@@ -552,6 +535,59 @@ footer {
   cursor: pointer;
 }
 
+/* Admin Pop up */
+/* .image-upload > input {
+  display: none;
+} */
+
+.image-upload label {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.img.image-upload  {
+  display: inline-block;
+}
+
+.img {
+  display: inline-block;
+}
+
+.hover-box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.hover-content {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.hover-content span {
+  padding-top: 40px;
+  display: inline-block;
+}
+
+.hover-box:hover .hover-content {
+  opacity: 1;
+  cursor: pointer;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 768px) {

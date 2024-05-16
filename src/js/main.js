@@ -189,7 +189,7 @@ $(document).ready(function () {
         required: true,
         email: true,
       },
-      Description: {
+      description: {
         required: true,
         minlength: 5,
         maxlength: 12,
@@ -209,7 +209,7 @@ $(document).ready(function () {
         required: "The email is required",
         email: "Enter a valid email address",
       },
-      Description: {
+      description: {
         required: "The name and your first surname are required",
         maxlength: "It must be at most 25 characters long",
         minlength: "It must be at least 3 characters long",
@@ -268,6 +268,39 @@ $("#information").validate({
   },
 });
 
+$(document).ready(function(){
+    // SLICK CAROUSEL
+    $(".slick-carousel").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        prevArrow: "<button class='slick-prev'><</button>",
+        nextArrow: "<button class='slick-next'>></button>",
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: true,
+                    dots: false
+                }
+            }
+        ]
+    });
+    
 $(document).ready(function () {
   // SLICK CAROUSEL
   $(".slick-carousel").slick({
@@ -301,3 +334,4 @@ $(document).ready(function () {
     ],
   });
 });
+
