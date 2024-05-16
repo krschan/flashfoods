@@ -41,6 +41,7 @@ nav a {
   color: rgb(85, 83, 83);
   font-size: 14px;
   display: table;
+  transition: background-color 0.2s;
 }
 
 nav a:hover {
@@ -219,6 +220,7 @@ button .fa-solid {
   text-decoration: none;
   font-weight: bold;
   width: 170px;
+  transition: background-color 0.3s;
 }
 
 .login-button a:hover {
@@ -346,6 +348,7 @@ form {
 #information .normal-button {
   width: 30%;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #information .red-button:hover {
@@ -363,6 +366,7 @@ form {
   background: #EB5D61;
   width: 35%;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #information .red-button-border:hover {
@@ -384,6 +388,7 @@ form {
 
 #change-password-button {
   color: #000;
+  transition: background-color 0.3s;
 }
 
 article {
@@ -412,6 +417,35 @@ footer {
 .opinion {
   margin-top: 10px;
   font-style: italic;
+}
+
+/* Plan */
+.plan {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.plan h3 {
+  color: #555;
+  margin-bottom: 10px;
+}
+.plan a button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.plan a button:hover {
+  background-color: #0056b3;
+}
+.premium-highlight {
+  background-color: #ffd700;
+  border: 2px solid #ffcc00;
 }
 
 /* Location and Map */
@@ -481,6 +515,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: background-color 0.3s;
 }
 
 .check {
@@ -496,6 +531,7 @@ footer {
   color: black;
   background: #ffc90e;
   padding: 0.5rem;
+  transition: background-color 0.3s;
 }
 
 .cookies-accept:hover {
@@ -505,6 +541,7 @@ footer {
 
 .cookies-readmore {
   padding: 0.5rem;
+  transition: background-color 0.3s;
 }
 
 .cookies-readmore:hover {
@@ -545,6 +582,7 @@ footer {
   text-decoration: none;
   font-weight: bold;
   width: 300px;
+  transition: background-color 0.3s;
 }
 
 .cookies-restart button:hover {
