@@ -27,7 +27,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
     </a></li>
     <li class="content-locked"><a href="#">
       <i class="fas fa-ticket"></i>
-      <span class="nav-item">Cupons</span>
+      <span class="nav-item">Coupons</span>
     </a></li>
     <li class="content-locked"><a href="#">
       <i class="fas fa-heart"></i>
@@ -71,9 +71,9 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
       <i class="fas fa-file"></i>
       <span class="nav-item">Planning</span>
     </a></li>
-    <li><a href="#" onclick="openPopup(\'cupons-popup.php\')">
+    <li><a href="#" onclick="openPopup(\'coupons-popup.php\')">
       <i class="fas fa-ticket"></i>
-      <span class="nav-item">Cupons</span>
+      <span class="nav-item">Coupons</span>
     </a></li>
     <li><a href="#" onclick="openPopup(\'wishlist-popup.php\')">
       <i class="fas fa-heart"></i>

@@ -21,8 +21,8 @@ function openPopup(content) {
     case "planning-popup.php":
       popupUrl = "view/planning-popup.php";
       break;
-    case "cupons-popup.php":
-      popupUrl = "view/cupons-popup.php";
+    case "coupons-popup.php":
+      popupUrl = "view/coupons-popup.php";
       break;
     case "wishlist-popup.php":
       popupUrl = "view/wishlist-popup.php";

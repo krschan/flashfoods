@@ -476,6 +476,48 @@ background-color: #deb00d;
 background-color: #b28e0c;
 }
 
+/* Coupon */
+.coupon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.coupon-details {
+  width: 60%;
+}
+
+.coupon-action {
+  width: 30%; 
+}
+
+.coupon h3 {
+  margin-top: 0;
+}
+
+.coupon p {
+  margin-bottom: 5px;
+}
+
+.coupon button {
+  width: 100%;
+  background-color: #ffc90e;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.coupon button:hover {
+  background-color: #deb00d;
+}
+
 /* Location and Map */
 .map-marker {
   position: absolute;
