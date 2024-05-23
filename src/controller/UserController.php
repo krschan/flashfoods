@@ -61,26 +61,34 @@ class UserController
             exit();
         }
         */
+
         // check in the database
-        $stmt = $this->conn->prepare("SELECT admin, image, mail FROM user WHERE username=:username AND password=:password");
+        $stmt = $this->conn->prepare("SELECT admin, image, mail, password FROM user WHERE username=:username");
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $hashedPassword = $result['password'];
 
-            // authentication successful
-            $_SESSION["logged"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["admin"] = ($result['admin'] == 1);
-            $_SESSION["image"] = $result['image'];
+            if (password_verify($password, $hashedPassword)) {
+                // authentication successful
+                $_SESSION["logged"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["admin"] = ($result['admin'] == 1);
+                $_SESSION["image"] = $result['image'];
 
-            // Set the email in session
-            $_SESSION["mail"] = $result['mail'];
+                // Set the email in session
+                $_SESSION["mail"] = $result['mail'];
 
-            header("Location: ../index.php");
-            exit();
+                header("Location: ../index.php");
+                exit();
+            } else {
+                // authentication failed, display an error message 
+                $_SESSION["error"] = "Invalid username or password. Please try again.";
+                header("Location: ../auth/login.php");
+                exit();
+            }
         } else {
             // authentication failed, display an error message 
             $_SESSION["error"] = "Invalid username or password. Please try again.";
@@ -88,6 +96,7 @@ class UserController
             exit();
         }
     }
+
 
     // register user
     public function register(): void
@@ -114,9 +123,17 @@ class UserController
         try {
             // insert in the database
             $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (:mail, :username, :password, :admin)");
+
+            // hash password
+            $options = [
+                'cost' => 12
+            ];
+
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
+
             $stmt->bindParam(":mail", $mail);
             $stmt->bindParam(":username", $username);
-            $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":password", $hashedPassword);
             $stmt->bindParam(":admin", $admin);
 
             // execute the statement
@@ -124,6 +141,7 @@ class UserController
                 $_SESSION["logged"] = true;
                 $_SESSION["username"] = $username;
                 $_SESSION["admin"] = false;
+                $_SESSION["mail"] = $mail;
                 header("Location: ../index.php");
                 exit();
             } else {
@@ -168,37 +186,45 @@ class UserController
         $filename = basename($_FILES["fileUpload"]["name"]);
 
         if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $location . $filename)) {
-            $_SESSION["done"] = "The file was sent to another folder.";
-        } else {
-            $_SESSION["error"] = "The file you have entered had some errors. Try again.";
-        }
+            // hash password
+            $options = [
+                'cost' => 12
+            ];
 
-        try {
-            // insert in the database
-            $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, image, admin) VALUES (:mail, :username, :password, :image, :admin)");
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
 
-            $stmt->bindParam(":mail", $mail);
-            $stmt->bindParam(":username", $username);
-            $stmt->bindParam(":password", $password);
-            $stmt->bindParam(":image", $filename);
-            $stmt->bindParam(":admin", $admin);
+            try {
+                // insert in the database
+                $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, image, admin) VALUES (:mail, :username, :password, :image, :admin)");
 
-            // execute the statement
-            if ($stmt->execute()) {
-                $_SESSION["mail"] = $mail;
-                $_SESSION["logged"] = true;
-                $_SESSION["username"] = $username;
-                $_SESSION["admin"] = true;
-                $_SESSION["image"] = $filename;
-                header("Location: ../index.php");
-                exit();
-            } else {
-                echo "Error registering the user.";
+                $stmt->bindParam(":mail", $mail);
+                $stmt->bindParam(":username", $username);
+                $stmt->bindParam(":password", $hashedPassword);
+                $stmt->bindParam(":image", $filename);
+                $stmt->bindParam(":admin", $admin);
+
+                // execute the statement
+                if ($stmt->execute()) {
+                    $_SESSION["mail"] = $mail;
+                    $_SESSION["logged"] = true;
+                    $_SESSION["username"] = $username;
+                    $_SESSION["admin"] = true;
+                    $_SESSION["image"] = $filename;
+                    header("Location: ../index.php");
+                    exit();
+                } else {
+                    echo "Error registering the user.";
+                }
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
             }
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+        } else {
+            $_SESSION["error"] = "Please insert a profile picture.";
+            header("Location: ../auth/register-admin.php");
+            exit();
         }
     }
+
 
 
     public function logout(): void
