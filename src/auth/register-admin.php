@@ -56,6 +56,7 @@ session_start();
           <input type="email" name="mail">
         </div>
       </div>
+      <div id="validation-message" style="display : none"></div>
 
       <div>
         <label for="username">Username</label>
@@ -80,9 +81,12 @@ session_start();
       </div>
 
       <input type="submit" name="register-admin" value="Create Account" class="signin-input">
+      <div id="request-validation"></div>
+
     </div>
   </form>
   <script src="../js/main.js" defer></script>
+  <script src="../js/email-validator.js" defer></script>
 </body>
 
 </html>

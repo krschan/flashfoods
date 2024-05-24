@@ -61,8 +61,8 @@ $("#login").validate({
 $("#register").validate({
   rules: {
     mail: {
-      required: true,
-      email: true,
+      // required: true,
+      // email: true,
     },
     username: {
       required: true,
@@ -76,8 +76,8 @@ $("#register").validate({
   },
   messages: {
     mail: {
-      required: "The email is required",
-      email: "Enter a valid email address",
+      // required: "The email is required",
+      // email: "Enter a valid email address",
     },
     username: {
       required: "The username is required",
@@ -94,8 +94,8 @@ $("#register").validate({
 $("#register-admin").validate({
   rules: {
     mail: {
-      required: true,
-      email: true,
+      // required: true,
+      // email: true,
     },
     username: {
       required: true,
@@ -109,8 +109,8 @@ $("#register-admin").validate({
   },
   messages: {
     mail: {
-      required: "The email is required",
-      email: "Enter a valid email address",
+      // required: "The email is required",
+      // email: "Enter a valid email address",
     },
     username: {
       required: "The username is required",
@@ -268,37 +268,36 @@ $("#information").validate({
   },
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   // SLICK CAROUSEL
   $(".slick-carousel").slick({
-      dots: false,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: true,
-      prevArrow: "<button class='slick-prev'><</button>",
-      nextArrow: "<button class='slick-next'>></button>",
-      responsive: [
-          {
-              breakpoint: 1200,
-              settings: {
-                  slidesToShow: 2,
-                  arrows: true,
-                  dots: false
-              }
-          },
-          {
-              breakpoint: 992,
-              settings: {
-                  slidesToShow: 1,
-                  arrows: true,
-                  dots: false
-              }
-          }
-      ]
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: "<button class='slick-prev'><</button>",
+    nextArrow: "<button class='slick-next'>></button>",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          arrows: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          arrows: true,
+          dots: false,
+        },
+      },
+    ],
   });
 });
-
