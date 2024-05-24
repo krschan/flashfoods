@@ -688,9 +688,9 @@ footer {
 }
 
 /* Admin Pop up */
-/* .image-upload > input {
+.image-upload > input {
   display: none;
-} */
+}
 
 .image-upload label {
   display: inline-block;

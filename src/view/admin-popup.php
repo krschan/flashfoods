@@ -43,7 +43,7 @@
           <textarea id="description" name="description"></textarea> <br>
 
           <button type="submit" name="create_affiliation" class="normal-button">Create affiliation</button>
-          <button type="submit" name="delete_affiliation" class="normal-button">Delete affiliation</button>
+          <a href="view/list-affiliations.php"><button type="submit" name="show_affiliations" class="normal-button">Show affiliations</button></a>
         </form>
       </article>
     </div>
