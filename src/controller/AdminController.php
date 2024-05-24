@@ -9,6 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     //     $admin->updateAffiliation();
     } elseif (isset($_POST["change_password"])) {
         $admin->deleteAffiliation($_SESSION["username"], $oldPassword, $newPassword, $confirmNewPassword);
+    } elseif (isset($_POST["show_affiliations"])) {
+        $admin->showAffiliation();
     }
 }
 
@@ -25,7 +27,7 @@ class AdminController
         $username = "root";
         $password = "";
         $flashfood = "flashfood";
-
+    
         // create connection
         try {
             $this->conn = new PDO("mysql:host=$servername;dbname=$flashfood", $username, $password);
@@ -33,7 +35,17 @@ class AdminController
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
-        
+    }
+
+    public function showAffiliation(): void {
+        header("Location: ../view/list-affiliations.php");
+        exit();
+    }
+
+    public function getAffiliations(): PDOStatement
+    {
+        $sql = "SELECT * FROM affiliation";
+        return $this->conn->query($sql);
     }
 
     // create account
@@ -149,9 +161,9 @@ class AdminController
     public function deleteAffiliation($admin): void  {
         try {
             // delete in the database
-            $stmt = $this->conn->prepare("DELETE FROM admin WHERE name = :name OR phoneNumber = ,:phoneNumber OR email = :email OR description = :description");
-            $stmt->bindParam(":name", $admin);
-            $stmt->bindParam(":phoneNumber",$phoneNumber);
+            $stmt = $this->conn->prepare("DELETE FROM admin WHERE name = :admin OR phone_number = :admin OR email = :admin OR description = :admin");
+            $stmt->bindParam(":admin", $admin);
+            $stmt->bindParam(":phone_number",$phoneNumber);
             $stmt->bindParam(":email",$email);
             $stmt->bindParam(":description",$description);
     
@@ -171,5 +183,40 @@ class AdminController
             exit();
         }
     }
-}
+       // update user
+    public function updateAffiliation($admin, $email, $phoneNumber, $description): void{
+        $currentAdmin = $_SESSION['name'];
+        $currentEmail = $_SESSION['mail'];
+    
+        try {
+              // update in the database
+            $stmt = $this->conn->prepare("UPDATE admin set name = :name, email = :email, description = :description, phone_number = :phone_number WHERE name = :currentAdmin");
+            $stmt->bindParam(":name", $admin);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":currentEmail",$currentEmail);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":phone_number", $phoneNumber);
+            $stmt->bindParam(":currentAdmin", $currentAdmin);
+
+            // execute the statement
+            if ($stmt->execute()) {
+                header("Location: ../index.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error updating admin information.";
+                header("Location: ../index.php");
+                exit();
+            }
+
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error updating admin information" .$e->getMessage();
+            header("Location: ../index.php");
+            exit();
+        }
+
+
+        }
+    
+    }
+    
 ?>
