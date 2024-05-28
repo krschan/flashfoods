@@ -100,7 +100,7 @@ session_start();
     </div>
   </form>
   <script src="../js/main.js" defer></script>
-  <script src="../js/email-validator.js" defer></script>
+  <script src="../js/ajax-email-validator.js" defer></script>
 </body>
 
 </html>

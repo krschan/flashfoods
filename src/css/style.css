@@ -350,7 +350,7 @@ form {
 }
 
 #information .normal-button {
-  width: 30%;
+  width: 49%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -359,7 +359,6 @@ form {
   border: 1px solid #EB5D61;
   background: #c44549;
   font-weight: bold;
-  width: 35%;
   cursor: pointer;
 }
 
@@ -368,7 +367,7 @@ form {
   color: #000000;
   font-weight: bold;
   background: #EB5D61;
-  width: 35%;
+  width: 49%;
   cursor: pointer;
   transition: background-color 0.3s;
 }

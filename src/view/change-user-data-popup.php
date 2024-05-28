@@ -23,7 +23,7 @@
                 <input type="hidden" name="current_username" value="<?php echo getUserData('username'); ?>">
                 <input type="hidden" name="current_email" value="<?php echo getUserData('mail'); ?>">
 
-                <label for="name-surname">Name and Surname</label>
+                <label for="name-surname">Name</label>
                 <input type="text" id="nameSurname" name="nameSurname" value="<?php echo getUserData('name'); ?>" />
 
                 <label for="birth-date">Birth Date</label>
@@ -38,9 +38,10 @@
                     echo "<p style='color: red;'>" . $_SESSION['error'] . "</p>";
                     unset($_SESSION['error']);
                 }
-
                 ?>
-                <button type=submit name="update_account" class="normal-button">Save changes</button>
+                <div id="validation-message"></div>
+                <button type=submit name="update_account" class="normal-button">Save changes (PHP)</button>
+                <button type=submit name="update_account" class="normal-button" id="update-ajax-button">Save changes (AJAX)</button>
                 <button type=button name="change_password" class="normal-button"><a id="change-password-button"
                         href="/src/auth/change-password.php">Change password</a></button>
                 <button type=submit name="delete_account" class="red-button">DELETE ACCOUNT</button>

@@ -5,7 +5,7 @@ $(document).ready(function () {
     let mail = $(this).val();
 
     $.ajax({
-      url: "../controller/EmailValidator.php",
+      url: "../controller/AjaxEmailValidator.php",
       type: "POST",
       dataType: "json",
       data: { mail: mail },
