@@ -123,19 +123,14 @@ class UserController
         try {
             // insert in the database
             $stmt = $this->conn->prepare("INSERT INTO user (mail, username, password, admin) VALUES (:mail, :username, :password, :admin)");
-
+    
             // hash password
-            $options = [
-                'cost' => 12
-            ];
-
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
-
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT); 
             $stmt->bindParam(":mail", $mail);
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":password", $hashedPassword);
             $stmt->bindParam(":admin", $admin);
-
+    
             // execute the statement
             if ($stmt->execute()) {
                 $_SESSION["logged"] = true;
@@ -149,7 +144,7 @@ class UserController
             }
         } catch (PDOException $e) {
             // authentication failed, display an error message
-            $_SESSION["error"] = "Invalid username or password. Please try again.";
+            $_SESSION["error"] = "Error registering the user: " . $e->getMessage();
             header("Location: ../auth/register.php");
             exit();
         }
@@ -186,12 +181,9 @@ class UserController
         $filename = basename($_FILES["fileUpload"]["name"]);
 
         if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $location . $filename)) {
+            
             // hash password
-            $options = [
-                'cost' => 12
-            ];
-
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             try {
                 // insert in the database
