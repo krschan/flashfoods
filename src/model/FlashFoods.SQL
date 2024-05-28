@@ -14,7 +14,7 @@ CREATE TABLE user (
     name VARCHAR(50) NOT NULL,
     surname VARCHAR(50) NOT NULL,
     username VARCHAR(50) UNIQUE,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     mail VARCHAR(100),
     birth_date DATE,
     phone_number VARCHAR(15),

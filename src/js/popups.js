@@ -31,6 +31,7 @@ function openPopup(content) {
       popupUrl = "view/admin-popup.php";
       break;
     case "change-affiliation-popup.php":
+      popupUrl = "change-affiliation-popup.php";
       break;
     default:
       popupUrl = "view/index.php";

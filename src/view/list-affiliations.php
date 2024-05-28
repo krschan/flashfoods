@@ -23,7 +23,7 @@
 
         $admin = new AdminController();
         $result = $admin->getAffiliations();
-
+        
         if ($result->rowCount() > 0) {
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
@@ -33,11 +33,11 @@
                 echo "<td class='text-col'>" . $row["mail"] . "</td>";
                 echo "<td class='text-col'>" . $row["description"] . "</td>";
                 echo "<td class='button-col'>";
-                echo "<button type=submit name='update_affiliation' class='btn'>Actualizar</button>";
+                echo "<button type='submit' name='edit_affiliation' class='btn' onclick='openPopup(\"change-affiliation-popup.php\", \"" . $row["id_affiliation"] . "\", \"" . $row["name"] . "\", \"" . $row["phone_number"] . "\", \"" . $row["mail"] . "\", \"" . $row["description"] . "\", \"" . $row["image"] . "\")'>Actualizar</button>";
                 echo "<button class='btn'>Eliminar</button>";
                 echo "</td>";
                 echo "</tr>";
-            }
+            }                               
         } else {
             echo "<tr><td colspan='6'>No hay datos disponibles</td></tr>";
         }
@@ -53,6 +53,6 @@
     </main>
 
     <!-- js -->
-    <script src="js/popups.js"></script>
+    <script src="../js/popups.js"></script>
 </body>
 </html>
