@@ -14,7 +14,7 @@
         } elseif (isset($_POST["update_affiliation"])) {
             $admin->updateAffiliation($name, $phoneNumber, $mail, $description);
         } elseif (isset($_POST["edit_affiliation"])) {
-            $admin->editAffiliation($name, $phoneNumber, $mail, $description);
+            $admin->editAffiliation($id_affiliation);
         }
     }
 
@@ -191,28 +191,22 @@
         }
 
         // edit affiliation
-        public function editAffiliation(): void
+        public function editAffiliation($id_affiliation): void
         {
-            $currentAffiliation = "McDonalds";
-
             //Seleccionar en la base de datos
-            $stmt = $this->conn->prepare("SELECT name, phone_number, mail, description, image FROM affiliation WHERE name = :currentAffiliation");
-            $stmt->bindParam(":currentAffiliation", $currentAffiliation);
+            $stmt = $this->conn->prepare("SELECT name, phone_number, mail, description, image FROM affiliation WHERE id_affiliation = :id_affiliation");
+            $stmt->bindParam(":id_affiliation", $id_affiliation);
             $stmt->execute();
 
-            if ($stmt->execute()) {
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
+            if ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $_SESSION["nameAffiliation"] = $result["name"];
-                $_SESSION["phoneAffiliation"] = $result["phoneNumber"];
+                $_SESSION["phoneAffiliation"] = $result["phone_number"];
                 $_SESSION["mailAffiliation"] = $result["mail"];
                 $_SESSION["descriptionAffiliation"] = $result["description"];
-                exit();
+                $_SESSION["imageAffiliation"] = $result["image"];
             } else {
-                // authentication failed, display an error message 
-                $_SESSION["error"] = "Invalid username or password. Please try again.";
-                header("Location: ../auth/login.php");
-                exit();
+                // Si no se encuentra la afiliación, establecer un mensaje de error
+                $_SESSION["error"] = "No se encontró la afiliación.";
             }
         }
     }

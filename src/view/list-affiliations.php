@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla con Imágenes y Botones</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <table>
@@ -33,7 +34,8 @@
                 echo "<td class='text-col'>" . $row["mail"] . "</td>";
                 echo "<td class='text-col'>" . $row["description"] . "</td>";
                 echo "<td class='button-col'>";
-                echo "<button type='submit' name='edit_affiliation' class='btn' onclick='openPopup(\"change-affiliation-popup.php\", \"" . $row["id_affiliation"] . "\", \"" . $row["name"] . "\", \"" . $row["phone_number"] . "\", \"" . $row["mail"] . "\", \"" . $row["description"] . "\", \"" . $row["image"] . "\")'>Actualizar</button>";
+                echo "<button type='submit' name='edit_affiliation' class='btn' onclick='openPopup(\"change-affiliation-popup.php\", \"" . $row["id_affiliation"] . "\")'>Actualizar</button>";
+
                 echo "<button class='btn'>Eliminar</button>";
                 echo "</td>";
                 echo "</tr>";
