@@ -2,20 +2,21 @@
 session_start();
 
 $admin = new AdminController();
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["create_affiliation"])) {
         $admin->createAffiliation();
-    // } elseif (isset($_POST["update_account"])) {
-    //     $admin->updateAffiliation();
+        // } elseif (isset($_POST["update_account"])) {
+        //     $admin->updateAffiliation();
     } elseif (isset($_POST["change_password"])) {
         $admin->deleteAffiliation($_SESSION["username"], $oldPassword, $newPassword, $confirmNewPassword);
     } elseif (isset($_POST["show_affiliations"])) {
         $admin->showAffiliation();
+    } elseif (isset($_POST["update_affiliation"])) {
+        $admin->updateAffiliation($name, $phoneNumber, $mail, $description);
     }
 }
 
-
-class AdminController 
+class AdminController
 {
 
     private $conn;
@@ -27,7 +28,7 @@ class AdminController
         $username = "root";
         $password = "";
         $flashfood = "flashfood";
-    
+
         // create connection
         try {
             $this->conn = new PDO("mysql:host=$servername;dbname=$flashfood", $username, $password);
@@ -37,7 +38,8 @@ class AdminController
         }
     }
 
-    public function showAffiliation(): void {
+    public function showAffiliation(): void
+    {
         header("Location: ../view/list-affiliations.php");
         exit();
     }
@@ -117,56 +119,19 @@ class AdminController
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-
     }
 
-    // update account
-    // public function updateAffiliation($username, $email, $nameSurname, $birthDate, $phoneNumber): void
-    // {
-    //     $username = $_SESSION["username"];
-    //     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    //     $phoneNumber = $_POST['phoneNumber'];
-
-    //     $currentUsername = $_SESSION['username'];
-    //     $currentEmail = $_SESSION['mail'];
-
-    //     try {
-    //         // update in the database
-    //         $stmt = $this->conn->prepare("UPDATE user SET username = :username, mail = :email, phone_number = :phoneNumber WHERE username = :currentUsername");
-    //         $stmt->bindParam(":username", $username);
-    //         $stmt->bindParam(":email", $currentEmail);
-    //         $stmt->bindParam(":nameSurname", $nameSurname);
-    //         $stmt->bindParam(":birthDate", $birthDate);
-    //         $stmt->bindParam(":phoneNumber", $phoneNumber);
-    //         $stmt->bindParam(":currentUsername", $currentUsername);
-
-    //         // execute the statement
-    //         if ($stmt->execute()) {
-    //             header("Location: ../index.php");
-    //             exit();
-    //         } else {
-    //             $_SESSION["error"] = "Error updating user information.";
-    //             header("Location: ../index.php");
-    //             exit();
-    //         }
-    //     } catch (PDOException $e) {
-    //         $_SESSION["error"] = "Error updating user information: " . $e->getMessage();
-    //         header("Location: ../index.php");
-    //         exit();
-    //     }
-    // }
-
-    // delete admin
-
-    public function deleteAffiliation($admin): void  {
+    // delete affiliation
+    public function deleteAffiliation($admin): void
+    {
         try {
             // delete in the database
             $stmt = $this->conn->prepare("DELETE FROM admin WHERE name = :admin OR phone_number = :admin OR email = :admin OR description = :admin");
             $stmt->bindParam(":admin", $admin);
-            $stmt->bindParam(":phone_number",$phoneNumber);
-            $stmt->bindParam(":email",$email);
-            $stmt->bindParam(":description",$description);
-    
+            $stmt->bindParam(":phone_number", $phoneNumber);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":description", $description);
+
             // execute the statement
             if ($stmt->execute()) {
                 session_destroy();
@@ -183,40 +148,36 @@ class AdminController
             exit();
         }
     }
-       // update user
-    public function updateAffiliation($admin, $email, $phoneNumber, $description): void{
+
+    // update affiliation
+    public function updateAffiliation($name, $phoneNumber, $mail, $description): void
+    {
         $currentAdmin = $_SESSION['name'];
         $currentEmail = $_SESSION['mail'];
-    
+
         try {
-              // update in the database
-            $stmt = $this->conn->prepare("UPDATE admin set name = :name, email = :email, description = :description, phone_number = :phone_number WHERE name = :currentAdmin");
-            $stmt->bindParam(":name", $admin);
+            // update in the database
+            $stmt = $this->conn->prepare("UPDATE affiliation set name = :name, email = :email, description = :description, phone_number = :phone_number WHERE name = :currentAdmin");
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":currentname", $currentName);
             $stmt->bindParam(":email", $email);
-            $stmt->bindParam(":currentEmail",$currentEmail);
+            $stmt->bindParam(":currentEmail", $currentEmail);
             $stmt->bindParam(":description", $description);
             $stmt->bindParam(":phone_number", $phoneNumber);
-            $stmt->bindParam(":currentAdmin", $currentAdmin);
 
             // execute the statement
             if ($stmt->execute()) {
                 header("Location: ../index.php");
                 exit();
             } else {
-                $_SESSION["error"] = "Error updating admin information.";
+                $_SESSION["error"] = "Error updating affiliation information.";
                 header("Location: ../index.php");
                 exit();
             }
-
         } catch (PDOException $e) {
-            $_SESSION["error"] = "Error updating admin information" .$e->getMessage();
+            $_SESSION["error"] = "Error updating affiliation information" . $e->getMessage();
             header("Location: ../index.php");
             exit();
         }
-
-
-        }
-    
     }
-    
-?>
+}

@@ -8,7 +8,7 @@
           <div class="img">
             <div class="img image-upload">
               <?php if (isset($_SESSION['imageAffiliation']) && !empty($_SESSION['imageAffiliation'])): ?>
-                <label for="image">
+                <label for="file-input">
                   <div class="hover-box">
                     <img class="user-img" src="model/<?php echo $_SESSION['imageAffiliation']; ?>" alt="image-affiliation">
                     <div class="hover-content">
@@ -17,7 +17,7 @@
                   </div>
                 </label>
               <?php else: ?>
-                <label for="image">
+                <label for="file-input">
                   <div class="hover-box">
                     <img class="user-img edit-photo" src="images/edit-photo.png" alt="edit-photo" />
                     <div class="hover-content">

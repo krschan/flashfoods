@@ -32,6 +32,7 @@ CREATE TABLE affiliation (
     phone_number VARCHAR(15),
     mail VARCHAR(100),
     description TEXT,
+    image VARCHAR(255),
     id_user INT,
     FOREIGN KEY (id_user) REFERENCES user (id_user)
 );

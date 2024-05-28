@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla con Imágenes y Botones</title>
-    <style>
-        /* Estilos CSS */
-    </style>
 </head>
 <body>
     <table>
@@ -36,7 +33,7 @@
                 echo "<td class='text-col'>" . $row["mail"] . "</td>";
                 echo "<td class='text-col'>" . $row["description"] . "</td>";
                 echo "<td class='button-col'>";
-                echo "<button class='btn'>Actualizar</button>";
+                echo "<button type=submit name='update_affiliation' class='btn'>Actualizar</button>";
                 echo "<button class='btn'>Eliminar</button>";
                 echo "</td>";
                 echo "</tr>";
@@ -48,5 +45,14 @@
 
         </tbody>
     </table>
+
+    <main class="content">
+        <div id="popup" class="popup">
+            <div class="popup-content"></div>
+        </div>
+    </main>
+
+    <!-- js -->
+    <script src="js/popups.js"></script>
 </body>
 </html>
