@@ -1,4 +1,6 @@
 # Flashfoods
+![white-bg](https://github.com/krschan/flashfoods/assets/114497613/4f98ebb1-cdfc-4545-a2ec-bc552e0d53d3)
+
 Flashfoods is a project developed in class by a group of three people. As we learn and discover new technologies, we continually improve the project. It's important to note that we started this project with zero programming knowledge, and it is still in constant development today.
 
 ## Project Overview
