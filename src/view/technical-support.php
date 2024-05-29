@@ -11,7 +11,7 @@ session_start();
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
     <title>FlashFood | Technical Support</title>
-    <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
+    <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
 
     <!-- css -->
     <link rel="stylesheet" href="../css/login-register-admin-support.css">

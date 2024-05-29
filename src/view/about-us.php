@@ -13,7 +13,7 @@ $showAffiliations = new ShowAfilliations();
     <meta name="description" content="Flash Food gives you the best offers and discounts near you." />
     <meta name="generator" content="FlashFood">
     <title>FlashFood | About us</title>
-    <link rel="icon" type="image/png" href="../src/images/flashfoods-logo-f.png">
+    <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
 
     <!-- jQuery -->
     <script src="../js/jquery-3.7.1.min.js"></script>
