@@ -34,11 +34,11 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
       <span class="nav-item">Wishlist</span>
     </a></li>
     <hr class="nav-separator">
-    <li><a href="view/technical-support.php">
+    <li><a href="view/technical-support.php" target="_blank">
     <i class="fas fa-wrench"></i>
     <span class="nav-item">Technical support</span>
     </a></li>
-    <li><a href="view/about-us.php">
+    <li><a href="view/about-us.php" target="_blank">
     <i class="fas fa-circle-info"></i>
     <span class="nav-item">About us</span>
     </a></li>
@@ -80,11 +80,11 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
       <span class="nav-item">Wishlist</span>
     </a></li>
     <hr class="nav-separator">
-    <li><a href="view/technical-support.php">
+    <li><a href="view/technical-support.php" target="_blank">
     <i class="fas fa-wrench"></i>
     <span class="nav-item">Technical support</span>
     </a></li>
-    <li><a href="view/about-us.php">
+    <li><a href="view/about-us.php" target="_blank">
     <i class="fas fa-circle-info"></i>
     <span class="nav-item">About us</span>
     </a></li>';

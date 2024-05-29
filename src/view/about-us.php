@@ -28,11 +28,6 @@ $showAffiliations = new ShowAfilliations();
 <body id="body-background">
     <div>
         <div id="header-background" class="center">
-            <div class="return-button">
-                <a href="../index.php">
-                    <button>Return</button>
-                </a>
-            </div>
             <div class="logo-container">
                 <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
             </div>

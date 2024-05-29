@@ -744,6 +744,26 @@ footer {
   cursor: pointer;
 }
 
+/* Admin */
+.btn {
+  width: 49%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ffc90e;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background-color: #deb00d;
+  cursor: pointer;
+}
+
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
   .search-box {
