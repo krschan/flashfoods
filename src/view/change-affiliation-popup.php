@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <div class="info-box center">
     <div class="info-form aligned">
         <h2>Edit affiliation</h2>

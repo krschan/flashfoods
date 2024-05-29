@@ -65,11 +65,12 @@
             ?>
         </tbody>
     </table>
-    <main class="content">
-        <div id="popup" class="popup">
-            <div class="popup-content"></div>
-        </div>
-    </main>
-    <script src="../js/popups.js"></script>
+
+    <?php
+    if (isset($_SESSION['affiliation-popup']) && $_SESSION['affiliation-popup'] == TRUE) {
+        include 'change-affiliation-popup.php';
+    }
+    ?>
+
 </body>
 </html>

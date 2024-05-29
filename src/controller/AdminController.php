@@ -160,9 +160,13 @@ class AdminController
                 $_SESSION["mailAffiliation"] = $result["mail"];
                 $_SESSION["descriptionAffiliation"] = $result["description"];
                 $_SESSION["imageAffiliation"] = $result["image"];
-                echo $_SESSION["nameAffiliation"];
+                $_SESSION['affiliation-popup'] = TRUE;
+                header("Location: ../view/list-affiliations.php");
+                exit();
             } else {
                 $_SESSION["error"] = "Affiliation not found.";
+                header("Location: ../view/list-affiliations.php");
+                exit();
             }
         } catch (PDOException $e) {
             $_SESSION["error"] = "Error al actualizar la información de la afiliación: " . $e->getMessage();
