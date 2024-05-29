@@ -14,7 +14,7 @@ session_start();
     <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/login-register-admin-support.css">
+    <link rel="stylesheet" href="../css/normal-page.css">
 
     <!-- jQuery -->
     <script src="/src/assets/js/jquery-3.7.1.min.js"></script>

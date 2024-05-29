@@ -15,13 +15,6 @@
   background-color: #ebebeb;
 }
 
-/* Return to main page */
-.return-button {
-  margin-left: 2.5rem;
-  position: relative;
-  top: 6rem;
-}
-
 /* Logo */
 .logo-container {
   text-align: center;
@@ -57,7 +50,7 @@
 
 /* Title */
 #title-container {
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: center;
 }
 
