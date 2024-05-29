@@ -115,44 +115,11 @@ BEGIN
     ('Granada'),
     ('Alicante');
 
-    -- Insert data into 'user' table
-    INSERT INTO user (name, username, password, mail, birth_date, phone_number, id_city, image, admin) VALUES
-    ('Juan', 'juanperez', 'password123', 'juan@example.com', '1990-01-15', '123-456-7890', 1, null, 0), 
-    ('Ana', 'anagomez', 'password456', 'ana@example.com', '1985-03-22', '987-654-3210', 2, null, 0), 
-    ('Carlos', 'carloshdz', 'pass789', 'carlos@example.com', '1992-07-10', '555-123-4567', 3, null, 0), 
-    ('Laura', 'lauramtz', 'pass789', 'laura@example.com', '1988-05-18', '888-777-5555', 4, null, 0),
-    ('Pedro', 'pedrosan', 'pass789', 'pedro@example.com', '1991-11-28', '111-222-3333', 5, null, 0);
-
-    -- Insert data into 'affiliation' table
-    INSERT INTO affiliation (name, phone_number, mail, description) VALUES
-    ('McDonalds', '123-456-7890', 'mcdonalds@example.com', 'Famous burger chain with fast food options.'),
-    ('BurgerKing', '987-654-3210', 'burgerking@example.com', 'International burger chain and fast food products.'),
-    ('KFC', '555-123-4567', 'kfc@example.com', 'World-famous fried chicken restaurant.'),
-    ('TheGoodBurger', '888-777-5555', 'thegoodburger@example.com', 'Spanish gourmet burger and fast food chain.'),
-    ('FosterHollywood', '111-222-3333', 'fosterhollywood@example.com', 'American-themed restaurant with a variety of dishes.'),
-    ('DominosPizza', '444-333-2222', 'dominospizza@example.com', 'International pizza chain with home delivery.'),
-    ('TacoBell', '666-999-8888', 'tacobell@example.com', 'American fast food chain specializing in tacos.'),
-    ('Viena', '777-888-9999', 'viena@example.com', 'Restaurant chain with emphasis on fast food and varied options.'),
-    ('100Montaditos', '222-444-6666', '100montaditos@example.com', 'Spanish chain known for its varied and affordable montaditos.'),
-    ('Pans&Company', '333-555-7777', 'pansandcompany@example.com', 'Restaurant chain specializing in sandwiches and varied breads.');
-
-    -- Insert data into 'discount' table
-    INSERT INTO discount (name, id_affiliation) VALUES
-    ('Descuento McDonalds', 1),
-    ('Oferta BurgerKing', 2),
-    ('Promoción KFC', 3),
-    ('Descuento TheGoodBurger', 4),
-    ('Oferta FosterHollywood', 5),
-    ('Cupón DominosPizza', 6),
-    ('Descuento TacoBell', 7),
-    ('Oferta Viena', 8),
-    ('Promoción 100Montaditos', 9),
-    ('Cupón Pans&Company', 10);
 END //
 
 DELIMITER ;
 
-DELIMITER //
+DELIMITER //	
 
 CREATE PROCEDURE DropTables()
 BEGIN
@@ -177,5 +144,9 @@ CALL InsertData();
 -- To drop all tables, call the DropTables procedure
 -- CALL DropTables();
 
---  Useful queries
+-- Useful queries
 SELECT * FROM user;
+SELECT * FROM affiliation;
+DELETE FROM affiliation WHERE phone_number = 0000000;
+;
+
