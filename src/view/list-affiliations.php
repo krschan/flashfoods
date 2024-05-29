@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +7,17 @@
     <meta name="generator" content="FlashFood">
     <title>FlashFood | Affiliations list</title>
     <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
-
-    <!-- css -->
     <link rel="stylesheet" href="../css/normal-page.css">
-
-    <!-- jQuery -->
     <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
     <script src="/src/assets/js/dist/jquery.validate.js"></script>
     <script src="/src/assets/js/dist/additional-methods.js"></script>
 </head>
-
 <body id="grey-background" class="center">
     <div id="white-background">
         <div class="div-logo">
-            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png"
-                    alt="logo-flashfood"></a>
+            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
         </div>
-
         <div id="div-title">
             <a href="#">
                 <button id="technical-title">Affiliation list</button>
@@ -59,9 +51,11 @@
                     echo "<td class='text-col'>" . $row["mail"] . "</td>";
                     echo "<td class='text-col'>" . $row["description"] . "</td>";
                     echo "<td class='button-col'>";
-                    echo "<button type='submit' name='edit_affiliation' class='btn' onclick='openPopup(\"change-affiliation-popup.php\", \"" . $row["id_affiliation"] . "\")'>Update</button>";
-
-                    echo "<button class='btn'>Delete</button>";
+                    echo "<form method='POST' action='../controller/AdminController.php'>";
+                    echo "<input type='hidden' name='id_affiliation' value='" . $row["id_affiliation"] . "'>";
+                    echo "<button type='submit' name='edit_affiliation' class='btn'>Update</button>";
+                    echo "<button type='submit' name='delete_affiliation' class='btn'>Delete</button>";
+                    echo "</form>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -69,18 +63,13 @@
                 echo "<tr><td colspan='6'>No data available</td></tr>";
             }
             ?>
-
         </tbody>
     </table>
-
     <main class="content">
         <div id="popup" class="popup">
             <div class="popup-content"></div>
         </div>
     </main>
-
-    <!-- js -->
     <script src="../js/popups.js"></script>
 </body>
-
 </html>

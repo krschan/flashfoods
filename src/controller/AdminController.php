@@ -1,199 +1,155 @@
-    <?php
-    session_start();
+<?php
+session_start();
 
-    $admin = new AdminController();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["create_affiliation"])) {
-            $admin->createAffiliation();
-            // } elseif (isset($_POST["update_account"])) {
-            //     $admin->updateAffiliation();
-        } elseif (isset($_POST["change_password"])) {
-            $admin->deleteAffiliation($_SESSION["username"], $oldPassword, $newPassword, $confirmNewPassword);
-        } elseif (isset($_POST["show_affiliations"])) {
-            $admin->showAffiliation();
-        } elseif (isset($_POST["update_affiliation"])) {
-            $admin->updateAffiliation($name, $phoneNumber, $mail, $description);
-        } elseif (isset($_POST["edit_affiliation"])) {
-            $admin->editAffiliation($id_affiliation);
+$admin = new AdminController();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["create_affiliation"])) {
+        $admin->createAffiliation();
+    } elseif (isset($_POST["delete_affiliation"])) {
+        $admin->deleteAffiliation($id_affiliation);
+    } elseif (isset($_POST["show_affiliations"])) {
+        $admin->showAffiliation();
+    } elseif (isset($_POST["update_affiliation"])) {
+        $admin->updateAffiliation($name, $phoneNumber, $mail, $description);
+    } elseif (isset($_POST["edit_affiliation"])) {
+        $admin->editAffiliation($id_affiliation);
+    }
+}
+
+class AdminController
+{
+    private $conn;
+
+    public function __construct()
+    {
+        // database connection
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $flashfood = "flashfood";
+
+        // create connection
+        try {
+            $this->conn = new PDO("mysql:host=$servername;dbname=$flashfood", $username, $password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
         }
     }
 
-    class AdminController
+    public function showAffiliation(): void
     {
+        header("Location: ../view/list-affiliations.php");
+        exit();
+    }
 
-        private $conn;
+    public function getAffiliations(): PDOStatement
+    {
+        $sql = "SELECT id_affiliation, name, phone_number, mail, description, image 
+            FROM affiliation";
+        return $this->conn->query($sql);
+    }
 
-        public function __construct()
-        {
-            // database connection
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $flashfood = "flashfood";
+    public function createAffiliation(): void
+    {
+        $name = $_POST['name'];
+        $mail = $_POST['mail'];
+        $phoneNumber = $_POST['phoneNumber'];
+        $description = $_POST['description'];
 
-            // create connection
-            try {
-                $this->conn = new PDO("mysql:host=$servername;dbname=$flashfood", $username, $password);
-                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                echo "Connection failed: " . $e->getMessage();
-            }
+        $location = "../model/";
+        $filename = basename($_FILES["fileUpload"]["name"]);
+
+        if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $location . $filename)) {
+            $_SESSION["done"] = "The file was sent to another folder.";
+        } else {
+            $_SESSION["error"] = "The file you have entered had some errors. Try again.";
         }
 
-        public function showAffiliation(): void
-        {
-            header("Location: ../view/list-affiliations.php");
-            exit();
-        }
+        try {
+            $stmt = $this->conn->prepare("INSERT INTO affiliation (name, phone_number, mail, description, image) VALUES (:name, :phone_number, :mail, :description, :image)");
 
-        public function getAffiliations(): PDOStatement
-        {
-            $sql = "SELECT id_affiliation, name, phone_number, mail, description, image 
-                FROM affiliation";
-            return $this->conn->query($sql);
-        }
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":phone_number", $phoneNumber);
+            $stmt->bindParam(":mail", $mail);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":image", $filename);
 
-
-
-        // create account
-        public function createAffiliation(): void
-        {
-
-            // validate user selected a file
-            // if (!isset($_FILES["fileUpload"]) || $_FILES["fileUpload"]["error"] == UPLOAD_ERR_NO_FILE) {
-            //     $_SESSION["error"] = "No se ha seleccionado ningún archivo.";
-            //     header("Location: ../index.php");
-            //     exit();
-            // }
-
-            $name = $_POST['name'];
-            $mail = $_POST['mail'];
-            $phoneNumber = $_POST['phoneNumber'];
-            $description = $_POST['description'];
-
-            // validate username and password here
-            /*
-                if (!ctype_alpha($username)) {
-                    $_SESSION["logged"] = false;
-                    $_SESSION["error"] = "The username can only contain letters.";
-                    header("Location: ../auth/register-admin.php");
-                    exit();
-                }
-        
-                if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)) {
-                    $_SESSION["logged"] = false;
-                    $_SESSION["error"] = "The password must be at least 8 characters long and contain at least one uppercase letter.";
-                    header("Location: ../auth/register-admin.php");
-                    exit();
-                }
-                */
-
-            // path file to uploads
-            $location = "../model/";
-
-            // filename without the path
-            $filename = basename($_FILES["fileUpload"]["name"]);
-
-            if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $location . $filename)) {
-                $_SESSION["done"] = "The file was sent to another folder.";
-            } else {
-                $_SESSION["error"] = "The file you have entered had some errors. Try again.";
-            }
-
-            try {
-                // insert in the database
-                $stmt = $this->conn->prepare("INSERT INTO affiliation (name, phone_number, mail, description, image) VALUES (:name, :phone_number, :mail, :description, :image)");
-
-                $stmt->bindParam(":name", $name);
-                $stmt->bindParam(":phone_number", $phoneNumber);
-                $stmt->bindParam(":mail", $mail);
-                $stmt->bindParam(":description", $description);
-                $stmt->bindParam(":image", $filename);
-
-                // execute the statement
-                if ($stmt->execute()) {
-                    $_SESSION["logged"] = true;
-                    $_SESSION["nameAffiliation"] = $name;
-                    $_SESSION["imageAffiliation"] = $filename;
-                    echo $_SESSION["imageAffiliation"];
-                    header("Location: ../index.php");
-                    exit();
-                } else {
-                    echo "Error creating the affiliation.";
-                }
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
-
-
-        // delete affiliation
-        public function deleteAffiliation($admin): void
-        {
-            try {
-                // delete in the database
-                $stmt = $this->conn->prepare("DELETE FROM admin WHERE name = :admin OR phone_number = :admin OR email = :admin OR description = :admin");
-                $stmt->bindParam(":admin", $admin);
-                $stmt->bindParam(":phone_number", $phoneNumber);
-                $stmt->bindParam(":email", $email);
-                $stmt->bindParam(":description", $description);
-
-                // execute the statement
-                if ($stmt->execute()) {
-                    session_destroy();
-                    header("Location: ../index.php");
-                    exit();
-                } else {
-                    $_SESSION["error"] = "Error deleting the admin.";
-                    header("Location: ../index.php");
-                    exit();
-                }
-            } catch (PDOException $e) {
-                $_SESSION["error"] = "Error deleting the admin: " . $e->getMessage();
+            if ($stmt->execute()) {
+                $_SESSION["logged"] = true;
+                $_SESSION["nameAffiliation"] = $name;
+                $_SESSION["imageAffiliation"] = $filename;
+                echo $_SESSION["imageAffiliation"];
                 header("Location: ../index.php");
                 exit();
+            } else {
+                echo "Error creating the affiliation.";
             }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
+    }
 
-        // update affiliation
-        public function updateAffiliation($name, $phoneNumber, $mail, $description): void
-        {
-            $currentAffiliation = $_SESSION['nameAffiliation'];
+    public function deleteAffiliation($id_affiliation): void
+    {
+        $id_affiliation = $_POST["id_affiliation"];
 
-            try {
-                // Actualizar en la base de datos
-                $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phone_number, mail = :mail, description = :description WHERE name = :currentAffiliation");
-                $stmt->bindParam(":name", $name);
-                $stmt->bindParam(":phone_number", $phoneNumber);
-                $stmt->bindParam(":mail", $mail);
-                $stmt->bindParam(":description", $description);
-                $stmt->bindParam(":currentAffiliation", $currentAffiliation);
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM affiliation WHERE id_affiliation = :id_affiliation");
+            $stmt->bindParam(":id_affiliation", $id_affiliation);
+            $stmt->execute();
 
-                // Ejecutar la consulta
-                if ($stmt->execute()) {
-                    // Actualizar las variables de sesión con los nuevos valores
-                    $_SESSION['nameAffiliation'] = $name;
-                    $_SESSION['phoneAffiliation'] = $phoneNumber;
-                    $_SESSION['mailAffiliation'] = $mail;
-                    $_SESSION['descriptionAffiliation'] = $description;
-                    header("Location: ../view/list-affiliations.php");
-                    exit();
-                } else {
-                    $_SESSION["error"] = "Error al actualizar la información de la afiliación.";
-                    header("Location: ../view/list-affiliations.php");
-                    exit();
-                }
-            } catch (PDOException $e) {
-                $_SESSION["error"] = "Error al actualizar la información de la afiliación: " . $e->getMessage();
+            if ($stmt->execute()) {
+                header("Location: ../view/list-affiliations.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error deleting the affiliation.";
                 header("Location: ../view/list-affiliations.php");
                 exit();
             }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error deleting the affiliation: " . $e->getMessage();
+            header("Location: ../view/list-affiliations.php");
+            exit();
         }
+    }
 
-        // edit affiliation
-        public function editAffiliation($id_affiliation): void
-        {
-            //Seleccionar en la base de datos
+    public function updateAffiliation($name, $phoneNumber, $mail, $description): void
+    {
+        $currentAffiliation = $_SESSION['nameAffiliation'];
+
+        try {
+            $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phone_number, mail = :mail, description = :description WHERE name = :currentAffiliation");
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":phone_number", $phoneNumber);
+            $stmt->bindParam(":mail", $mail);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":currentAffiliation", $currentAffiliation);
+
+            if ($stmt->execute()) {
+                $_SESSION['nameAffiliation'] = $name;
+                $_SESSION['phoneAffiliation'] = $phoneNumber;
+                $_SESSION['mailAffiliation'] = $mail;
+                $_SESSION['descriptionAffiliation'] = $description;
+                header("Location: ../view/list-affiliations.php");
+                exit();
+            } else {
+                $_SESSION["error"] = "Error al actualizar la información de la afiliación.";
+                header("Location: ../view/list-affiliations.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error al actualizar la información de la afiliación: " . $e->getMessage();
+            header("Location: ../view/list-affiliations.php");
+            exit();
+        }
+    }
+
+    public function editAffiliation($id_affiliation): void
+    {
+        $id_affiliation = $_POST["id_affiliation"];
+
+        try {
             $stmt = $this->conn->prepare("SELECT name, phone_number, mail, description, image FROM affiliation WHERE id_affiliation = :id_affiliation");
             $stmt->bindParam(":id_affiliation", $id_affiliation);
             $stmt->execute();
@@ -204,9 +160,14 @@
                 $_SESSION["mailAffiliation"] = $result["mail"];
                 $_SESSION["descriptionAffiliation"] = $result["description"];
                 $_SESSION["imageAffiliation"] = $result["image"];
+                echo $_SESSION["nameAffiliation"];
             } else {
-                // Si no se encuentra la afiliación, establecer un mensaje de error
-                $_SESSION["error"] = "No se encontró la afiliación.";
+                $_SESSION["error"] = "Affiliation not found.";
             }
+        } catch (PDOException $e) {
+            $_SESSION["error"] = "Error al actualizar la información de la afiliación: " . $e->getMessage();
+            header("Location: ../view/list-affiliations.php");
+            exit();
         }
     }
+}
