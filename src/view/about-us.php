@@ -1,12 +1,6 @@
-<?php
-
-include '../controller/ShowAfilliations.php';
-
-$showAffiliations = new ShowAfilliations();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +10,10 @@ $showAffiliations = new ShowAfilliations();
     <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
 
     <!-- jQuery -->
-    <script src="../js/jquery-3.7.1.min.js"></script>
-    <script src="../js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="/src/js/jquery-3.7.1.min.js"></script>
+    <script src="/src/js/slick-1.8.1/slick/slick.js"></script>
+    <script src="/src/js/dist/jquery.validate.js"></script>
+    <script src="/src/js/dist/additional-methods.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="../css/about-us.css">
@@ -29,7 +25,8 @@ $showAffiliations = new ShowAfilliations();
     <div>
         <div id="header-background" class="center">
             <div class="logo-container">
-                <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
+                <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png"
+                        alt="logo-flashfood"></a>
             </div>
             <div id="title-container">
                 <a href="#">
@@ -42,27 +39,34 @@ $showAffiliations = new ShowAfilliations();
             <div class="main-content">
                 <img src="../images/about-us-work.jpg" alt="three young entrepreneurs working" class="main-img">
                 <div class="text-content">
-                    <p><span class="bold">Flashfoods</span> was born from the collaborative efforts of three young students:
-                        Cristian Oraña, Pau Carrera, and Alex Rodríguez. What began as a classroom project in 2023 has swiftly
+                    <p><span class="bold">Flashfoods</span> was born from the collaborative efforts of three young
+                        students:
+                        Cristian Oraña, Pau Carrera, and Alex Rodríguez. What began as a classroom project in 2023 has
+                        swiftly
                         evolved into a burgeoning startup, driven by a shared passion for innovation and technology.</p>
-                    <p>At Flashfoods, our mission is simple yet transformative: to revolutionize the way people <span class="bold">discover the latest deals and offerings in their local food scene</span>. We've created an interactive map that not only showcases the freshest deals but also highlights a diverse array of fast-food joints and, soon, restaurants of all kinds.</p>
-                    <p>By harnessing the power of technology, Flashfoods serves as a dynamic platform, connecting hungry customers with exciting culinary experiences while simultaneously spotlighting the vibrant tapestry of eateries in every neighborhood. Whether you're craving a quick bite or embarking on a gastronomic adventure, Flashfoods is your gateway to culinary exploration.</p>
-                    <p class="join-us">Join us as we redefine the dining landscape, one delicious discovery at a time.</p>
+                    <p>At Flashfoods, our mission is simple yet transformative: to revolutionize the way people <span
+                            class="bold">discover the latest deals and offerings in their local food scene</span>. We've
+                        created an interactive map that not only showcases the freshest deals but also highlights a
+                        diverse array of fast-food joints and, soon, restaurants of all kinds.</p>
+                    <p>By harnessing the power of technology, Flashfoods serves as a dynamic platform, connecting hungry
+                        customers with exciting culinary experiences while simultaneously spotlighting the vibrant
+                        tapestry of eateries in every neighborhood. Whether you're craving a quick bite or embarking on
+                        a gastronomic adventure, Flashfoods is your gateway to culinary exploration.</p>
+                    <p class="join-us">Join us as we redefine the dining landscape, one delicious discovery at a time.
+                    </p>
                 </div>
             </div>
+
             <h3 id="slick-carousel-title">Affiliations</h3>
-            <?php $showAffiliations->showAffiliationsLogo(); ?>
+            <div id="affiliations-slider" class="affiliations-slider"></div>
+            <div id="pages">
+                <button id="prev-btn">prev</button>
+                <button id="next-btn">next</button>
+            </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-            $('.affiliations-slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-            });
-        });
-    </script>
-    <script src="../js/main.js" defer></script>
+
+    <script src="../js/ajax-slider.js" defer></script>
 </body>
+
 </html>

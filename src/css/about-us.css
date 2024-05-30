@@ -40,6 +40,7 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: left;
+  padding-bottom: 10rem;
 }
 
 .main-content {
@@ -132,28 +133,79 @@ input {
   font-size: 2rem;
 }
 
-/* Slick Carousel */
-.slick-carousel {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem 0 2rem 8rem;
-  text-align: center;
+.affiliations-details img {
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.affiliations-details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+}
+#affiliations-slider {
+  width: 80%;
+  margin: 0 auto;
+}
+#information{
+  margin: 0.5rem 0 1.5rem 0;
 }
 
-.slick-carousel img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 1em;
-}
 
-.slick-carousel p {
+.affiliations-details img {
+  margin-top: 4rem;
+  max-width: 100%;
+  max-height: 300px;
+}
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
   margin: 0;
-  width: 56%;
+  padding: 0;
+  text-align: center;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
 }
 
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+Con estos cambios
+.slick-dots li {
+  box-shadow: 0;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: #888;
+  border-radius: 50%;
+}
+.slick-dots li.slick-active button {
+  background: #ffc90e;
+}
+#pages {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {

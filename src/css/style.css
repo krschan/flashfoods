@@ -360,7 +360,7 @@ article#affiliation-information img.user-img:hover {
 form {
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 8rem);
+  width: calc(100% - 3rem);
 }
 
 #information .normal-button {
@@ -760,6 +760,8 @@ footer {
 
 /* Admin */
 .btn {
+  text-align: center;
+  display: inline-block;
   width: 49%;
   padding: 10px 20px;
   margin-top: 20px;

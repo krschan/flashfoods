@@ -19,20 +19,20 @@
                     </div>
                 </div>
 
-                <label for="name">Name</label> <br>
+                <label for="name">Name</label> 
                 <input type="text" id="name" name="name" value="<?php echo $_SESSION['nameAffiliation']; ?>" required>
-                <br>
+                
 
-                <label for="phone">Phone Number</label> <br>
+                <label for="phone">Phone Number</label> 
                 <input type="tel" id="phone" name="phoneNumber" value="<?php echo $_SESSION['phoneAffiliation']; ?>">
-                <br>
+                
 
-                <label for="email">Mail</label> <br>
-                <input type="email" id="email" name="mail" value="<?php echo $_SESSION['mailAffiliation']; ?>"> <br>
+                <label for="email">Mail</label> 
+                <input type="email" id="email" name="mail" value="<?php echo $_SESSION['mailAffiliation']; ?>"> 
 
-                <label for="description">Description</label> <br>
+                <label for="description">Description</label> 
                 <textarea id="description"
-                    name="description"><?php echo $_SESSION['descriptionAffiliation']; ?></textarea> <br>
+                    name="description"><?php echo $_SESSION['descriptionAffiliation']; ?></textarea> 
 
                 <input type="hidden" id="id_affiliation" name="id_affiliation"
                     value="<?php echo $_SESSION['id_affiliation']; ?>">
