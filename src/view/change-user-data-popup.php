@@ -14,7 +14,7 @@
                 </div>
             </div>
             <form id="information" method="POST" action="controller/UserController.php">
-                <label for="username">Username</label>
+                <label for="user">Username</label>
                 <input type="text" id="user" name="username" value="<?php echo $_SESSION['username']; ?>" disabled />
 
                 <label for="email">Email</label>
@@ -23,15 +23,14 @@
                 <input type="hidden" name="current_username" value="<?php echo getUserData('username'); ?>">
                 <input type="hidden" name="current_email" value="<?php echo getUserData('mail'); ?>">
 
-                <label for="name-surname">Name</label>
+                <label for="nameSurname">Name</label>
                 <input type="text" id="nameSurname" name="nameSurname" value="<?php echo getUserData('name'); ?>" />
 
-                <label for="birth-date">Birth Date</label>
+                <label for="birthDate">Birth Date</label>
                 <input type="text" id="birthDate" name="birthDate" value="<?php echo getUserData('birth_date'); ?>" />
 
-                <label for="phone-number">Phone Number</label>
-                <input type="text" id="phoneNumber" name="phoneNumber"
-                    value="<?php echo getUserData('phone_number'); ?>" />
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="<?php echo getUserData('phone_number'); ?>" />
 
                 <?php
                 if (isset($_SESSION['error'])) {
@@ -40,21 +39,23 @@
                 }
                 ?>
                 <div id="validation-message"></div>
-                <button type=submit name="update_account" class="normal-button">Save changes (PHP)</button>
-                <button type=submit name="update_account" class="normal-button" id="update-ajax-button">Save changes (AJAX)</button>
-                <button type=button name="change_password" class="normal-button"><a id="change-password-button"
-                        href="/src/auth/change-password.php">Change password</a></button>
-                <button type=submit name="delete_account" class="red-button">DELETE ACCOUNT</button>
+                <button type="submit" name="update_account" class="normal-button">Save changes (PHP)</button>
+                <input type="button" name="update_account" class="normal-button" id="update-ajax-button" value="Save changes (AJAX)">
+                <button type="button" name="change_password" class="normal-button">
+                    <a id="change-password-button" href="/src/auth/change-password.php">Change password</a>
+                </button>
+                <button type="submit" name="delete_account" class="red-button">DELETE ACCOUNT</button>
             </form>
 
         </article>
     </div>
 </div>
 
+<script src="/src/js/jquery-3.7.1.min.js"></script>
+<script src="../js/ajax-update-user.js"></script>
 <?php
 function getUserData($field)
 {
-    // database connection parameters
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -74,7 +75,6 @@ function getUserData($field)
 
         // execute the statement
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
         $conn = null;
 
         // if a result is found, return the value of the specified field
@@ -89,4 +89,3 @@ function getUserData($field)
     }
 }
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <?php include 'view/nav.php'; ?>
+  <?php require_once 'view/nav.php'; ?>
   <div class="overlay"></div>
   <div class="main">
     <div class="search-box">
@@ -106,6 +106,8 @@
   <script src="js/main.js" defer></script>
   <script src="js/popups.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/ajax-update-user.js"></script>
+
 
 </body>
 
