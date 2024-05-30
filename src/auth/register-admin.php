@@ -53,10 +53,10 @@ session_start();
       <div>
         <label for="email">Email</label>
         <div>
-          <input type="email" name="mail">
+          <input type="text" name="mail">
+          <div id="validation-message" style="display : none"></div>
         </div>
       </div>
-      <div id="validation-message" style="display : none"></div>
 
       <div>
         <label for="username">Username</label>

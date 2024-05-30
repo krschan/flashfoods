@@ -24,15 +24,22 @@ class EmailValidator
 
   public function validateEmail()
   {
-    // error message in case the mail is empty or does not have a valid mail format
+    // get and sanitize the email
     $mail = isset($_POST['mail']) ? filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL) : '';
 
+    // check if the email is empty
     if (empty($mail)) {
-      echo json_encode(array("message" => "Insert a valid email address"));
+      echo json_encode(array("message" => "The email is required"));
       return;
     }
 
-    // if the mail is the same, it gives a "count". If there is no mail equal to the mail set, it gives a "count" = 0. If there is, it is already 1.
+    // validate the email format
+    if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+      echo json_encode(array("message" => "Invalid email format"));
+      return;
+    }
+
+    // check if the email is already taken
     $stmt = $this->conn->prepare("SELECT COUNT(*) FROM user WHERE mail = :mail");
     $stmt->bindParam(':mail', $mail);
     $stmt->execute();
@@ -45,7 +52,6 @@ class EmailValidator
     }
 
     echo json_encode($response);
-    ;
   }
 }
 
