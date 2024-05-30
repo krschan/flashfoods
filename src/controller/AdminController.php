@@ -117,18 +117,42 @@ class AdminController
 
     public function updateAffiliation($name, $phoneNumber, $mail, $description): void
     {
-        $id_affiliation = $_POST["id_affiliation"];
+        // desactivate pop up
+        $_SESSION['affiliation-popup'] = FALSE;
 
+        $currentidAffiliation = $_SESSION['id_affiliation'];
+        
+        $name = $_POST['name'];
+        $phoneNumber = $_POST['phoneNumber'];
+        $mail = $_POST['mail'];
+        $description = $_POST['description'];
+        
+        
+        // TO-DO if user wants to change picture 
+        
+        // $currentImage = $_SESSION['imageAffiliation'];
+        
+        // $location = "../model/";
+        // $filename = null !== basename($_FILES["fileUpload"]["name"]) ? basename($_FILES["fileUpload"]["name"]) : $currentImage;
+
+        // if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $location . $filename)) {
+        //     $_SESSION["done"] = "The file was sent to another folder.";
+        // } else {
+        //     $_SESSION["error"] = "The file you have entered had some errors. Try again.";
+        // }
+
+        // update the row that user selected
         try {
             $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phone_number, mail = :mail, description = :description WHERE id_affiliation = :id_affiliation");
-            $stmt->bindParam(":id_affiliation", $id_affiliation);
+            $stmt->bindParam(":id_affiliation", $currentidAffiliation);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":phone_number", $phoneNumber);
+            $stmt->bindParam(":mail", $mail);
+            $stmt->bindParam(":description", $description);
+
             $stmt->execute();
 
             if ($stmt->execute()) {
-                $_SESSION['nameAffiliation'] = $name;
-                $_SESSION['phoneAffiliation'] = $phoneNumber;
-                $_SESSION['mailAffiliation'] = $mail;
-                $_SESSION['descriptionAffiliation'] = $description;
                 header("Location: ../view/list-affiliations.php");
                 exit();
             } else {
@@ -146,6 +170,7 @@ class AdminController
     public function editAffiliation($id_affiliation): void
     {
         $id_affiliation = $_POST["id_affiliation"];
+        $_SESSION['id_affiliation'] = $id_affiliation;
 
         try {
             $stmt = $this->conn->prepare("SELECT name, phone_number, mail, description, image FROM affiliation WHERE id_affiliation = :id_affiliation");
