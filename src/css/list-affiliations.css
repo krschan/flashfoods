@@ -145,7 +145,6 @@ button {
   padding: 10px 20px;
   border-radius: 20px;
   border: solid 1px rgb(255, 201, 14);
-  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: white;
   transition: background-color 0.3s;
 }
@@ -157,7 +156,6 @@ button:hover {
 input {
   border: solid 1px rgb(255, 201, 14);
   border-radius: 20px;
-  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
 }
 
@@ -265,4 +263,59 @@ th {
 .img-col img {
   width: 50%;
   height: auto;
+}
+
+/* popup */
+img.user-img {
+  width: 50%;
+}
+
+input#file-input {
+  display: none;
+}
+
+.info-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.info-form {
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.info-form h2 {
+  color: #000000;
+  background: #ffc90e;
+  text-align: left;
+  padding: 5px 0 5px 2rem;
+  margin-top: 1.5rem;
+  font-size: 24px;
+}
+
+.info-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-form input,
+.info-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+#information {
+  margin: 2rem;
 }

@@ -7,7 +7,7 @@
     <meta name="generator" content="FlashFood">
     <title>FlashFood | Affiliations list</title>
     <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
-    <link rel="stylesheet" href="../css/normal-page.css">
+    <link rel="stylesheet" href="../css/list-affiliations.css">
     <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
     <script src="/src/assets/js/dist/jquery.validate.js"></script>

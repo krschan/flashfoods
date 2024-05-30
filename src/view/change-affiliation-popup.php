@@ -2,7 +2,7 @@
     <div class="info-form aligned">
         <h2>Edit affiliation</h2>
         <article id="affiliation-information">
-            <form id="information" method="POST" action="controller/AdminController.php" enctype="multipart/form-data">
+            <form id="information" method="POST" action="../controller/AdminController.php" enctype="multipart/form-data">
                 <div class="img">
                     <div class="img image-upload">
                         <label for="file-input">

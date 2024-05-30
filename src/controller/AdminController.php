@@ -39,6 +39,7 @@ class AdminController
 
     public function showAffiliation(): void
     {
+        $_SESSION['affiliation-popup'] = FALSE;
         header("Location: ../view/list-affiliations.php");
         exit();
     }
@@ -116,15 +117,12 @@ class AdminController
 
     public function updateAffiliation($name, $phoneNumber, $mail, $description): void
     {
-        $currentAffiliation = $_SESSION['nameAffiliation'];
+        $id_affiliation = $_POST["id_affiliation"];
 
         try {
-            $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phone_number, mail = :mail, description = :description WHERE name = :currentAffiliation");
-            $stmt->bindParam(":name", $name);
-            $stmt->bindParam(":phone_number", $phoneNumber);
-            $stmt->bindParam(":mail", $mail);
-            $stmt->bindParam(":description", $description);
-            $stmt->bindParam(":currentAffiliation", $currentAffiliation);
+            $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phone_number, mail = :mail, description = :description WHERE id_affiliation = :id_affiliation");
+            $stmt->bindParam(":id_affiliation", $id_affiliation);
+            $stmt->execute();
 
             if ($stmt->execute()) {
                 $_SESSION['nameAffiliation'] = $name;
