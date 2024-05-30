@@ -121,17 +121,17 @@ class AdminController
         $_SESSION['affiliation-popup'] = FALSE;
 
         $currentidAffiliation = $_SESSION['id_affiliation'];
-        
+
         $name = $_POST['name'];
         $phoneNumber = $_POST['phoneNumber'];
         $mail = $_POST['mail'];
         $description = $_POST['description'];
-        
-        
+
+
         // TO-DO if user wants to change picture 
-        
+
         // $currentImage = $_SESSION['imageAffiliation'];
-        
+
         // $location = "../model/";
         // $filename = null !== basename($_FILES["fileUpload"]["name"]) ? basename($_FILES["fileUpload"]["name"]) : $currentImage;
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,16 @@
     <title>FlashFood | Affiliations list</title>
     <link rel="icon" type="image/png" href="../images/flashfoods-logo-f.png">
     <link rel="stylesheet" href="../css/list-affiliations.css">
-    <script src="/src/assets/js/jquery-3.7.1.min.js"></script>
-    <script src="/src/assets/js/slick-1.8.1/slick/slick.js"></script>
-    <script src="/src/assets/js/dist/jquery.validate.js"></script>
-    <script src="/src/assets/js/dist/additional-methods.js"></script>
+    <script src="/src/js/jquery-3.7.1.min.js"></script>
+    <script src="/src/js/dist/jquery.validate.js"></script>
+    <script src="/src/js/dist/additional-methods.js"></script>
 </head>
+
 <body id="grey-background" class="center">
     <div id="white-background">
         <div class="div-logo">
-            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
+            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png"
+                    alt="logo-flashfood"></a>
         </div>
         <div id="div-title">
             <a href="#">
@@ -51,7 +53,7 @@
                     echo "<td class='text-col'>" . $row["mail"] . "</td>";
                     echo "<td class='text-col'>" . $row["description"] . "</td>";
                     echo "<td class='button-col'>";
-                    echo "<form method='POST' action='../controller/AdminController.php'>";
+                    echo "<form method='POST' action='../controller/AdminController.php' id='information'>";
                     echo "<input type='hidden' name='id_affiliation' value='" . $row["id_affiliation"] . "'>";
                     echo "<button type='submit' name='edit_affiliation' class='btn'>Update</button>";
                     echo "<button type='submit' name='delete_affiliation' class='btn'>Delete</button>";
@@ -71,6 +73,7 @@
         include 'change-affiliation-popup.php';
     }
     ?>
-
+    <script src="/src/js/ajax-update-affiliation.js"></script>
 </body>
+
 </html>

@@ -30,7 +30,8 @@
                 <input type="text" id="birthDate" name="birthDate" value="<?php echo getUserData('birth_date'); ?>" />
 
                 <label for="phoneNumber">Phone Number</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" value="<?php echo getUserData('phone_number'); ?>" />
+                <input type="text" id="phoneNumber" name="phoneNumber"
+                    value="<?php echo getUserData('phone_number'); ?>" />
 
                 <?php
                 if (isset($_SESSION['error'])) {
@@ -40,7 +41,8 @@
                 ?>
                 <div id="validation-message"></div>
                 <button type="submit" name="update_account" class="normal-button">Save changes (PHP)</button>
-                <input type="button" name="update_account" class="normal-button" id="update-ajax-button" value="Save changes (AJAX)">
+                <input type="button" name="update_account" class="normal-button" id="update-ajax-button"
+                    value="Save changes (AJAX)">
                 <button type="button" name="change_password" class="normal-button">
                     <a id="change-password-button" href="/src/auth/change-password.php">Change password</a>
                 </button>

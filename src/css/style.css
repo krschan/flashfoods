@@ -295,6 +295,20 @@ button .fa-solid {
   border-radius: 5px;
   box-sizing: border-box;
 }
+input[type="button"]{
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ffc90e;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="button"]:hover{
+  background-color: #deb00d;
+
+}
 
 #information button {
   padding: 10px 20px;

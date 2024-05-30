@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-class AjaxUpdateUser
+class AjaxUpdateAffiliation
 {
   private $conn;
 
@@ -26,22 +26,25 @@ class AjaxUpdateUser
   public function updateAccount()
   {
     $success = null;
-    $successMessage = "Profile successfully updated";
-    $failMessage = "Unable to update profile";
+    $successMessage = "Affiliation successfully updated";
+    $failMessage = "Unable to update affiliation information";
     $successId = "updateSuccess";
     $failId = "updateFailed";
-    $nameSurname = isset($_POST['nameSurname']) ?
-      ($_POST['nameSurname']) : '';
-    $birthDate = isset($_POST['birthDate']) ? ($_POST['birthDate']) : '';
+    $name = isset($_POST['name']) ?
+      ($_POST['name']) : '';
     $phoneNumber = isset($_POST['phoneNumber']) ? ($_POST['phoneNumber']) : '';
-    $currentUsername = $_SESSION['username'];
+    $email = isset($_POST['email']) ? ($_POST['email']) : '';
+    $description = isset($_POST['description']) ? ($_POST['description']) : '';
+    $idAffiliation = isset($_POST['id_affiliation']) ? ($_POST['id_affiliation']) : '';
+
 
     try {
-      $stmt = $this->conn->prepare("UPDATE user SET name = :nameSurname, birth_date = :birthDate, phone_number = :phoneNumber WHERE username = :currentUsername");
-      $stmt->bindParam(":nameSurname", $nameSurname);
-      $stmt->bindParam(":birthDate", $birthDate);
+      $stmt = $this->conn->prepare("UPDATE affiliation SET name = :name, phone_number = :phoneNumber, mail = :email, description = :description WHERE id_affiliation = :id_affiliation");
+      $stmt->bindParam(":name", $name);
       $stmt->bindParam(":phoneNumber", $phoneNumber);
-      $stmt->bindParam(":currentUsername", $currentUsername);
+      $stmt->bindParam(":email", $email);
+      $stmt->bindParam(":description", $description);
+      $stmt->bindParam(":id_affiliation", $idAffiliation);
       $stmt->execute();
       $success = true;
     } catch (PDOException $e) {
@@ -67,6 +70,6 @@ class AjaxUpdateUser
 
 // invoke the method inside the class
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $validator = new AjaxUpdateUser();
+  $validator = new AjaxUpdateAffiliation();
   $validator->updateAccount();
 }

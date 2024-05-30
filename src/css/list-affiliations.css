@@ -319,3 +319,22 @@ input#file-input {
 #information {
   margin: 2rem;
 }
+td.button-col {
+  width: 33%;
+}
+input[type="button"]{
+  width: 35%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000000;
+  border: 1px solid #ffc90e;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="button"]:hover{
+  background-color: #ffc90e;
+  color: #fff;
+  cursor: pointer;
+}
