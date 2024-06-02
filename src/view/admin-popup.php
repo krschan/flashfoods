@@ -2,6 +2,7 @@
 
     <div class="info-box center">
       <div class="info-form aligned">
+        <button class="close-button" onclick="closePopup()">x</button>
         <h2>Create Affiliation</h2>
         <article id="affiliation-information">
           <form id="information" method="POST" action="controller/AdminController.php" enctype="multipart/form-data">
