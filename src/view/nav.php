@@ -3,7 +3,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
   echo '<nav>
   <ul>
     <li>
-      <a href="index.php">
+      <a id="menu-icon">
         <i class="fas fa-bars"></i>
         <span class="nav-item logo"><img src="images/flashfoods-logo.png" alt="flashfoods-logo"></span>
       </a>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] == false) {
   echo '<nav>
   <ul>
     <li>
-      <a href="index.php">
+      <a id="menu-icon">
         <i class="fas fa-bars"></i>
         <span class="nav-item logo"><img src="images/flashfoods-logo.png" alt="flashfoods-logo"></span>
       </a>

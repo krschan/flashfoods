@@ -49,6 +49,17 @@ function openPopup(content) {
 
       // display the popup
       popup.style.display = "block";
+
+      // display the overlay
+      var overlay = document.querySelector(".overlay");
+      overlay.style.display = "block";
+      overlay.style.opacity = "0.8";
     })
     .catch((error) => console.error("Error loading popup content:", error)); // Log any errors
+}
+function closePopup() {
+  var popup = document.querySelector('.info-box');
+  popup.style.display = 'none';
+  var overlay = document.querySelector(".overlay");
+  overlay.style.opacity = "0";
 }

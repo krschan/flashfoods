@@ -267,7 +267,58 @@ $("#information").validate({
     },
   },
 });
-function closePopup() {
-  var popup = document.querySelector('.info-box');
-  popup.style.display = 'none';
-}
+document.addEventListener("DOMContentLoaded", function() {
+  // get the elements
+  var nav = document.querySelector("nav");
+  var menuIcon = document.getElementById("menu-icon");
+  var isOpen = false;
+
+  // get the overlay element
+  var overlay = document.querySelector(".overlay");
+
+  // function to open the nav menu
+  function openNav() {
+    nav.style.width = "280px"; // set the width to 280px
+    isOpen = true;
+    document.body.classList.add("menu-open");
+    overlay.style.display = "block";
+    overlay.style.opacity = "0.8";
+    // add event listener to close nav menu when clicking outside
+    document.addEventListener("click", closeNavOutside);
+  }
+
+  // function to close the nav menu
+  function closeNav() {
+    nav.style.width = "90px"; // width as per your CSS
+    isOpen = false;
+    document.body.classList.remove("menu-open");
+    overlay.style.display = "none";
+    overlay.style.opacity = "0";
+    // remove event listener to close nav menu when clicking outside
+    document.removeEventListener("click", closeNavOutside);
+  }
+
+  // function to close nav menu when clicking outside
+  function closeNavOutside(event) {
+    if (!nav.contains(event.target) && isOpen) {
+      closeNav();
+    }
+  }
+
+  // add event listener to open nav menu when menu icon is clicked
+  menuIcon.addEventListener("click", function() {
+    if (!isOpen) {
+      openNav();
+    } else {
+      closeNav();
+    }
+  });
+
+  var menuItems = document.querySelectorAll("nav ul li");
+  menuItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+      openOverlay();
+    });
+  });
+});
+
