@@ -29,14 +29,22 @@
   <?php require_once 'view/nav.php'; ?>
   <div class="overlay"></div>
   <div class="main">
-    <div class="search-box">
-      <div class="row">
-        <input type="text" id="input-search-box" placeholder="Search in FlashFoods" autocomplete="off">
-        <button id="button-search-box"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div class="search-and-filter-container">
+      <div class="search-box">
+        <div class="row">
+          <input type="text" id="input-search-box" placeholder="Search in FlashFoods" autocomplete="off">
+          <button id="button-search-box"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="result-box"></div>
       </div>
-      <div class="result-box"></div>
+      <div class="filter-container">
+        <div class="filter"><i class="fa-solid fa-money-bill-1-wave" style="color: #000000;"></i><span class="filter-text">Price</span><i class="fa-solid fa-caret-down" style="color: #000000;"></i></div>
+        <div class="filter"><i class="fa-solid fa-star" style="color: #000000;"></i><span class="filter-text">Rating</span><i class="fa-solid fa-caret-down" style="color: #000000;"></i></div>
+        <div class="filter"><i class="fa-solid fa-utensils" style="color: #000000;"></i><span class="filter-text">Cuisine</span><i class="fa-solid fa-caret-down" style="color: #000000;"></i></div>
+        <div class="filter"><i class="fa-solid fa-calendar-days" style="color: #000000;"></i><span class="filter-text">Schedule</span><i class="fa-solid fa-caret-down" style="color: #000000;"></i></div>
+        <div class="filter"><i class="fa-solid fa-chevron-filter" style="color: #000000;"></i><span class="filter-text">All filters</span><i class="fa-solid fa-caret-down" style="color: #000000;"></i></div>
+      </div>
     </div>
-
     <?php
     if (isset($_SESSION["logged"]) && $_SESSION["logged"] == true) {
       echo
