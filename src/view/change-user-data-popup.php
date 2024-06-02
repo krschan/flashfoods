@@ -26,7 +26,7 @@
                 <label for="nameSurname">Name</label>
                 <input type="text" id="nameSurname" name="nameSurname" value="<?php echo getUserData('name'); ?>" />
 
-                <label for="birthDate">Birth Date</label>
+                <label for="birthDate">Birth Date (yyyy-mm-dd)</label>
                 <input type="text" id="birthDate" name="birthDate" value="<?php echo getUserData('birth_date'); ?>" />
 
                 <label for="phoneNumber">Phone Number</label>
