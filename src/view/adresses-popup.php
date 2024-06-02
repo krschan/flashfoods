@@ -2,6 +2,7 @@
 
 <div class="info-box center">
     <div class="info-form aligned">
+        <button class="close-button" onclick="closePopup()">x</button>
         <h2>Addresses</h2>
         <article>
             <article>

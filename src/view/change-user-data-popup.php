@@ -2,6 +2,7 @@
 
 <div class="info-box center">
     <div class="info-form aligned">
+        <button class="close-button" onclick="closePopup()">x</button>
         <h2>Account Information</h2>
         <article id="user-information">
             <div class="img">

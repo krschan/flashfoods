@@ -13,9 +13,6 @@
 /* Body */
 body {
   background-image: url(/src/images/barcelona-map.png);
-  display: flex;
-  min-height: 100vh;
-  flex-direction: row;
 }
 
 /* Navigation */
@@ -240,6 +237,27 @@ button .fa-solid {
   border-radius: 1rem;
   z-index: 25;
 }
+.close-button {
+  color: #555;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button:hover {
+  background-color: #ccc;
+  border-radius: 50%;
+}
 
 /* User Data */
 .info-box {
@@ -267,7 +285,7 @@ button .fa-solid {
   background: #ffc90e;
   text-align: left;
   padding: 5px 0 5px 2rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   font-size: 24px;
 }
 

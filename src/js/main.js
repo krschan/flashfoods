@@ -267,3 +267,7 @@ $("#information").validate({
     },
   },
 });
+function closePopup() {
+  var popup = document.querySelector('.info-box');
+  popup.style.display = 'none';
+}

@@ -3,6 +3,7 @@
 <body>
     <div class="info-box center">
         <div class="info-form aligned">
+            <button class="close-button" onclick="closePopup()">x</button>
             <h2>History</h2>
             <article>
                 <div class="history-item div-popup">
