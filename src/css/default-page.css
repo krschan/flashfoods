@@ -46,7 +46,10 @@
   transform: translateX(-50%);
   text-align: center;
 }
-
+#social-media {
+  text-align: center;
+  margin-top: 2rem;
+}
 /* Title */
 #div-title {
   padding-top: 180px;
@@ -76,7 +79,7 @@
 
 /* Main */
 .main {
-  padding-top: 50px;
+  padding-top: 33px;
   text-align: left;
 }
 
@@ -94,7 +97,7 @@ div>input {
   width: 100%;
   box-shadow: 0 0 0;
   border: 0;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .main>div>a>button {
@@ -145,7 +148,6 @@ button {
   padding: 10px 20px;
   border-radius: 20px;
   border: solid 1px rgb(255, 201, 14);
-  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: white;
   transition: background-color 0.3s;
 }

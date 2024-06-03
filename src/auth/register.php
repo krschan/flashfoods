@@ -47,20 +47,20 @@ session_start();
     </div>
   </div>
 
+  <div class="center" id="social-media">
+    <button>
+      <img class="signin-faster" src="../images/google-icon.png" alt="sign-in-with-google">
+    </button>
+    <button>
+      <img class="signin-faster" src="../images/apple-icon.png" alt="sign-in-with-apple">
+    </button>
+    <button>
+      <img class="signin-faster" src="../images/mail-icon.png" alt="sign-in-with-mail">
+    </button>
+  </div>
   <form action="../controller/UserController.php" method="post" id="register" enctype="multipart/form-data">
 
     <div id="main-div" class="aligned main">
-      <div class="center">
-        <button>
-          <img class="signin-faster" src="../images/google-icon.png" alt="sign-in-with-google">
-        </button>
-        <button>
-          <img class="signin-faster" src="../images/apple-icon.png" alt="sign-in-with-apple">
-        </button>
-        <button>
-          <img class="signin-faster" src="../images/mail-icon.png" alt="sign-in-with-mail">
-        </button>
-      </div>
 
       <div>
         <label for="email">Email</label>
@@ -82,12 +82,8 @@ session_start();
         <div>
           <input type="password" name="password">
         </div>
-        <div class="support-box">
-          <a id="support" href="../view/technical-support.php">Forgot password or having
-            trouble?</a>
-        </div>
-      </div>
 
+      </div>
       <input type="submit" name="register" value="Create account" class="signin-input">
       <?php
       if (isset($_SESSION['error'])) {

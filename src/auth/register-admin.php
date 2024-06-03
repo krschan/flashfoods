@@ -70,9 +70,7 @@ session_start();
         <div>
           <input type="password" name="password">
         </div>
-        <div class="support-box">
-          <a id="support" href="../view/technical-support.php">Forgot password or having trouble?</a>
-        </div>
+
       </div>
 
       <div>
