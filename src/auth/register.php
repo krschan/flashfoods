@@ -23,12 +23,6 @@ session_start();
 </head>
 
 <body id="grey-background" class="center">
-  <div class="return">
-    <a href="../index.php">
-      <button>Return</button>
-    </a>
-  </div>
-
   <div id="white-background">
     <div class="div-logo">
       <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>

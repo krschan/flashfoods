@@ -47,7 +47,12 @@ nav a:hover {
 }
 
 nav .content-locked {
-  opacity: 35%;
+  opacity: 15%;
+}
+
+nav .content-locked a:hover {
+  background: none;
+  cursor: default;
 }
 
 /* Logo */
@@ -79,6 +84,13 @@ nav .content-locked {
   font-weight: bolder;
 }
 
+#menu-icon {
+  margin: -12px 0 0 0;   
+}
+
+#menu-icon:hover {
+  cursor: pointer;
+}
 /* Overlay */
 .overlay {
   position: fixed;
@@ -234,7 +246,7 @@ button .fa-solid {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 25;
+  z-index: 15;
 }
 
 .login-button a {
@@ -344,6 +356,7 @@ button .fa-solid {
   border-radius: 5px;
   box-sizing: border-box;
 }
+
 input[type="button"]{
   padding: 10px 20px;
   margin-top: 20px;
@@ -386,7 +399,7 @@ input[type="button"]:hover{
 
 article#user-information,
 article#affiliation-information {
-  padding: 2rem 1rem 2rem 3rem;
+  padding: 2rem 1rem 2rem 4rem;
   text-align: start;
   position: relative;
 }
