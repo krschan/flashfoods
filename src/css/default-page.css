@@ -113,10 +113,6 @@ div>input {
   background-color: #f9d967;
 }
 
-.support-box {
-  margin-top: 10px;
-}
-
 #support {
   color: red;
   text-decoration: underline red;
@@ -156,10 +152,26 @@ button:hover {
   cursor: pointer;
 }
 
-input {
+#return-home {
+  padding: 0.5rem 0;
+  border: solid 1px #ffc90e;
+  background-color: #ffc90e;
+  color: #000;
+  font-size: bolder;
+  transition: background-color 0.3s;
+  margin-bottom: 1rem;
+}
+
+#return-home:hover {
+  padding: 0.5rem 0;
+  border: solid 1px #f9d967;
+  background-color: #f9d967;
+  cursor: pointer;
+}
+
+input, span {
   border: solid 1px rgb(255, 201, 14);
   border-radius: 20px;
-  box-shadow: 5px 5px 2.5px rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
 }
 
@@ -205,12 +217,14 @@ button:hover {
 }
 
 .signin-input {
+  width: 100%;
   padding: 0.5rem 0;
   border: solid 1px #ffc90e;
   background-color: #ffc90e;
   color: #000;
   font-size: bolder;
   transition: background-color 0.3s;
+  margin-bottom: 1rem;
 }
 
 .signin-input:hover {

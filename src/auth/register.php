@@ -79,6 +79,11 @@ session_start();
 
       </div>
       <input type="submit" name="register" value="Create account" class="signin-input">
+      <a href="../index.php">
+        <input type="button" name="register" value="Back to home" class="signin-input">
+      </a> </a></input>
+
+
       <?php
       if (isset($_SESSION['error'])) {
         echo "<p style='color: red;'>" . $_SESSION['error'] . "</p>";

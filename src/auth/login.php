@@ -25,8 +25,7 @@ session_start();
 <body id="grey-background" class="center">
     <div id="white-background">
         <div class="div-logo">
-            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png"
-                    alt="logo-flashfood"></a>
+            <a href="../index.php"><img class="logo center" src="../images/flashfoods-logo.png" alt="logo-flashfood"></a>
         </div>
 
         <div id="div-title">
@@ -42,20 +41,21 @@ session_start();
         </div>
     </div>
 
+    <div class="center" id="social-media">
+        <button>
+            <img class="signin-faster" src="../images/google-icon.png" alt="sign-in-with-google">
+        </button>
+        <button>
+            <img class="signin-faster" src="../images/apple-icon.png" alt="sign-in-with-apple">
+        </button>
+        <button>
+            <img class="signin-faster" src="../images/mail-icon.png" alt="sign-in-with-mail">
+        </button>
+    </div>
+
     <form action="../controller/UserController.php" method="post" id="login">
 
         <div id="main-div" class="aligned main">
-            <div class="center">
-                <button>
-                    <img class="signin-faster" src="../images/google-icon.png" alt="sign-in-with-google">
-                </button>
-                <button>
-                    <img class="signin-faster" src="../images/apple-icon.png" alt="sign-in-with-apple">
-                </button>
-                <button>
-                    <img class="signin-faster" src="../images/mail-icon.png" alt="sign-in-with-mail">
-                </button>
-            </div>
 
             <div>
                 <label for="username">Username</label>
@@ -76,6 +76,9 @@ session_start();
             </div>
 
             <input type="submit" name="login" value="Log in" class="signin-input">
+            <a href="../index.php">
+                <input type="button" name="register" value="Back to home" class="signin-input">
+            </a> </a></input>
             <?php
             if (isset($_SESSION['error'])) {
                 echo "<p style='color: red;'>" . $_SESSION['error'] . "</p>";

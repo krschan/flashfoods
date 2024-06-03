@@ -72,9 +72,11 @@ session_start();
         <input type="file" name="fileUpload" id="fileUpload">
       </div>
 
-      <input type="submit" name="register-admin" value="Create Account" class="signin-input">
+      <input type="submit" name="register-admin" value="Create account" class="signin-input">
+      <a href="../index.php">
+        <input type="button" name="register" value="Back to home" class="signin-input">
+      </a> </a></input>
       <div id="request-validation"></div>
-
     </div>
   </form>
   <script src="../js/main.js" defer></script>
