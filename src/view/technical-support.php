@@ -42,14 +42,14 @@ session_start();
 
         <div id="main-div" class="main">
             <div>
-                <label for="email" class="mail">Email</label>
+                <label for="email" class="mail">Introduce your email</label>
                 <div>
                     <input type="email">
                 </div>
             </div>
 
             <div>
-                <a href="/src/pages/view/login/index-user.html">
+                <a href="/src/index.php">
                     <button>Send</button>
                 </a>
             </div>
